@@ -12,8 +12,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    # ./modules/nixos/grub.nix
-    # ./modules/nixos/main-user.nix
+    ../../modules/nixos/grub.nix
+    ../../modules/nixos/main-user.nix
     inputs.home-manager.nixosModules.default
   ];
 

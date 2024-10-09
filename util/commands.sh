@@ -7,17 +7,18 @@ function rebuild() {
 
 function editconfig() {
     _prepare
-    nvim "$nixDir/hosts/default/configuration.nix"
+    nvim "hosts/default/configuration.nix"
     _finalize
 }
 
 function _prepare() {
     set -e
+    pushd $nixDir
 
 }
 
 function _finalize() {
-    git diff -U0 "$nixDir/**/*.nix"
+    git diff -U0 ./**/*.nix
 
     echo "NixOS Rebuilding..."
     sudo nixos-rebuild switch --flake "$nixDir/#default" >&$logfile || (
@@ -31,4 +32,5 @@ function _finalize() {
     echo "Commit: \"Gen: $generation - $date\""
     git add ./**/*
     git commit -am "Gen: $generation - $date"
+    popd
 }
