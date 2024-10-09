@@ -8,7 +8,7 @@ function rebuild() {
 function editconfig() {
     _prepare
     nvim "$nixDir/hosts/default/configuration.nix"
-    _finalize
+    _finalize&
 }
 
 function _prepare() {
@@ -32,5 +32,3 @@ function _finalize() {
     git add ./**/*
     git commit -am "Gen: $generation - $date"
 }
-
-rebuild
