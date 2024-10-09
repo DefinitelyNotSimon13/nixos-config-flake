@@ -138,7 +138,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     bat
-    cargo
     cmake
     curl
     eza
@@ -161,7 +160,6 @@
     pinentry-tty
     python3
     rofi-wayland
-    rustc
     sl
     stow
     thefuck

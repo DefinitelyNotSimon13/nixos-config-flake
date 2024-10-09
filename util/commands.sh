@@ -8,7 +8,7 @@ function rebuild() {
 function editconfig() {
     _prepare
     nvim "$nixDir/hosts/default/configuration.nix"
-    _finalize&
+    _finalize
 }
 
 function _prepare() {
@@ -17,7 +17,7 @@ function _prepare() {
 }
 
 function _finalize() {
-    git diff -U0 ./**/*.nix
+    git diff -U0 "$nixDir/**/*.nix"
 
     echo "NixOS Rebuilding..."
     sudo nixos-rebuild switch --flake "$nixDir/#default" >&$logfile || (
