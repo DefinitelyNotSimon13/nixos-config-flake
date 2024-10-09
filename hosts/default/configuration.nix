@@ -13,19 +13,16 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/nixos/grub.nix
-    ../../modules/nixos/console-config.nix
     ../../modules/nixos/main-user.nix
+    ../../modules/nixos/console-config.nix
+    ../../modules/nixos/network-config.nix
     inputs.home-manager.nixosModules.default
   ];
 
   grub.enable = true;
 
   consoleConfig.enable = true;
-
-  networking.hostName = "nixos-desktop"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networkConfig.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
