@@ -21,6 +21,7 @@ function _finalize() {
     git diff -U0 ./**/*.nix
 
     echo "NixOS Rebuilding..."
+    git add ./**/*
     sudo nixos-rebuild switch --flake "$nixDir/#default" >&$logfile || (
         cat $logfile | grep --color error && false)
 
@@ -30,7 +31,6 @@ function _finalize() {
     date=$(date '+%d.%m.%Y - %H:%M:%S')
 
     echo "Commit: \"Gen: $generation - $date\""
-    git add ./**/*
     git commit -am "Gen: $generation - $date"
     popd
 }

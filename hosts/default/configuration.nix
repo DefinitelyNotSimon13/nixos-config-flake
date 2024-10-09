@@ -13,11 +13,14 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/nixos/grub.nix
+    ../../modules/nixos/console-config.nix
     ../../modules/nixos/main-user.nix
     inputs.home-manager.nixosModules.default
   ];
 
   grub.enable = true;
+
+  consoleConfig.enable = true;
 
   networking.hostName = "nixos-desktop"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -32,31 +35,6 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    earlySetup = true;
-    packages = with pkgs; [ terminus_font ];
-    font = "ter-u28n";
-    useXkbConfig = true; # use xkb.options in tty.
-    colors = [
-      "1e1e2e"
-      "f38ba8"
-      "fab387"
-      "a6e3a1"
-      "89b4fa"
-      "cba6f7"
-      "89dceb"
-      "cdd6f4"
-      "313244"
-      "eba0ac"
-      "f9e2af"
-      "94e2d5"
-      "74c7ec"
-      "b4befe"
-      "94e2d5"
-      "bac2de"
-    ];
-  };
 
   nix.settings.experimental-features = [
     "nix-command"

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+source "$HOME/dotfiles/nixos/util/commands.sh"
+
+file="$nixDir/bin/$1"
+cp "$nixDir/templates/command.tpl" "$file"
+chmod +x "$file"
+nvim "$file" "$nixDir/util/commands.sh"
