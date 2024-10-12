@@ -147,6 +147,9 @@
     zoxide
     gh
     vscode
+    dunst
+    viewnior
+    grim
   ];
 
   services.pcscd.enable = true;
