@@ -115,21 +115,24 @@
     bat
     cmake
     curl
+    dunst
     eza
     firefox
     fzf
     gcc
+    gh
     git-credential-manager
     gnupg
     go
+    grim
     hyprcursor
     hypridle
     hyprpaper
     jetbrains-toolbox
-    nixfmt-rfc-style
     kitty
     lazygit
     nixd
+    nixfmt-rfc-style
     oh-my-posh
     pass
     pinentry-tty
@@ -140,16 +143,14 @@
     thefuck
     tmux
     unzip
+    viewnior
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vscode
     waybar
     wget
+    xorg.xrandr
     yazi
     zoxide
-    gh
-    vscode
-    dunst
-    viewnior
-    grim
   ];
 
   services.pcscd.enable = true;
