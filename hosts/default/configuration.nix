@@ -169,6 +169,7 @@
     pinentryPackage = pkgs.pinentry-tty;
   };
 
+  virtualisation.docker.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
