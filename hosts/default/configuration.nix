@@ -132,6 +132,7 @@
     jetbrains-toolbox
     kitty
     lazygit
+    tldr
     nixd
     nixfmt-rfc-style
     oh-my-posh
