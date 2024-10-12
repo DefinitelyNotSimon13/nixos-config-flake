@@ -139,6 +139,7 @@
     python3
     rofi-wayland
     sl
+    slurp
     stow
     thefuck
     tmux
