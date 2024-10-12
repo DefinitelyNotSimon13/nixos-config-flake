@@ -129,7 +129,6 @@
     hyprcursor
     hypridle
     hyprpaper
-    jetbrains-toolbox
     kitty
     lazygit
     tldr
