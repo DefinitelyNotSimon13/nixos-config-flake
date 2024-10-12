@@ -157,6 +157,7 @@
     xorg.xrandr
     yazi
     zoxide
+    plantuml
   ];
 
   services.pcscd.enable = true;
