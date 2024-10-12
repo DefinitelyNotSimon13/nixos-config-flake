@@ -113,6 +113,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     bat
+    cliphist
     cmake
     curl
     dunst
