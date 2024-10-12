@@ -129,6 +129,7 @@
     hyprcursor
     hypridle
     hyprpaper
+    spotify
     kitty
     lazygit
     tldr
