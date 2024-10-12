@@ -150,7 +150,10 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     vscode
     waybar
+    wl-clipboard
     wget
+    xdg-ninja
+    xdg-utils
     xorg.xrandr
     yazi
     zoxide
