@@ -146,6 +146,7 @@
     yazi
     zoxide
     gh
+    vscode
   ];
 
   services.pcscd.enable = true;
