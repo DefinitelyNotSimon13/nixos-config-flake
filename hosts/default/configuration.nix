@@ -139,6 +139,7 @@
     pinentry-tty
     python3
     rofi-wayland
+    jetbrains-toolbox
     sl
     slurp
     stow
