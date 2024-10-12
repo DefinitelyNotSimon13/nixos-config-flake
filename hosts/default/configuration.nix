@@ -139,6 +139,7 @@
     pass
     pinentry-tty
     python3
+    zathura
     rofi-wayland
     jetbrains-toolbox
     sl
