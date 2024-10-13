@@ -16,7 +16,6 @@
     ../../modules/nixos/main-user.nix
     ../../modules/nixos/console-config.nix
     ../../modules/nixos/network-config.nix
-    ../../modules/nixos/stylix-config.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -28,12 +27,10 @@
   consoleConfig.enable = true;
   networkConfig.enable = true;
 
-  stylix = {
-    image = ../../assets/nice-blue-background.png;
-    enable = true;
-    autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-  };
+  stylix.enable = true;
+  stylix.autoEnable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  stylix.image = ../../assets/nice-blue-background.png;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
