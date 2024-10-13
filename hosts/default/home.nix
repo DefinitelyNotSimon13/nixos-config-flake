@@ -6,7 +6,7 @@
 {
   imports = [
     ../../modules/home-mananger/shells.nix
-    # ../../modules/home-mananger/stylix-user-config.nix
+    ../../modules/home-mananger/stylix-user-config.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -17,6 +17,8 @@
   shells = {
     zshConfig = true;
   };
+
+  stylixUserConfig.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

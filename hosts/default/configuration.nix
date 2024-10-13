@@ -15,6 +15,7 @@
     ../../modules/nixos/grub.nix
     ../../modules/nixos/main-user.nix
     ../../modules/nixos/console-config.nix
+    ../../modules/nixos/stylix-config.nix
     ../../modules/nixos/network-config.nix
     inputs.home-manager.nixosModules.default
   ];
@@ -27,11 +28,7 @@
   consoleConfig.enable = true;
   networkConfig.enable = true;
 
-  stylix = {
-    enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    image = ../../assets/nice-blue-background.png;
-  };
+  stylixConfig.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
