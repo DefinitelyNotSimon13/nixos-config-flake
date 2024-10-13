@@ -9,14 +9,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:danth/stylix";
+    # stylix.url = "github:danth/stylix";
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      stylix,
+      # stylix,
       ...
     }@inputs:
     {
@@ -27,7 +27,7 @@
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
-          stylix.nixosModules.stylix
+          # stylix.nixosModules.stylix
         ];
       };
     };
