@@ -137,6 +137,9 @@
   # wayland.windowManager.hyprland.enable = true;
   # home.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  gtk.enable = true;
+  qt.enable = true;
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager = {
@@ -158,6 +161,9 @@
       withPython3 = true;
       withRuby = true;
     };
+
+    alacritty.enable = true;
+    btop.enable = true;
 
     # kitty = {
     #   enable = true;

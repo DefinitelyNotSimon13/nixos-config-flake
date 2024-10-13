@@ -27,11 +27,11 @@
   consoleConfig.enable = true;
   networkConfig.enable = true;
 
-  # stylix = {
-  #   enable = true;
-  #   base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  #   image = ../../assets/nice-blue-background.png;
-  # };
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    image = ../../assets/nice-blue-background.png;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
