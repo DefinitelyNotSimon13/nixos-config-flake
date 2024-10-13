@@ -1,8 +1,13 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     ../../modules/home-mananger/shells.nix
-    ../../modules/stylix-config.nix
+    ../../modules/home-mananger/stylix-user-config.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -10,11 +15,11 @@
   home.username = "simon";
   home.homeDirectory = "/home/simon";
 
+  stylixUserConfig.enable = true;
+
   shells = {
     zshConfig = true;
   };
-
-  stylixConfig.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -130,8 +135,6 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
-  stylix.targets.neovim.enable = false;
 
   # wayland.windowManager.hyprland.enable = true;
   # home.sessionVariables.NIXOS_OZONE_WL = "1";

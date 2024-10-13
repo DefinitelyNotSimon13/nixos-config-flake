@@ -16,7 +16,7 @@
     ../../modules/nixos/main-user.nix
     ../../modules/nixos/console-config.nix
     ../../modules/nixos/network-config.nix
-    ../../modules/stylix-config.nix
+    ../../modules/nixos/stylix-config.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -25,10 +25,10 @@
     enableTheme = false;
   };
 
-  stylixConfig.enable = true;
-
   consoleConfig.enable = true;
   networkConfig.enable = true;
+
+  stylixConfig.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
