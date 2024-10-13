@@ -22,7 +22,7 @@
 
   grub = {
     enable = true;
-    enableTheme = false;
+    enableTheme = true;
   };
 
   consoleConfig.enable = true;
