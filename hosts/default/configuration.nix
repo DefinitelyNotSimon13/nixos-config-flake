@@ -139,8 +139,6 @@
     nixfmt-rfc-style
     oh-my-posh
     pass
-    cargo-tauri
-    rustup
     pinentry-tty
     python3
     gnumake
