@@ -48,7 +48,6 @@
     lazygit
     nixd
     nixfmt-rfc-style
-    oh-my-posh
     pass
     pinentry-tty
     plantuml
