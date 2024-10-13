@@ -1,9 +1,15 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ../../modules/home-mananger/shell/zsh.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
+
   home.username = "simon";
   home.homeDirectory = "/home/simon";
+
+  zsh.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -16,7 +22,55 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  nixpkgs.config.allowUnfree = true;
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    bat
+    cliphist
+    cmake
+    curl
+    dunst
+    eza
+    firefox
+    fzf
+    gcc
+    gh
+    git-credential-manager
+    gnumake
+    gnupg
+    grim
+    hyprcursor
+    hypridle
+    hyprpaper
+    jetbrains-toolbox
+    lazygit
+    nixd
+    nixfmt-rfc-style
+    oh-my-posh
+    pass
+    pinentry-tty
+    plantuml
+    python3
+    rofi-wayland
+    sl
+    slurp
+    spotify
+    stow
+    thefuck
+    tldr
+    tmux
+    unzip
+    viewnior
+    vim
+    vscode
+    waybar
+    wget
+    wl-clipboard
+    xdg-utils
+    xorg.xrandr
+    yazi
+    zathura
+    zoxide
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -70,8 +124,35 @@
     # EDITOR = "emacs";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager = {
-    enable = true;
+  # wayland.windowManager.hyprland.enable = true;
+  # home.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager = {
+      enable = true;
+    };
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      vimAlias = true;
+      viAlias = true;
+      withNodeJs = true;
+      withPython3 = true;
+      withRuby = true;
+    };
+
+    # kitty = {
+    #   enable = true;
+    # };
+
   };
+
 }

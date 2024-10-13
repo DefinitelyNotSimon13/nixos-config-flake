@@ -78,101 +78,37 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    vimAlias = true;
-    viAlias = true;
-    withNodeJs = true;
-    withPython3 = true;
-    withRuby = true;
-  };
-
-  programs.git = {
-    enable = true;
-    config = {
-      init = {
-        defaultBranch = "main";
+  programs = {
+    hyprland.enable = true;
+    zsh.enable = true;
+    git = {
+      enable = true;
+      config = {
+        init = {
+          defaultBranch = "main";
+        };
+        credential = {
+          credentialStore = "gpg";
+          helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
+        };
       };
-      credential = {
-        credentialStore = "gpg";
-        helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
-      };
+    };
+
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      pinentryPackage = pkgs.pinentry-tty;
     };
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-  };
-
-  nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    bat
-    cliphist
-    cmake
-    curl
-    dunst
-    eza
-    firefox
-    fzf
-    gcc
-    gh
-    git-credential-manager
-    gnupg
-    go
-    grim
-    hyprcursor
-    hypridle
-    hyprpaper
-    spotify
-    kitty
-    lazygit
-    tldr
-    nixd
-    nixfmt-rfc-style
-    oh-my-posh
-    pass
-    pinentry-tty
-    python3
-    gnumake
-    zathura
-    rofi-wayland
-    jetbrains-toolbox
-    sl
-    slurp
-    stow
-    thefuck
-    tmux
-    unzip
-    viewnior
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    vscode
-    waybar
-    wl-clipboard
-    wget
-    xdg-ninja
-    xdg-utils
-    xorg.xrandr
-    yazi
-    zoxide
-    plantuml
-  ];
-
-  programs.direnv.enable = true;
+  environment.systemPackages =
+    with pkgs;
+    [
+    ];
 
   services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-tty;
-  };
 
   virtualisation.docker = {
     enable = true;
