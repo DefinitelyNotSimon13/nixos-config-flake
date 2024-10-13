@@ -28,7 +28,12 @@
   consoleConfig.enable = true;
   networkConfig.enable = true;
 
-  stylixConfig.enable = true;
+  stylix = {
+    image = ../../assets/nice-blue-background.png;
+    enable = true;
+    autoEnable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
