@@ -17,6 +17,7 @@ in
     stylix = {
       targets = {
         neovim.enable = false;
+        alacritty.enable = true;
       };
     };
 
