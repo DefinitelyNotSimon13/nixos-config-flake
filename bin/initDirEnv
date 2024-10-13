@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source "$HOME/dotfiles/nixos/util/commands.sh"
+
+nix flake new -t github:nix-community/nix-direnv .

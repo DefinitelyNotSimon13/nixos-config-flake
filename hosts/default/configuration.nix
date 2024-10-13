@@ -71,6 +71,8 @@
     users = {
       "simon" = import ./home.nix;
     };
+    backupFileExtension = "hm-backup";
+
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -137,6 +139,8 @@
     nixfmt-rfc-style
     oh-my-posh
     pass
+    cargo-tauri
+    rustup
     pinentry-tty
     python3
     gnumake
@@ -162,6 +166,8 @@
     zoxide
     plantuml
   ];
+
+  programs.direnv.enable = true;
 
   services.pcscd.enable = true;
   programs.gnupg.agent = {
