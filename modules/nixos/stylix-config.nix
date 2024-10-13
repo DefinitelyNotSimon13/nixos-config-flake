@@ -17,7 +17,7 @@ in
     stylix = {
       image = ../../assets/nice-blue-background.png;
       enable = true;
-      polarity = "dark";
+      autoEnable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     };
 
