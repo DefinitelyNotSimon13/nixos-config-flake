@@ -60,14 +60,12 @@
     pinentry-tty
     plantuml
     python3
-    rofi-wayland
     sl
     slurp
     spotify
     stow
     thefuck
     tldr
-    nautilus
     btop
     tmux
     kitty
@@ -75,7 +73,6 @@
     viewnior
     vim
     vscode
-    waybar
     wget
     wl-clipboard
     xdg-utils
@@ -164,12 +161,12 @@
       withRuby = true;
     };
 
-    alacritty.enable = true;
     btop.enable = true;
-
-    # kitty = {
-    #   enable = true;
-    # };
+    waybar.enable = true;
+    rofi = {
+      enable = true;
+      package = pkgs.rofi-wayland;
+    };
 
   };
 

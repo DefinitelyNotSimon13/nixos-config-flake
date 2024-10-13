@@ -18,6 +18,8 @@ in
       enable = true;
       targets = {
         neovim.enable = false;
+        rofi.enable = false;
+        waybar.enable = false;
       };
     };
 
