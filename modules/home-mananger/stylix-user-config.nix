@@ -16,12 +16,12 @@ in
   config = lib.mkIf cfg.enable {
     stylix = {
       enable = true;
-      targets = {
-        neovim.enable = false;
-        alacritty.enable = true;
-        btop.enable = true;
-        dunst.enable = true;
-      };
+      # targets = {
+      #   neovim.enable = false;
+      #   alacritty.enable = true;
+      #   btop.enable = true;
+      #   dunst.enable = true;
+      # };
     };
 
   };
