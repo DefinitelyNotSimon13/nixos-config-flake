@@ -13,7 +13,12 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      stylix,
+      ...
+    }@inputs:
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -21,8 +26,8 @@
         };
         modules = [
           ./hosts/default/configuration.nix
-          inputs.stylix.nixosModules.stylix
           inputs.home-manager.nixosModules.default
+          stylix.nixosModules.stylix
         ];
       };
     };
