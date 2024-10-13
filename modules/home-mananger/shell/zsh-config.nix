@@ -5,7 +5,7 @@
   ...
 }:
 let
-  moduleName = "zsh";
+  moduleName = "zshConfig";
   cfg = config."${moduleName}";
 in
 {
@@ -17,6 +17,7 @@ in
     programs.zsh = {
       enable = true;
       enableCompletion = true;
+      syntaxHighlighting.enable = true;
     };
   };
 }
