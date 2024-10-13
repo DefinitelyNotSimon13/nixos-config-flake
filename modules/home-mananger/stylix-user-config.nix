@@ -19,6 +19,8 @@ in
       targets = {
         neovim.enable = false;
         alacritty.enable = true;
+        btop.enable = true;
+        dunst.enable = true;
       };
     };
 
