@@ -2,6 +2,7 @@
 {
   imports = [
     ../../modules/home-mananger/shells.nix
+    ../../modules/stylix-config.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -12,6 +13,8 @@
   shells = {
     zshConfig = true;
   };
+
+  stylixConfig.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -59,8 +62,8 @@
     stow
     thefuck
     tldr
-    wezterm
-    dolphin
+    nautilus
+    btop
     tmux
     kitty
     unzip
@@ -127,6 +130,8 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  stylix.targets.neovim.enable = false;
 
   # wayland.windowManager.hyprland.enable = true;
   # home.sessionVariables.NIXOS_OZONE_WL = "1";

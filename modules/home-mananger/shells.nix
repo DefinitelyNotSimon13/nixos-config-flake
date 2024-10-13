@@ -18,7 +18,6 @@ in
     zshConfig = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      example = true;
       description = "enables the zsh config";
     };
   };

@@ -16,10 +16,16 @@
     ../../modules/nixos/main-user.nix
     ../../modules/nixos/console-config.nix
     ../../modules/nixos/network-config.nix
+    ../../modules/stylix-config.nix
     inputs.home-manager.nixosModules.default
   ];
 
-  grub.enable = true;
+  grub = {
+    enable = true;
+    enableTheme = false;
+  };
+
+  stylixConfig.enable = true;
 
   consoleConfig.enable = true;
   networkConfig.enable = true;

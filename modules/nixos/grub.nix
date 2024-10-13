@@ -17,6 +17,11 @@ in
 {
   options.grub = {
     enable = lib.mkEnableOption "enable grub module";
+    enableTheme = lib.mkOption {
+      description = "set theme or not";
+      default = true;
+      type = lib.types.bool;
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -30,7 +35,7 @@ in
         useOSProber = true;
         efiSupport = true;
         device = "nodev";
-        theme = catppuccin;
+        theme = lib.mkIf cfg.enableTheme catppuccin;
       };
     };
   };
