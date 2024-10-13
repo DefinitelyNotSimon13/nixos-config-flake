@@ -1,21 +1,18 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }:
 {
   imports = [
     ../../modules/home-mananger/shells.nix
-    ../../modules/home-mananger/stylix-user-config.nix
+    # ../../modules/home-mananger/stylix-user-config.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
   home.username = "simon";
   home.homeDirectory = "/home/simon";
-
-  stylixUserConfig.enable = true;
 
   shells = {
     zshConfig = true;
