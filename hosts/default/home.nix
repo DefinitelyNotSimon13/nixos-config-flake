@@ -59,6 +59,8 @@
     stow
     thefuck
     tldr
+    wezterm
+    dolphin
     tmux
     kitty
     unzip
