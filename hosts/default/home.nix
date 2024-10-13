@@ -35,6 +35,7 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    alacritty
     bat
     cliphist
     cmake
