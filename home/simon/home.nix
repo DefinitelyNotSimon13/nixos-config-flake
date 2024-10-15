@@ -5,20 +5,13 @@
 }:
 {
   imports = [
-    ../../modules/home-mananger/shells.nix
-    ../../modules/home-mananger/stylix-user-config.nix
+    ../common
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
   home.username = "simon";
   home.homeDirectory = "/home/simon";
-
-  shells = {
-    zshConfig = true;
-  };
-
-  stylixUserConfig.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -31,11 +24,11 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     alacritty
     bat
+    btop
     cliphist
     cmake
     curl
@@ -53,22 +46,23 @@
     hypridle
     hyprpaper
     jetbrains-toolbox
+    kitty
     lazygit
     nixd
     nixfmt-rfc-style
+    nh
     pass
     pinentry-tty
     plantuml
     python3
+    ripgrep
     sl
     slurp
     spotify
     stow
     thefuck
     tldr
-    btop
     tmux
-    kitty
     unzip
     viewnior
     vim

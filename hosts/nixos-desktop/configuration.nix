@@ -12,21 +12,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/nixos/grub.nix
-    ../../modules/nixos/main-user.nix
-    ../../modules/nixos/console-config.nix
-    ../../modules/nixos/stylix-config.nix
-    ../../modules/nixos/network-config.nix
     inputs.home-manager.nixosModules.default
   ];
-
-  grub = {
-    enable = true;
-    enableTheme = true;
-  };
-
-  consoleConfig.enable = true;
-  networkConfig.enable = true;
 
   stylixConfig.enable = true;
 
@@ -38,11 +25,6 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = false;
@@ -70,16 +52,16 @@
     initialPassword = "password";
   };
 
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-    users = {
-      "simon" = import ./home.nix;
-    };
-    backupFileExtension = "hm-backup";
-
-  };
+  # home-manager = {
+  #   extraSpecialArgs = {
+  #     inherit inputs;
+  #   };
+  #   users = {
+  #     "simon" = import ./home.nix;
+  #   };
+  #   backupFileExtension = "hm-backup";
+  #
+  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -144,12 +126,6 @@
       };
     };
   };
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   system.autoUpgrade = {
     enable = true;
