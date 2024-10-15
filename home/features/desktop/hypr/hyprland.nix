@@ -21,13 +21,6 @@ in
       enable = true;
       settings = {
 
-        monitor = [
-          "eDP-1, preferred, auto, 1.2"
-          "DP-1, 1920x1080@60, 0x0, 1"
-          "DP-2 , 1920x1080@60, -1920x0000, 1"
-          "DP-3, 1920x1080@60, 1920x-700, 1, transform, 3"
-        ];
-
         xwayland = {
           force_zero_scaling = true;
         };
