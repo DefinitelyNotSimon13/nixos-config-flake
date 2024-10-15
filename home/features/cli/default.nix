@@ -58,6 +58,7 @@
     procs
     ripgrep
     tldr
+    killall
     zip
     unzip
     nh
