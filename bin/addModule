@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-source "$HOME/dotfiles/nixos/util/commands.sh"
-
-cp "$nixDir/templates/module.tpl.nix" "$1"
-nvim "$1" "$nixDir/hosts/default/configuration.nix"

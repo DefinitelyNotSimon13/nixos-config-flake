@@ -2,7 +2,7 @@
 {
   imports = [
     ./home.nix
-    ./dotfiles
+    ../dotfiles
     ../common
     ../features/cli
     ../features/stylix
@@ -31,9 +31,41 @@
   };
 
   dotfiles = {
-    nvim = {
+    alacritty = {
       enable = true;
-      symlink = true;
+    };
+    dunst = {
+      enable = true;
+    };
+    executables = {
+      enable = true;
+    };
+    i3 = {
+      enable = false;
+    };
+    ideavim = {
+      enable = true;
+    };
+    kitty = {
+      enable = true;
+    };
+    neofetch = {
+      enable = true;
+    };
+    oh-my-posh = {
+      enable = true;
+    };
+    rofi = {
+      enable = false;
+    };
+    tmux = {
+      enable = true;
+    };
+    wallpapers = {
+      enable = true;
+    };
+    zathura = {
+      enable = true;
     };
   };
 

@@ -6,16 +6,16 @@
 }:
 with lib;
 let
-  cfg = config.dotfiles.nvim;
+  cfg = config.dotfiles.executables;
 
 in
 {
-  options.dotfiles.nvim = {
-    enable = mkEnableOption "enables nvim";
+  options.dotfiles.executables = {
+    enable = mkEnableOption "enables executables";
 
     symlink = mkOption {
       description = "wether file is symlinked from config.home.homeDirectory/dotfiles or not";
-      default = true;
+      default = false;
       type = lib.types.bool;
     };
   };
@@ -23,13 +23,13 @@ in
   config = mkIf cfg.enable {
     home.file = mkMerge [
       (mkIf (!cfg.symlink) {
-        ".config/nvim" = {
-          source = "${inputs.dotfiles}/nvim";
+        ".bin" = {
+          source = "${inputs.dotfiles}/executables";
           recursive = true;
         };
       })
       (mkIf (cfg.symlink) {
-        ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
+        ".bin".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/executables";
       })
     ];
   };
