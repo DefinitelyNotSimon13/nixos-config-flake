@@ -32,6 +32,7 @@ in
   home.packages = with pkgs; [
     cliphist
     edit-config
+    sops
     fzf
     gcc
     gh
@@ -53,8 +54,6 @@ in
     sl
     spotify
     testscript
-    age
-    ssh-to-age
     viewnior
     vscode
     wget
