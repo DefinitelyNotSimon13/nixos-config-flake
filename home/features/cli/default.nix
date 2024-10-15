@@ -22,12 +22,10 @@
 
   programs.bat = {
     enable = true;
-    enableZshIntegration = true;
   };
 
   programs.btop = {
     enable = true;
-    enableZshIntegration = true;
   };
 
   programs.thefuck = {
