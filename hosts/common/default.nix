@@ -11,8 +11,8 @@
     ./services
     ./configs
     ./programs.nix
+    ./secrets.nix
     inputs.home-manager.nixosModules.home-manager
   ];
-
 
 }

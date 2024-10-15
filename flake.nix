@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,9 +37,7 @@
     {
       self,
       nixpkgs,
-      stylix,
       home-manager,
-      catppuccin,
       ...
     }@inputs:
     let
@@ -59,8 +62,9 @@
           };
           modules = [
             ./hosts/nixos-desktop
-            stylix.nixosModules.stylix
-            catppuccin.nixosModules.catppuccin
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.nixosModules.catppuccin
+            inputs.sops-nix.nixosModules.sops
           ];
         };
         "nixos-laptop" = nixpkgs.lib.nixosSystem {
@@ -69,8 +73,9 @@
           };
           modules = [
             ./hosts/nixos-laptop
-            stylix.nixosModules.stylix
-            catppuccin.nixosModules.catppuccin
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.nixosModules.catppuccin
+            inputs.sops-nix.nixosModules.sops
           ];
         };
       };
@@ -82,8 +87,8 @@
           };
           modules = [
             ./home/simon/nixos-desktop.nix
-            stylix.nixosModules.stylix
-            catppuccin.homeManagerModules.catppuccin
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.homeManagerModules.catppuccin
           ];
         };
         "simon@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
@@ -93,8 +98,8 @@
           };
           modules = [
             ./home/simon/nixos-laptop.nix
-            stylix.nixosModules.stylix
-            catppuccin.homeManagerModules.catppuccin
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.homeManagerModules.catppuccin
           ];
         };
       };
