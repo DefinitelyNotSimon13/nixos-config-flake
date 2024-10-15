@@ -33,7 +33,7 @@
   dotfiles = {
     nvim = {
       enable = true;
-      symlink = false;
+      symlink = true;
     };
   };
 

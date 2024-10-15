@@ -29,7 +29,7 @@ in
         };
       })
       (mkIf (cfg.symlink) {
-        ".config/nvim" = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
+        ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
       })
     ];
   };

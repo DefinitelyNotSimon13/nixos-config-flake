@@ -29,7 +29,7 @@ in
         };
       })
       (mkIf (cfg.symlink) {
-        ".config/REPLACE" = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/REPLACE";
+        ".config/REPLACE".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/REPLACE";
       })
     ];
   };
