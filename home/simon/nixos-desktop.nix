@@ -18,6 +18,7 @@
 
     desktop = {
       wayland.enable = true;
+      waybar.enable = true;
     };
 
     stylix.enable = true;
