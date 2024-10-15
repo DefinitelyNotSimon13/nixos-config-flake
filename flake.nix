@@ -34,6 +34,7 @@
     in
     {
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
       overlays = import ./overlays { inherit inputs; };
       nixosConfigurations = {
         "nixos-desktop" = nixpkgs.lib.nixosSystem {

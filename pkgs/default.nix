@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs ? import <nixpkgs> { },
+  ...
+}:
 {
   # Define your custom packages here
   #  my-package = pkgs.callPackage ./my-package {};
-  test-command = pkgs.callPackage ./test-command { };
+  testscript = pkgs.callPackage ./testscript { };
 }

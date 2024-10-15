@@ -12,13 +12,27 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
   ];
 
   stylixConfig.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
+
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADRESS = "de_DE.UTF-8";
+    LC_IDENTIFICATION = "de_DE.UTF-8";
+    LC_MEASUREMENT = "de_DE.UTF-8";
+    LC_MONETARY = "de_DE.UTF-8";
+    LC_NAME = "de_DE.UTF-8";
+    LC_NUMERIC = "de_DE.UTF-8";
+    LC_PAPER = "de_DE.UTF-8";
+    LC_TELEPHONE = "de_DE.UTF-8";
+    LC_TIME = "de_DE.UTF-8";
+    LC_MESSAGES = "de_DE.UTF-8";
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -45,23 +59,6 @@
   };
 
   services.goxlr-utility.enable = true;
-
-  main-user = {
-    enable = true;
-    userName = "simon";
-    initialPassword = "password";
-  };
-
-  # home-manager = {
-  #   extraSpecialArgs = {
-  #     inherit inputs;
-  #   };
-  #   users = {
-  #     "simon" = import ./home.nix;
-  #   };
-  #   backupFileExtension = "hm-backup";
-  #
-  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -94,6 +91,10 @@
   # environment.systemPackages = with pkgs; [
   #   btop
   # ];
+  environment.systemPackages = with pkgs; [
+    neovim
+    git
+  ];
 
   services.pcscd.enable = true;
 
@@ -107,7 +108,11 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "no";
+    allowSFTP = true;
+  };
 
   services.greetd = {
     enable = true;
@@ -138,6 +143,8 @@
     dates = "09:00";
     randomizedDelaySec = "45min";
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

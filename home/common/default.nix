@@ -6,11 +6,21 @@
   ...
 }:
 {
+  imports = [
+    ./shells.nix
+    ./stylix-user-config.nix
+    ./scripts
+  ];
+
+  scripts.enable = lib.mkDefault true;
+
+  shells = {
+    zshConfig = lib.mkDefault true;
+  };
+
+  stylixUserConfig.enable = lib.mkDefault true;
+
   nixpkgs = {
-    imports = [
-      ./shells.nix
-      ./stylix-user-config.nix
-    ];
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
@@ -36,14 +46,6 @@
       allowUnfreePredicate = _: true;
     };
   };
-
-  scripts.enable = lib.mkDefault true;
-
-  shells = {
-    zshConfig = lib.mkDefault true;
-  };
-
-  stylixUserConfig.enable = lib.mkDefault true;
 
   nix = {
     package = lib.mkDefault pkgs.nix;

@@ -16,7 +16,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      (import ../../pkgs { inherit pkgs; })
+      (import ./test-command.nix { inherit pkgs; })
     ];
 
   };

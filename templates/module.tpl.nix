@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+home,
   ...
 }:
 let
@@ -14,6 +15,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    home
 
   };
 }
