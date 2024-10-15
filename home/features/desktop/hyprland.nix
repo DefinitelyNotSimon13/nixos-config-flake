@@ -37,12 +37,11 @@ in
           "hypridle"
           "hyprpaper"
           "wl-paste --watch cliphist store"
+          "hyprctl setcursor Catppuccin-Mocha-Dark-Cursors 24"
         ];
 
         env = [
           "WLR_NO_HARDWARE_CURSORS,1"
-          "HYPRCURSOR_THEME,Catppuccin-Mocha-Dark-Cursor"
-          "HYPRCURSOR_SIZE,24"
         ];
 
         input = {
