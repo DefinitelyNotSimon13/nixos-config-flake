@@ -11,12 +11,18 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    dotfiles = {
+      url = "git+https://github.com/DefinitelyNotSimon13/dotfiles.git";
+      flake = false;
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      dotfiles,
       stylix,
       home-manager,
       ...

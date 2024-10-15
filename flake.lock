@@ -66,6 +66,22 @@
         "type": "github"
       }
     },
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728999284,
+        "narHash": "sha256-LUTe5nMPNUngzcOSoKOUAPZ1M8/RpEb7N5BE58SSXhI=",
+        "ref": "refs/heads/nixos",
+        "rev": "5b7d9d1071902085363b4c9505f8e6b864f3aebe",
+        "revCount": 188,
+        "type": "git",
+        "url": "https://github.com/DefinitelyNotSimon13/dotfiles.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyNotSimon13/dotfiles.git"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -227,6 +243,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
