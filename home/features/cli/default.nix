@@ -3,6 +3,7 @@
   imports = [
     ./zsh.nix
     ./neofetch.nix
+    ./fzf.nix
   ];
 
   programs = {
