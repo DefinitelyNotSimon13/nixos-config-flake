@@ -93,23 +93,23 @@ in
         bind = [
           "$mainMod, RETURN, exec, kitty"
           "$mainMod SHIFT, RETURN, exec, alacritty -e tmux"
-          "$mainMod, Q, exec, zen-browser"
+          "$mainMod, Q, exec, firefox"
           "$mainMod, C, killactive,"
-          "$mainMod SHIFT, P, exec, ~/.bin/powermenu"
+          "$mainMod SHIFT, P, exec, ~/.config/rofi/bin/powermenu.sh"
           "$mainMod SHIFT, M, exit,"
           "$mainMod, E, exec, $fileManager"
           "$mainMod, V, togglefloating,"
           "$mainMod, P, pseudo,"
-          "$mainMod, R, exec, exec ~/.bin/runner"
-          "$mainMod, A, exec, exec ~/.bin/drawer"
-          "$mainMod, S, exec, exec ~/.bin/screenshot"
+          "$mainMod, R, exec, exec ~/.config/rofi/bin/runner.sh"
+          "$mainMod, A, exec, exec ~/.config/rofi/bin/drawer.sh"
+          "$mainMod, S, exec, exec ~/.config/rofi/bin/screenshot.sh"
           "$mainMod, J, togglesplit,"
           "$mainMod, F, fullscreen, 0"
-          "$mainMod SHIFT, S, exec, spotify-launcher"
-          "$mainMod SHIFT, V, exec, $HOME/.bin/volume"
-          "$mainMod, B, exec, $HOME/.bin/brightness"
-          "$mainMod SHIFT, B, exec, $HOME/.bin/battery"
-          "$mainMod, M, exec, $HOME/.bin/mpd"
+          "$mainMod SHIFT, S, exec, spotify"
+          "$mainMod SHIFT, V, exec, ~/.config/rofi/bin/volume.sh"
+          "$mainMod, B, exec, ~/.config/rofi/bin/brightness"
+          "$mainMod SHIFT, B, exec, ~/.config/rofi/bin/battery.sh"
+          "$mainMod, M, exec, ~/.config/rofi/bin/mpd.sh"
           "$mainMod, h, movefocus, l"
           "$mainMod, l, movefocus, r"
           "$mainMod, k, movefocus, u"
@@ -160,7 +160,7 @@ in
         ];
 
         bindr = [
-          "$mainMod, SUPER_L, exec, ~/.bin/launcher"
+          "$mainMod, SUPER_L, exec, ~/.config/rofi/bin/launcher.sh"
         ];
 
         gestures = {

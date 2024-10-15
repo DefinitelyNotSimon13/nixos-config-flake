@@ -31,6 +31,7 @@
   outputs =
     {
       self,
+      disko,
       nixpkgs,
       stylix,
       home-manager,
@@ -59,6 +60,7 @@
           modules = [
             ./hosts/nixos-desktop
             stylix.nixosModules.stylix
+            disko.nixosModules.disko
           ];
         };
         homeConfigurations = {
