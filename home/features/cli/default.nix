@@ -1,36 +1,38 @@
 { pkgs, ... }:
 {
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  programs = {
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
-  programs.oh-my-posh = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+    oh-my-posh = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
-  programs.eza = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+    eza = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
-  programs.yazi = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+    yazi = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
-  programs.bat = {
-    enable = true;
-  };
+    bat = {
+      enable = true;
+    };
 
-  programs.btop = {
-    enable = true;
-  };
+    btop = {
+      enable = true;
+    };
 
-  programs.thefuck = {
-    enable = true;
-    enableZshIntegration = true;
+    thefuck = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 
   home.packages = with pkgs; [
@@ -41,5 +43,8 @@
     ripgrep
     tldr
     zip
+    unzip
+    nh
+    tmux
   ];
 }

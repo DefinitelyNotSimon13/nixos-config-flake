@@ -27,11 +27,8 @@
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     cliphist
-    cmake
-    curl
     dunst
     edit-config
-    eza
     firefox
     fzf
     gcc
@@ -46,7 +43,6 @@
     jetbrains-toolbox
     kitty
     lazygit
-    nh
     nixd
     nixfmt-rfc-style
     pass
@@ -59,20 +55,13 @@
     slurp
     spotify
     testscript
-    thefuck
-    tldr
-    tmux
-    unzip
     viewnior
-    vim
     vscode
     wget
     wl-clipboard
     xdg-utils
     xorg.xrandr
-    yazi
     zathura
-    zoxide
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -107,6 +96,7 @@
   #  /etc/profiles/per-user/simon/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    FLAKE = "${config.home.homeDirectory}/dofiles/nixos";
     # EDITOR = "emacs";
   };
 
@@ -122,12 +112,6 @@
       enable = true;
     };
 
-    direnv = {
-      enable = true;
-      enableZshIntegration = true; # see note on other shells below
-      nix-direnv.enable = true;
-    };
-
     neovim = {
       enable = true;
       defaultEditor = true;
@@ -138,7 +122,6 @@
       withRuby = true;
     };
 
-    btop.enable = true;
     waybar.enable = true;
     rofi = {
       enable = true;
