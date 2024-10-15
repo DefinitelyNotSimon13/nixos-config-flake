@@ -33,6 +33,7 @@
     cmake
     curl
     dunst
+    edit-config
     eza
     firefox
     fzf
@@ -48,13 +49,14 @@
     jetbrains-toolbox
     kitty
     lazygit
+    nh
     nixd
     nixfmt-rfc-style
-    nh
     pass
     pinentry-tty
     plantuml
     python3
+    rebuild
     ripgrep
     sl
     slurp

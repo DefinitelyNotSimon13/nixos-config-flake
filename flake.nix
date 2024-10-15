@@ -56,7 +56,6 @@
               ./home/simon/nixos-desktop.nix
               stylix.nixosModules.stylix
             ];
-            backupFileExtension = "hm-backup";
           };
         };
       };

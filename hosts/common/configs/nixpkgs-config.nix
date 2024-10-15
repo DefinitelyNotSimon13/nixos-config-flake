@@ -1,21 +1,5 @@
+{ outputs, ... }:
 {
-  lib,
-  outputs,
-  pkgs,
-  ...
-}:
-{
-  imports = [
-    ./shells.nix
-    ./stylix-user-config.nix
-  ];
-
-  shells = {
-    zshConfig = lib.mkDefault true;
-  };
-
-  stylixUserConfig.enable = lib.mkDefault true;
-
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -38,20 +22,6 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-    };
-  };
-
-  nix = {
-    package = lib.mkDefault pkgs.nix;
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-        "repl-flake"
-      ];
-      warn-dirty = false;
     };
   };
 }

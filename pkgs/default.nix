@@ -3,7 +3,7 @@
   ...
 }:
 {
-  # Define your custom packages here
-  #  my-package = pkgs.callPackage ./my-package {};
   testscript = pkgs.callPackage ./testscript { };
+  rebuild = pkgs.callPackage ./util-scripts/rebuild.nix { };
+  edit-config = pkgs.callPackage ./util-scripts/edit-config.nix { };
 }

@@ -15,7 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
     stylix = {
-      image = ../../assets/nice-blue-background.png;
+      image = ../../../assets/nice-blue-background.png;
       enable = true;
       autoEnable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
