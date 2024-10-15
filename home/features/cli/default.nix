@@ -61,6 +61,5 @@
     zip
     unzip
     nh
-    tmux
   ];
 }

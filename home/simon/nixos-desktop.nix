@@ -5,6 +5,7 @@
     ../common
     ../features/cli
     ../features/stylix
+    ../features/desktop
   ];
 
   features = {
@@ -14,6 +15,11 @@
       fzf.enable = true;
       tmux.enable = true;
     };
+
+    desktop = {
+      wayland.enable = true;
+    };
+
     stylix.enable = true;
   };
 }

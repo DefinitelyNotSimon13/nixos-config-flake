@@ -38,8 +38,6 @@
     gnupg
     grim
     hyprcursor
-    hypridle
-    hyprpaper
     jetbrains-toolbox
     kitty
     lazygit
@@ -52,13 +50,11 @@
     rebuild
     ripgrep
     sl
-    slurp
     spotify
     testscript
     viewnior
     vscode
     wget
-    wl-clipboard
     xdg-utils
     xorg.xrandr
     zathura
