@@ -3,7 +3,10 @@
   imports = [
     ./wayland.nix
     ./waybar.nix
-    ./hyprland.nix
+    ./hypr/hyprland.nix
+    ./hypr/hypridle.nix
+    ./hypr/hyprpaper.nix
+    ./hypr/hyprlock.nix
   ];
 
   home.packages =

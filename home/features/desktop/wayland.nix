@@ -18,9 +18,6 @@ in
 
     home.packages = with pkgs; [
       grim
-      hyprlock
-      hypridle
-      hyprpaper
       qt6.qtwayland
       slurp
       wl-clipboard

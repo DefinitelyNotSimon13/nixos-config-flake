@@ -20,6 +20,9 @@
       wayland.enable = true;
       waybar.enable = true;
       hyprland.enable = true;
+      hyprpaper.enable = true;
+      hypridle.enable = true;
+      hyprlock.enable = true;
     };
 
     stylix.enable = true;
