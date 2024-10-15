@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -29,6 +30,7 @@
       nixpkgs,
       stylix,
       home-manager,
+      catppuccin,
       ...
     }@inputs:
     let
@@ -54,6 +56,7 @@
           modules = [
             ./hosts/nixos-desktop
             stylix.nixosModules.stylix
+            catppuccin.nixosModules.catppuccin
           ];
         };
         "nixos-laptop" = nixpkgs.lib.nixosSystem {
@@ -63,6 +66,7 @@
           modules = [
             ./hosts/nixos-laptop
             stylix.nixosModules.stylix
+            catppuccin.nixosModules.catppuccin
           ];
         };
       };
@@ -75,6 +79,7 @@
           modules = [
             ./home/simon/nixos-desktop.nix
             stylix.nixosModules.stylix
+            catppuccin.homeManagerModules.catppuccin
           ];
         };
         "simon@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
@@ -85,6 +90,7 @@
           modules = [
             ./home/simon/nixos-laptop.nix
             stylix.nixosModules.stylix
+            catppuccin.homeManagerModules.catppuccin
           ];
         };
       };

@@ -5,10 +5,10 @@
 }:
 with lib;
 let
-  cfg = config.features.stylix;
+  cfg = config.features.theming.stylix;
 in
 {
-  options.features.stylix = {
+  options.features.theming.stylix = {
     enable = mkEnableOption "enables stylix";
   };
 

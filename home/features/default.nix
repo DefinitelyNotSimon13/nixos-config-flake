@@ -1,29 +1,36 @@
 { lib, ... }:
+with lib;
 {
   imports = [
     ./cli
     ./desktop
-    ./stylix
+    ./theming
   ];
 
   features = {
     cli = {
-      zsh.enable = lib.mkDefault true;
-      neofetch.enable = lib.mkDefault true;
-      fzf.enable = lib.mkDefault true;
-      tmux.enable = lib.mkDefault true;
+      zsh.enable = mkDefault true;
+      neofetch.enable = mkDefault true;
+      fzf.enable = mkDefault true;
+      tmux.enable = mkDefault true;
     };
 
     desktop = {
-      wayland.enable = lib.mkDefault true;
-      waybar.enable = lib.mkDefault true;
-      hyprland.enable = lib.mkDefault true;
-      hyprpaper.enable = lib.mkDefault true;
-      hypridle.enable = lib.mkDefault true;
-      hyprlock.enable = lib.mkDefault true;
-      fonts.enable = lib.mkDefault true;
+      wayland.enable = mkDefault true;
+      waybar.enable = mkDefault true;
+      hyprland.enable = mkDefault true;
+      hyprpaper.enable = mkDefault true;
+      hypridle.enable = mkDefault true;
+      hyprlock.enable = mkDefault true;
+      fonts.enable = mkDefault true;
     };
 
-    stylix.enable = lib.mkDefault true;
+    theming = {
+      stylix.enable = mkDefault false;
+      catppuccin.enable = mkDefault true;
+      qt.enable = mkDefault true;
+      gtk.enable = mkDefault true;
+    };
+
   };
 }

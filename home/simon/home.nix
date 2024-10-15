@@ -1,11 +1,13 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }:
 {
   imports = [
     ../common
+    inputs.catppuccin.homeManagerModules.catppuccin
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -26,7 +28,6 @@
   # environment.
   home.packages = with pkgs; [
     cliphist
-    dunst
     edit-config
     firefox
     fzf
@@ -39,7 +40,6 @@
     hyprcursor
     jetbrains-toolbox
     kitty
-    lazygit
     nixd
     nixfmt-rfc-style
     pass
@@ -63,8 +63,11 @@
     FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";
   };
 
-  gtk.enable = true;
-  qt.enable = true;
+  services = {
+    dunst = {
+      enable = true;
+    };
+  };
 
   programs = {
     # Let Home Manager install and manage itself.
@@ -86,6 +89,15 @@
     rofi = {
       enable = true;
       package = pkgs.rofi-wayland;
+    };
+
+    lazygit = {
+      enable = true;
+      catppuccin = {
+        enable = true;
+        accent = "peach";
+        flavor = "mocha";
+      };
     };
 
   };

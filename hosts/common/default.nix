@@ -2,6 +2,7 @@
 
 {
   inputs,
+  lib,
   ...
 }:
 {
@@ -12,5 +13,11 @@
     ./programs.nix
     inputs.home-manager.nixosModules.home-manager
   ];
+
+  catppuccin = {
+    enable = lib.mkDefault true;
+    accent = "peach";
+    flavor = "mocha";
+  };
 
 }
