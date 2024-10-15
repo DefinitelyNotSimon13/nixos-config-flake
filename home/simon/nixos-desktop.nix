@@ -12,6 +12,7 @@
       zsh.enable = true;
       neofetch.enable = true;
       fzf.enable = true;
+      tmux.enable = true;
     };
     stylix.enable = true;
   };
