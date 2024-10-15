@@ -4,16 +4,16 @@
   config,
   ...
 }:
+with lib;
 let
-  moduleName = "zshConfig";
-  cfg = config."${moduleName}";
+  cfg = config.features.cli.zsh;
 in
 {
-  options."${moduleName}" = {
-    enable = lib.mkEnableOption "enables ${moduleName}";
+  options.features.cli.zsh = {
+    enable = mkEnableOption "enables extended zsh configuration";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -63,9 +63,10 @@ in
         z = "zathura";
       };
 
+      # eval "$(${pkgs.oh-my-posh}/bin/oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
+
       initExtra = ''
 
-        eval "$(${pkgs.oh-my-posh}/bin/oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
 
         export GPG_TTY=$(tty)
 

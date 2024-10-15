@@ -5,17 +5,6 @@
   ...
 }:
 {
-  imports = [
-    ./shells.nix
-    ./stylix-user-config.nix
-  ];
-
-  shells = {
-    zshConfig = lib.mkDefault true;
-  };
-
-  stylixUserConfig.enable = lib.mkDefault true;
-
   nixpkgs = {
     # You can add overlays here
     overlays = [

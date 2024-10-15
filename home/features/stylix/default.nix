@@ -1,19 +1,18 @@
 {
-  pkgs,
   lib,
   config,
   ...
 }:
+with lib;
 let
-  moduleName = "stylixUserConfig";
-  cfg = config."${moduleName}";
+  cfg = config.features.stylix;
 in
 {
-  options."${moduleName}" = {
-    enable = lib.mkEnableOption "enables ${moduleName}";
+  options.features.stylix = {
+    enable = mkEnableOption "enables stylix";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     stylix = {
       enable = true;
       targets = {
