@@ -29,17 +29,13 @@ in
         };
 
         ".tmux/plugins/tpm" = {
-          source = "${inputs.tmux-tpm}";
+          source = "${inputs.dotfiles}/dot-tmux/tpm";
           recursive = true;
         };
       })
       (mkIf (cfg.symlink) {
         ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/tmux";
-        ".tmux/plugins/tpm" = {
-          source = "${inputs.tmux-tpm}";
-          recursive = true;
-        };
-
+        ".tmux/plugins/tpm".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homDirectory/dotfiles/dot-tmux/tpm}";
       })
     ];
   };

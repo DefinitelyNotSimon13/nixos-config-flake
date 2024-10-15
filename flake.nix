@@ -29,10 +29,6 @@
       flake = false;
     };
 
-    tmux-tpm = {
-      url = "git+https://github.com/tmux-plugins/tpm.git";
-      flake = false;
-    };
   };
 
   outputs =

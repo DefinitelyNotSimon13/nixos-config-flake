@@ -286,8 +286,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
-        "stylix": "stylix",
-        "tmux-tpm": "tmux-tpm"
+        "stylix": "stylix"
       }
     },
     "stylix": {
@@ -384,22 +383,6 @@
         "owner": "tinted-theming",
         "repo": "tinted-tmux",
         "type": "github"
-      }
-    },
-    "tmux-tpm": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1677502767,
-        "narHash": "sha256-hW8mfwB8F9ZkTQ72WQp/1fy8KL1IIYMZBtZYIwZdMQc=",
-        "ref": "refs/heads/master",
-        "rev": "99469c4a9b1ccf77fade25842dc7bafbc8ce9946",
-        "revCount": 215,
-        "type": "git",
-        "url": "https://github.com/tmux-plugins/tpm.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://github.com/tmux-plugins/tpm.git"
       }
     }
   },
