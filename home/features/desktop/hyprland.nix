@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 with lib;
@@ -13,6 +14,9 @@ in
   };
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      hyprcursor
+    ];
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
@@ -36,8 +40,9 @@ in
         ];
 
         env = [
-          "XCURSOR_SIZE,32"
           "WLR_NO_HARDWARE_CURSORS,1"
+          "HYPRCURSOR_THEME,Catppuccin-Mocha-Dark-Cursor"
+          "HYPRCURSOR_SIZE,24"
         ];
 
         input = {
