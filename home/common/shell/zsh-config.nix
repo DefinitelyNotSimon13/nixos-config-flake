@@ -139,19 +139,5 @@ in
 
     };
 
-    programs.oh-my-posh = {
-      enable = true;
-    };
-
-    programs.eza = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
-    programs.yazi = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
   };
 }
