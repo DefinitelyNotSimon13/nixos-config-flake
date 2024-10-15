@@ -92,7 +92,7 @@
   #  /etc/profiles/per-user/simon/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    FLAKE = "${config.home.homeDirectory}/dofiles/nixos";
+    FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";
     # EDITOR = "emacs";
   };
 
