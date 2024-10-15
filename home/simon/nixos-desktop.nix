@@ -3,7 +3,8 @@
   imports = [
     ./home.nix
     ../common
-    ../features
+    ../features/cli
+    ../features/stylix
   ];
 
   features = {

@@ -61,6 +61,8 @@ in
         uvenv = "source .venv/bin/activate";
         neorg = "nvim -c \"Neorg workspace notes\"";
         z = "zathura";
+        grep = "rg";
+        find = "fd";
       };
 
       # eval "$(${pkgs.oh-my-posh}/bin/oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
