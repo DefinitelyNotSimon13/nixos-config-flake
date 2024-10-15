@@ -96,9 +96,6 @@
     # EDITOR = "emacs";
   };
 
-  # wayland.windowManager.hyprland.enable = true;
-  # home.sessionVariables.NIXOS_OZONE_WL = "1";
-
   gtk.enable = true;
   qt.enable = true;
 
