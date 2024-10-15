@@ -67,6 +67,9 @@
     zathura = {
       enable = true;
     };
+    nvim = {
+    	enable = true;
+    };
   };
 
   wayland.windowManager.hyprland = {
