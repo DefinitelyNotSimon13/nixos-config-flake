@@ -24,9 +24,17 @@
       hyprpaper.enable = true;
       hypridle.enable = true;
       hyprlock.enable = true;
+      fonts.enable = true;
     };
 
     stylix.enable = true;
+  };
+
+  dotfiles = {
+    nvim = {
+      enable = true;
+      symlink = false;
+    };
   };
 
   wayland.windowManager.hyprland = {

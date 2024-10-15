@@ -3,6 +3,7 @@
   imports = [
     ./wayland.nix
     ./waybar.nix
+    ./fonts.nix
     ./hypr/hyprland.nix
     ./hypr/hypridle.nix
     ./hypr/hyprpaper.nix
