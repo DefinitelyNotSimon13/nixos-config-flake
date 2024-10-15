@@ -89,6 +89,7 @@
             ./home/simon/nixos-desktop.nix
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.sops-nix.homeManagerModules.sops
           ];
         };
         "simon@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
@@ -100,6 +101,7 @@
             ./home/simon/nixos-laptop.nix
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.sops-nix.homeManagerModules.sops
           ];
         };
       };
