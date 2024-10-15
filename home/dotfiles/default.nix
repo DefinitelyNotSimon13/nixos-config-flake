@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, inputs, ... }:
 {
   imports = [
     ./nvim.nix
@@ -55,4 +55,6 @@
       enable = lib.mkDefault true;
     };
   };
+
+  home.file.".config/firefox/import.json".source = "${inputs.dotfiles}/firefox/import.json";
 }
