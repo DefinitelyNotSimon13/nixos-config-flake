@@ -65,9 +65,9 @@ in
         find = "fd";
       };
 
-      # eval "$(${pkgs.oh-my-posh}/bin/oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
-
       initExtra = ''
+        eval "$(${pkgs.oh-my-posh}/bin/oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
+
         export GPG_TTY=$(tty)
 
         path+=("$HOME/.scripts/bin")
@@ -91,8 +91,8 @@ in
           zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
           zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
           zstyle ':completion:*' menu no
-          # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --group-directories-first $realpath'
-          # zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons --group-directories-first $realpath'
+          zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --group-directories-first $realpath'
+          zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons --group-directories-first $realpath'
         '';
       };
 
@@ -104,6 +104,15 @@ in
             repo = "zsh-autopair";
             rev = "449a7c3d095bc8f3d78cf37b9549f8bb4c383f3d";
             sha256 = "3zvOgIi+q7+sTXrT+r/4v98qjeiEL4Wh64rxBYnwJvQ=";
+          };
+        }
+        {
+          name = "fzf-tab";
+          src = pkgs.fetchFromGitHub {
+            owner = "Aloxaf";
+            repo = "fzf-tab";
+            rev = "b6e1b22458a131f835c6fe65bdb88eb45093d2d2";
+            sha256 = "4A7zpaO1rNPvS0rrmmxg56rJGpZHnw/g+x5FJd0EshI=";
           };
         }
         {
