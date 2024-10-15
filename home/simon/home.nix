@@ -26,9 +26,6 @@
   # environment.
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    alacritty
-    bat
-    btop
     cliphist
     cmake
     curl

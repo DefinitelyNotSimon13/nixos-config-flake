@@ -32,4 +32,14 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  home.packages = with pkgs; [
+    coreutils
+    fd
+    jq
+    procs
+    ripgrep
+    tldr
+    zip
+  ];
 }
