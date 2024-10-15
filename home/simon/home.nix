@@ -53,6 +53,8 @@ in
     sl
     spotify
     testscript
+    age
+    ssh-to-age
     viewnior
     vscode
     wget
