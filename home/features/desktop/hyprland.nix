@@ -55,8 +55,8 @@ in
           gaps_in = 0;
           gaps_out = 0;
           border_size = 2;
-          "col.active_border" = lib.mkForce "rgb (fab387)";
-          "col.inactive_border" = lib.mkForce "rgb (595959)";
+          "col.active_border" = lib.mkForce "rgba(fab387ff)";
+          "col.inactive_border" = lib.mkForce "rgba(595959ff)";
           layout = "dwindle";
           resize_on_border = true;
         };
