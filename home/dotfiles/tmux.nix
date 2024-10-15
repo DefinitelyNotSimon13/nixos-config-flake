@@ -27,14 +27,19 @@ in
           source = "${inputs.dotfiles}/tmux";
           recursive = true;
         };
-        ".tmux" = {
-          source = "${inputs.dotfiles}/dot-tmux";
+
+        ".tmux/plugins/tpm" = {
+          source = "${inputs.tmux-tpm}";
           recursive = true;
         };
       })
       (mkIf (cfg.symlink) {
         ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/tmux";
-        ".tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dot-tmux";
+        ".tmux/plugins/tpm" = {
+          source = "${inputs.tmux-tpm}";
+          recursive = true;
+        };
+
       })
     ];
   };

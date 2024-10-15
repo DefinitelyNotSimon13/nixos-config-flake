@@ -10,10 +10,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix.url = "github:danth/stylix";
 
     dotfiles = {
       url = "git+https://github.com/DefinitelyNotSimon13/dotfiles.git";
+      flake = false;
+    };
+
+    tmux-tpm = {
+      url = "git+https://github.com/tmux-plugins/tpm.git";
       flake = false;
     };
   };
@@ -22,7 +32,6 @@
     {
       self,
       nixpkgs,
-      dotfiles,
       stylix,
       home-manager,
       ...

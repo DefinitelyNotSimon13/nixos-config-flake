@@ -70,6 +70,7 @@ in
 
         export GPG_TTY=$(tty)
 
+        path+=("$HOME/.config/rofi/bin")
         path+=("$HOME/.scripts/bin")
         path+=("$HOME/.bin")
         path+=("$HOME/.cargo/bin")

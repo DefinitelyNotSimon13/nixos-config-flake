@@ -37,9 +37,6 @@
     dunst = {
       enable = true;
     };
-    executables = {
-      enable = true;
-    };
     i3 = {
       enable = false;
     };
@@ -56,7 +53,7 @@
       enable = true;
     };
     rofi = {
-      enable = false;
+      enable = true;
     };
     tmux = {
       enable = true;
@@ -68,7 +65,7 @@
       enable = true;
     };
     nvim = {
-    	enable = true;
+      enable = true;
     };
   };
 

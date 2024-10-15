@@ -4,7 +4,6 @@
     ./nvim.nix
     ./alacritty.nix
     ./dunst.nix
-    ./executables.nix
     ./i3.nix
     ./ideavim.nix
     ./kitty.nix
