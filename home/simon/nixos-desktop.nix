@@ -10,6 +10,7 @@
   features = {
     cli = {
       zsh.enable = true;
+      neofetch.enable = true;
     };
     stylix.enable = true;
   };
