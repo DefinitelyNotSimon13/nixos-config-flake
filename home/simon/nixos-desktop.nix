@@ -4,70 +4,8 @@
     ./home.nix
     ../dotfiles
     ../common
-    ../features/cli
-    ../features/stylix
-    ../features/desktop
+    ../features
   ];
-
-  features = {
-    cli = {
-      zsh.enable = true;
-      neofetch.enable = true;
-      fzf.enable = true;
-      tmux.enable = true;
-    };
-
-    desktop = {
-      wayland.enable = true;
-      waybar.enable = true;
-      hyprland.enable = true;
-      hyprpaper.enable = true;
-      hypridle.enable = true;
-      hyprlock.enable = true;
-      fonts.enable = true;
-    };
-
-    stylix.enable = true;
-  };
-
-  dotfiles = {
-    alacritty = {
-      enable = true;
-    };
-    dunst = {
-      enable = true;
-    };
-    i3 = {
-      enable = false;
-    };
-    ideavim = {
-      enable = true;
-    };
-    kitty = {
-      enable = true;
-    };
-    neofetch = {
-      enable = true;
-    };
-    oh-my-posh = {
-      enable = true;
-    };
-    rofi = {
-      enable = true;
-    };
-    tmux = {
-      enable = true;
-    };
-    wallpapers = {
-      enable = true;
-    };
-    zathura = {
-      enable = true;
-    };
-    nvim = {
-      enable = true;
-    };
-  };
 
   wayland.windowManager.hyprland = {
     settings = {
@@ -81,10 +19,10 @@
         "1, monitor:DP-1, default:true"
         "2, monitor:DP-1"
         "3, monitor:DP-1"
-        "4, monitor:DP-2"
+        "4, monitor:DP-1"
         "5, monitor:DP-1"
-        "6, monitor:DP-2"
-        "7, monitor:DP-2"
+        "6, monitor:DP-1"
+        "7, monitor:DP-1"
       ];
     };
   };

@@ -17,6 +17,12 @@ in
     home.packages = with pkgs; [
       hyprcursor
     ];
+
+    home.file.".local/share/icons/catppuccin-mocha-dark-cursors" = {
+      source = "${pkgs.catppuccin-cursors.mochaDark}/share/icons/catppuccin-mocha-dark-cursors";
+      recursive = true;
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
@@ -30,7 +36,7 @@ in
           "hypridle"
           "hyprpaper"
           "wl-paste --watch cliphist store"
-          "hyprctl setcursor Catppuccin-Mocha-Dark-Cursors 24"
+          "hyprctl setcursor catppuccin-mocha-dark-cursors 24"
         ];
 
         env = [

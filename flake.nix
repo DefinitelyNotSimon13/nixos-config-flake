@@ -26,7 +26,6 @@
   outputs =
     {
       self,
-      disko,
       nixpkgs,
       stylix,
       home-manager,
@@ -55,20 +54,38 @@
           modules = [
             ./hosts/nixos-desktop
             stylix.nixosModules.stylix
-            disko.nixosModules.disko
           ];
         };
-        homeConfigurations = {
-          "simon@nixos-desktop" = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages."x86_64-linux";
-            extraSpecialArgs = {
-              inherit inputs outputs;
-            };
-            modules = [
-              ./home/simon/nixos-desktop.nix
-              stylix.nixosModules.stylix
-            ];
+        "nixos-laptop" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
           };
+          modules = [
+            ./hosts/nixos-laptop
+            stylix.nixosModules.stylix
+          ];
+        };
+      };
+      homeConfigurations = {
+        "simon@nixos-desktop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./home/simon/nixos-desktop.nix
+            stylix.nixosModules.stylix
+          ];
+        };
+        "simon@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./home/simon/nixos-laptop.nix
+            stylix.nixosModules.stylix
+          ];
         };
       };
     };
