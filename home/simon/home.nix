@@ -45,6 +45,7 @@ in
     jetbrains-toolbox
     kitty
     nixd
+    mycli
     docker-compose
     nixfmt-rfc-style
     pass
