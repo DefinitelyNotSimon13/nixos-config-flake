@@ -78,6 +78,12 @@ in
       enable = true;
     };
 
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+
     firefox = {
       enable = true;
       profiles.simon = {
