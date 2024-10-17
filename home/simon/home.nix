@@ -63,6 +63,7 @@ in
     wget
     xdg-utils
     xorg.xrandr
+    mariadb
     zathura
   ];
 
