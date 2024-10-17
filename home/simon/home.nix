@@ -45,6 +45,7 @@ in
     jetbrains-toolbox
     kitty
     nixd
+    docker-compose
     nixfmt-rfc-style
     pass
     networkmanagerapplet
