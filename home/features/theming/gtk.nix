@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 with lib;
@@ -17,15 +18,9 @@ in
   config = mkIf cfg.enable {
     gtk = {
       enable = true;
-      catppuccin = {
-        enable = true;
-        accent = accent;
-        flavor = flavor;
-        icon = {
-          enable = true;
-          accent = accent;
-          flavor = flavor;
-        };
+      theme = {
+        name = "Tokyonight-Dark";
+        package = pkgs.tokyonight-gtk-theme;
       };
     };
 
