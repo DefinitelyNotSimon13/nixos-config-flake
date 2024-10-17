@@ -18,6 +18,7 @@ in
 
     home.packages = with pkgs; [
       grim
+      rofi-wayland
       qt6.qtwayland
       slurp
       wl-clipboard
