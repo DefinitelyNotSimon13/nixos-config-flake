@@ -39,6 +39,7 @@ in
     git-credential-manager
     gnumake
     gnupg
+    openssl
     grim
     hyprcursor
     jetbrains-toolbox
