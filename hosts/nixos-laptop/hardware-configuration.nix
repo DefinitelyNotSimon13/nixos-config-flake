@@ -18,12 +18,6 @@
       fsType = "ext4";
     };
 
-  fileSystems."/" =
-    { device = "";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/24aeae82-fa7b-4e9f-82bd-2ca6413c098a";
       fsType = "ext4";
