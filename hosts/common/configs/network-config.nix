@@ -25,6 +25,7 @@ in
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
-    networking.firewall.allowedTCPPorts = [ 22 ];
+    networking.firewall.enable = lib.mkForce false;
+    # networking.firewall.allowedTCPPorts = [ 22 ];
   };
 }

@@ -47,8 +47,8 @@ in
     nixd
     nixfmt-rfc-style
     pass
+    networkmanagerapplet
     pinentry-tty
-    nm-tray
     plantuml
     python3
     rebuild
