@@ -47,6 +47,7 @@ in
     nixfmt-rfc-style
     pass
     pinentry-tty
+    nm-tray
     plantuml
     python3
     rebuild
