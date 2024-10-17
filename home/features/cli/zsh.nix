@@ -84,7 +84,6 @@ in
           "colored-man-pages"
           "sudo"
           "git"
-          "command-not-found"
           "git-auto-fetch"
           "man"
         ];
