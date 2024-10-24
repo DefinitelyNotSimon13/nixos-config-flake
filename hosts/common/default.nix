@@ -21,11 +21,7 @@
   services.desktopManager.cosmic.enable = false;
   services.displayManager.cosmic-greeter.enable = false;
 
-  specialisation = {
-    aarch64.configuration = {
-      boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-    };
-  };
+  # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   hardware.graphics = {
     enable = true;
