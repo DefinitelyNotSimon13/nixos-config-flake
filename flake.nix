@@ -26,6 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     dotfiles = {
       url = "git+https://github.com/DefinitelyNotSimon13/dotfiles.git";
       flake = false;
@@ -61,10 +66,17 @@
             inherit inputs outputs;
           };
           modules = [
+            {
+              nix.settings = {
+                substituters = [ "https://cosmic.cachix.org/" ];
+                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+              };
+            }
             ./hosts/nixos-desktop
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
             inputs.sops-nix.nixosModules.sops
+            inputs.nixos-cosmic.nixosModules.default
           ];
         };
         "nixos-laptop" = nixpkgs.lib.nixosSystem {

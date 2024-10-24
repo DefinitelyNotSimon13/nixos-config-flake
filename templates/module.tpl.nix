@@ -2,11 +2,11 @@
   pkgs,
   lib,
   config,
-home,
+  home,
   ...
 }:
 let
-  moduleName = "$MODULE_NAME$";
+  moduleName = "MODULE_NAME";
   cfg = config."${moduleName}";
 in
 {
@@ -15,7 +15,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home
 
   };
 }
