@@ -21,8 +21,6 @@
   services.desktopManager.cosmic.enable = false;
   services.displayManager.cosmic-greeter.enable = false;
 
-  # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

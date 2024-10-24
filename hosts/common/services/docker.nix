@@ -15,7 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
     virtualisation.docker = {
-      enable = false;
+      enable = true;
       rootless = {
         enable = true;
         setSocketVariable = true;
@@ -24,7 +24,7 @@ in
 
     virtualisation.podman = {
       enable = true;
-      dockerCompat = true;
+      dockerCompat = false;
     };
 
     environment.systemPackages = [
