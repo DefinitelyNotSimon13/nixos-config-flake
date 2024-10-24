@@ -52,7 +52,7 @@
   };
 
   home.packages = with pkgs; [
-    coreutils
+    coreutils-full
     fd
     jq
     procs
