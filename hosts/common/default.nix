@@ -18,12 +18,20 @@
 
   greetdConfig.enable = true;
 
-  services.desktopManager.cosmic.enable = true;
+  services.desktopManager.cosmic.enable = false;
   services.displayManager.cosmic-greeter.enable = false;
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+  };
+
+  programs = {
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+    gamemode.enable = true;
   };
 
 }

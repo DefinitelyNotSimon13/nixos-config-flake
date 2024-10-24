@@ -5,6 +5,7 @@ with lib;
     ./cli
     ./desktop
     ./theming
+    ./gaming
   ];
 
   features = {
