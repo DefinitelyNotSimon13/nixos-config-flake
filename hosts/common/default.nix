@@ -16,10 +16,9 @@
     inputs.nixos-cosmic.nixosModules.default
   ];
 
-  greetdConfig.enable = false;
+  greetdConfig.enable = true;
 
   services.desktopManager.cosmic.enable = true;
-  services.displayManager.cosmic-greeter.enable = true;
-  services.flatpak.enable = true;
+  services.displayManager.cosmic-greeter.enable = false;
 
 }
