@@ -22,7 +22,7 @@
   services.displayManager.cosmic-greeter.enable = false;
 
   specialisation = {
-    arm64.configuration = {
+    aarch64.configuration = {
       boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
     };
   };
