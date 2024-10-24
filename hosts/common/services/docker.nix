@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 let
@@ -14,12 +15,21 @@ in
 
   config = lib.mkIf cfg.enable {
     virtualisation.docker = {
-      enable = true;
+      enable = false;
       rootless = {
         enable = true;
         setSocketVariable = true;
       };
     };
+
+    virtualisation.podman = {
+      enable = true;
+      dockerCompat = false;
+    };
+
+    environment.systemPackages = [
+      pkgs.distrobox
+    ];
 
   };
 }
