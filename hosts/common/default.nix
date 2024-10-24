@@ -21,4 +21,9 @@
   services.desktopManager.cosmic.enable = true;
   services.displayManager.cosmic-greeter.enable = false;
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
 }
