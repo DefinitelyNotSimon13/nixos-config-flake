@@ -20,14 +20,18 @@
     ./pscd.nix
     ./docker.nix
     ./libvirtd.nix
+    ./cosmic-desktop.nix
+    ./gaming.nix
   ];
 
-  greetdConfig.enable = lib.mkDefault true;
-  docker.enable = lib.mkDefault true;
-  libvirtd.enable = lib.mkDefault true;
-  grub.enable = lib.mkDefault true;
+  catppuccinConfig.enable = lib.mkDefault true;
   consoleConfig.enable = lib.mkDefault true;
+  cosmicDesktop.enable = lib.mkDefault false;
+  docker.enable = lib.mkDefault true;
+  gaming.enable = lib.mkDefault false;
+  greetdConfig.enable = lib.mkDefault true;
+  grub.enable = lib.mkDefault true;
+  libvirtd.enable = lib.mkDefault true;
   networkConfig.enable = lib.mkDefault true;
   stylixConfig.enable = lib.mkDefault false;
-  catppuccinConfig.enable = lib.mkDefault true;
 }

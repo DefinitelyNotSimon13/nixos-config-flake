@@ -15,17 +15,5 @@
     inputs.nixos-cosmic.nixosModules.default
   ];
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  programs = {
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
-    gamemode.enable = true;
-  };
-
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 }
