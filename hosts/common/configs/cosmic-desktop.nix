@@ -6,7 +6,7 @@
   ...
 }:
 let
-  moduleName = "MODULE_NAME";
+  moduleName = "docker";
   cfg = config."${moduleName}";
 in
 {
