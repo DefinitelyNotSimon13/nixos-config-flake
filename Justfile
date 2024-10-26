@@ -16,6 +16,11 @@ rebuild-post:
 rebuild: rebuild-pre && rebuild-post
     nh os switch
 
+update-rebuild: update rebuild
+
+update:
+    nix flake update
+
 diff:
     git diff ':!flake.lock'
 

@@ -9,6 +9,7 @@ with lib;
   ];
 
   features = {
+    
     cli = {
       zsh.enable = mkDefault true;
       neofetch.enable = mkDefault true;
