@@ -29,45 +29,6 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    libreoffice-qt
-    cliphist
-    edit-config
-    sops
-    fzf
-    gcc
-    gh
-    git-credential-manager
-    gnumake
-    gnupg
-    openssl
-    grim
-    hyprcursor
-    jetbrains-toolbox
-    kitty
-    nixd
-    mycli
-    docker-compose
-    nixfmt-rfc-style
-    pass
-    networkmanagerapplet
-    pinentry-tty
-    plantuml
-    python3
-    just
-    rebuild
-    ripgrep
-    sl
-    spotify
-    testscript
-    viewnior
-    vscode
-    wget
-    xdg-utils
-    xorg.xrandr
-    mariadb
-    zathura
-  ];
 
   home.sessionVariables = {
     FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";

@@ -5,6 +5,7 @@
     ../dotfiles
     ../common
     ../features
+    ../other
   ];
 
   wayland.windowManager.hyprland = {
