@@ -14,7 +14,7 @@ in
 
   config = mkIf cfg.enable {
     qt = {
-      enable = true;
+      enable = false;
       platformTheme.name = "kvantum";
       style = {
         name = "kvantum";

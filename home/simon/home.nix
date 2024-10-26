@@ -53,6 +53,7 @@ in
     pinentry-tty
     plantuml
     python3
+    just
     rebuild
     ripgrep
     sl
