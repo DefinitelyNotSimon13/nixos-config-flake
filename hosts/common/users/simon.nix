@@ -8,7 +8,7 @@
 {
 
   users.users.simon = {
-    initialPassword = "password";
+    initialHashedPassword = "";
     isNormalUser = true;
     description = "simon";
     extraGroups = [

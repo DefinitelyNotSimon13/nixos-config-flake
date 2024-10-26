@@ -1,4 +1,9 @@
-{ pkgs, modulesPath, ... }:
+{
+  pkgs,
+  modulesPath,
+  lib,
+  ...
+}:
 {
   imports = [
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
@@ -11,5 +16,7 @@
     disko
     yazi
   ];
+
+  services.getty.autologinUser = lib.mkForce "simon";
 
 }
