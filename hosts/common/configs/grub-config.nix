@@ -31,7 +31,7 @@ in
         efiSysMountPoint = "/boot/efi";
       };
       grub = {
-        enable = true;
+        enable = lib.mkForce true;
         useOSProber = true;
         efiSupport = true;
         device = "nodev";

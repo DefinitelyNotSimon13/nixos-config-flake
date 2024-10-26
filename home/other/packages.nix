@@ -16,34 +16,36 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      libreoffice-qt
       cliphist
+      docker-compose
       edit-config
-      sops
       fzf
       gcc
       gh
       git-credential-manager
       gnumake
       gnupg
-      openssl
       grim
       hyprcursor
       jetbrains-toolbox
+      just
       kitty
-      nixd
+      libreoffice-qt
+      mariadb
       mycli
-      docker-compose
-      nixfmt-rfc-style
-      pass
+      ncdu
       networkmanagerapplet
+      nixd
+      nixfmt-rfc-style
+      openssl
+      pass
       pinentry-tty
       plantuml
       python3
-      just
       rebuild
       ripgrep
       sl
+      sops
       spotify
       testscript
       viewnior
@@ -51,7 +53,6 @@ in
       wget
       xdg-utils
       xorg.xrandr
-      mariadb
       zathura
     ];
 

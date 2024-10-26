@@ -92,16 +92,17 @@
             inputs.nixos-cosmic.nixosModules.default
           ];
         };
-        "iso-image" =nixpkgs.lib.nixosSystem {
-        specialArgs = {
-        inherit inputs outputs;
-      };
+        "iso-image" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
           modules = [
-          ./hosts/iso-image
+            ./hosts/iso-image
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
-        ];
-      };
+            inputs.sops-nix.nixosModules.sops
+          ];
+        };
       };
       homeConfigurations = {
         "simon@nixos-desktop" = home-manager.lib.homeManagerConfiguration {
@@ -141,6 +142,5 @@
         };
       };
 
-      
     };
 }

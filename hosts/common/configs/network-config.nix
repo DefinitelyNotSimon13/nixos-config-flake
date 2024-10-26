@@ -20,12 +20,14 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    networking.hostName = cfg.hostName; # Define your hostname.
-    # Pick only one of the below networking options.
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+    networking = {
+      hostName = cfg.hostName; # Define your hostname.
 
-    networking.firewall.enable = lib.mkForce false;
-    # networking.firewall.allowedTCPPorts = [ 22 ];
+      networkmanager.enable = true; # Easiest to use and most distros use this by default.
+      wireless.enable = false; # Enables wireless support via wpa_supplicant.
+
+      firewall.enable = true;
+      firewall.allowedTCPPorts = [ 22 ];
+    };
   };
 }

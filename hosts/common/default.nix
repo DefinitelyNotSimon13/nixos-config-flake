@@ -16,4 +16,6 @@
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
+  sopsConfig.enable = lib.mkDefault true;
 }

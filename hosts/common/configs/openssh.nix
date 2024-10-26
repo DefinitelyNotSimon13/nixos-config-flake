@@ -1,7 +1,8 @@
+{ lib, ... }:
 {
   services.openssh = {
-    enable = true;
-    settings.PermitRootLogin = "no";
-    allowSFTP = true;
+    enable = lib.mkDefault true;
+    settings.PermitRootLogin = lib.mkDefault "no";
+    allowSFTP = lib.mkDefault true;
   };
 }

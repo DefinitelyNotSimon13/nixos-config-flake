@@ -1,15 +1,28 @@
-{ inputs, ... }:
 {
-  imports =
-    [
-    ];
+  inputs,
+  lib,
+  config,
+  ...
+}:
+let
+  moduleName = "sopsConfig";
+  cfg = config."${moduleName}";
+in
+{
 
-  sops.defaultSopsFile = ../../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
+  options."${moduleName}" = {
+    enable = lib.mkEnableOption "enables ${moduleName}";
+  };
 
-  sops.secrets = {
-    "myservice/mysubdir/my_secret" = { };
-    "myotherservice/another_secret" = { };
+  config = lib.mkIf cfg.enable {
+    sops.defaultSopsFile = ../../secrets/secrets.yaml;
+    sops.defaultSopsFormat = "yaml";
+
+    sops.secrets = {
+      "myservice/mysubdir/my_secret" = { };
+      "myotherservice/another_secret" = { };
+    };
+
   };
 
 }
