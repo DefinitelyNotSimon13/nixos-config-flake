@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     parted
     disko
+    yazi
   ];
 
 }
