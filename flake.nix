@@ -79,12 +79,27 @@
             inherit inputs outputs;
           };
           modules = [
+            {
+              nix.settings = {
+                substituters = [ "https://cosmic.cachix.org/" ];
+                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+              };
+            }
             ./hosts/nixos-laptop
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
             inputs.sops-nix.nixosModules.sops
+            inputs.nixos-cosmic.nixosModules.default
           ];
         };
+        "iso-image" =nixpkgs.lib.nixosSystem {
+        specialArgs = {
+        inherit inputs outputs;
+      };
+          modules = [
+          ./hosts/iso-image
+        ];
+      };
       };
       homeConfigurations = {
         "simon@nixos-desktop" = home-manager.lib.homeManagerConfiguration {
@@ -112,5 +127,7 @@
           ];
         };
       };
+
+      
     };
 }
