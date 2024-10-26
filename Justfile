@@ -24,6 +24,11 @@ update:
 diff:
     git diff ':!flake.lock'
 
-
 check:
     nix flake check --impure --keep-going
+
+build-iso: rebuild-pre && rebuild-post
+    nix run nixpkgs#nixos-generators -- \
+        --format iso \
+        --flake "/home/simon/dotfiles/nixos#iso-image" \
+        -o result

@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+lib,
   ...
 }:
 {
@@ -33,46 +34,40 @@
 
   services = {
     dunst = {
-      enable = true;
+      enable = lib.mkDefault true;
     };
   };
 
   programs = {
     # Let Home Manager install and manage itself.
     home-manager = {
-      enable = true;
+      enable = lib.mkDefault true;
     };
 
     direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
+      enable = lib.mkDefault true;
+      enableZshIntegration = lib.mkDefault true;
+      nix-direnv.enable = lib.mkDefault true;
     };
 
     firefox = {
-      enable = true;
+      enable = lib.mkDefault true;
     };
 
     neovim = {
-      enable = true;
-      defaultEditor = true;
-      vimAlias = true;
-      viAlias = true;
-      withNodeJs = true;
-      withPython3 = true;
-      withRuby = true;
-    };
-
-    waybar.enable = true;
-    rofi = {
-      enable = true;
-      package = pkgs.rofi-wayland;
+      enable = lib.mkDefault true;
+      defaultEditor = lib.mkDefault true;
+      vimAlias = lib.mkDefault true;
+      viAlias = lib.mkDefault true;
+      withNodeJs = lib.mkDefault true;
+      withPython3 = lib.mkDefault true;
+      withRuby = lib.mkDefault true;
     };
 
     lazygit = {
-      enable = true;
+      enable = lib.mkDefault true;
       catppuccin = {
-        enable = true;
+        enable = lib.mkDefault true;
         accent = "peach";
         flavor = "mocha";
       };

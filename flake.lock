@@ -84,11 +84,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1729942225,
-        "narHash": "sha256-ispEcuY8DpT7gVzG9XD0k84WneFjEIaiPY1ub2Zp03Q=",
+        "lastModified": 1729943726,
+        "narHash": "sha256-rCNQ/6V34Dze8h8C9F+m/cZ7oKSm6j6OkSoCLuMPBJc=",
         "ref": "refs/heads/main",
-        "rev": "dbeb4dc5080980767fa2a09f6234c24e949758f3",
-        "revCount": 196,
+        "rev": "4554186a9ad3483694cead136ad72fa8d3061b09",
+        "revCount": 197,
         "type": "git",
         "url": "https://github.com/DefinitelyNotSimon13/dotfiles.git"
       },

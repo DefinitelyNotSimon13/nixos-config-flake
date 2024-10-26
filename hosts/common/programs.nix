@@ -1,10 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs = {
-    hyprland.enable = true;
-    zsh.enable = true;
+    zsh.enable = lib.mkDefault true;
     git = {
-      enable = true;
+      enable = lib.mkDefault true;
       config = {
         init = {
           defaultBranch = "main";
@@ -17,8 +16,8 @@
     };
 
     gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
+      enable = lib.mkDefault true;
+      enableSSHSupport = lib.mkDefault true;
       pinentryPackage = pkgs.pinentry-tty;
     };
   };

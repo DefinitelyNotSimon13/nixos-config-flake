@@ -98,6 +98,8 @@
       };
           modules = [
           ./hosts/iso-image
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.nixosModules.catppuccin
         ];
       };
       };
@@ -124,6 +126,17 @@
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.homeManagerModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
+          ];
+        };
+        "simon@iso-image" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./home/simon/iso-image.nix
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.homeManagerModules.catppuccin
           ];
         };
       };
