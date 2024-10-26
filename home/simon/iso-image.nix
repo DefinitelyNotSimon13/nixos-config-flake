@@ -8,7 +8,6 @@
     ../other
   ];
 
-
   services = {
     dunst.enable = false;
   };
@@ -21,37 +20,37 @@
 
   dotfiles = {
     alacritty = {
-      enable =  false;
+      enable = false;
     };
     dunst = {
-      enable =  false;
+      enable = false;
     };
     ideavim = {
-      enable =  false;
+      enable = false;
     };
     kitty = {
-      enable =  false;
+      enable = false;
     };
     rofi = {
-      enable =  false;
+      enable = false;
     };
     wallpapers = {
-      enable =  false;
+      enable = false;
     };
     zathura = {
-      enable =  false;
+      enable = false;
     };
   };
 
   features = {
     desktop = {
-      wayland.enable =  false;
-      waybar.enable =  false;
-      hyprland.enable =  false;
-      hyprpaper.enable =  false;
-      hypridle.enable =  false;
-      hyprlock.enable =  false;
-      fonts.enable =  false;
+      wayland.enable = false;
+      waybar.enable = false;
+      hyprland.enable = false;
+      hyprpaper.enable = false;
+      hypridle.enable = false;
+      hyprlock.enable = false;
+      fonts.enable = false;
     };
   };
 

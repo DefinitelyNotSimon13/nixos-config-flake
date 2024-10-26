@@ -20,6 +20,7 @@ in
       docker-compose
       edit-config
       fzf
+
       gcc
       gh
       git-credential-manager
