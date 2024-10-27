@@ -5,6 +5,7 @@
     ./grub-config.nix
     ./home-manager-config.nix
     ./locale-config.nix
+    ./minecraft-server.nix
     ./network-config.nix
     ./network-config.nix
     ./nix-config.nix
@@ -34,4 +35,5 @@
   libvirtd.enable = lib.mkDefault true;
   networkConfig.enable = lib.mkDefault true;
   stylixConfig.enable = lib.mkDefault false;
+  minecraftServer.enable = lib.mkDefault false;
 }

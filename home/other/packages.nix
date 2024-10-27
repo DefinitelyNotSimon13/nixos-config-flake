@@ -20,8 +20,8 @@ in
       docker-compose
       edit-config
       fzf
-
       gcc
+      prismlauncher
       gh
       git-credential-manager
       gnumake

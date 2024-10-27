@@ -14,6 +14,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    programs.dconf.enable = true;
     virtualisation.docker = {
       enable = true;
       rootless = {
