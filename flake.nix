@@ -31,6 +31,8 @@
       flake = false;
     };
 
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
   };
 
   outputs =

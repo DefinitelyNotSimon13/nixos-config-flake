@@ -3,6 +3,7 @@
   lib,
   config,
   home,
+  inputs,
   ...
 }:
 let
@@ -10,11 +11,15 @@ let
   cfg = config."${moduleName}";
 in
 {
+
+  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+
   options."${moduleName}" = {
     enable = lib.mkEnableOption "enables ${moduleName}";
   };
 
   config = lib.mkIf cfg.enable {
+    nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
     services.minecraft-server = {
       enable = true;
       eula = true;
