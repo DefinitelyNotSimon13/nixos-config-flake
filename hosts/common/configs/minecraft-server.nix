@@ -87,6 +87,29 @@ in
             };
         };
 
+        fabric-server2 = {
+          enable = true;
+          package = pkgs.fabricServers.fabric-1_20_1.override { loaderVersion = "0.16.7"; };
+
+          serverProperties = {
+            server-port = 25569;
+          };
+
+          symlinks =
+            let
+              modpack = (
+                pkgs.fetchPackwizModpack {
+                  url = "http://localhost:8080/pack.toml";
+                  packHash = "+xyYgot/owkaDQAX2d+rx3SprT6gQz7JNrAz+jHZxQI=";
+                }
+              );
+            in
+            {
+              "mods" = "${modpack}/mods";
+
+            };
+        };
+
       };
     };
 
