@@ -24,6 +24,7 @@ in
       enable = true;
       eula = true;
       declarative = true;
+      package = pkgs.minecraftServers.vanilla-1_21_1;
 
       serverProperties = {
         "rcon.password" = "password";
