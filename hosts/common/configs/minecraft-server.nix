@@ -74,15 +74,15 @@ in
 
           symlinks =
             let
-              modpackOptimized = (
+              modpack = (
                 pkgs.fetchPackwizModpack {
-                  url = "https://raw.githubusercontent.com/Fabulously-Optimized/fabulously-optimized/refs/tags/v6.2.1/Packwiz/1.21.1/pack.toml";
+                  url = "http://localhost:8080/pack.toml";
                   packHash = "+xyYgot/owkaDQAX2d+rx3SprT6gQz7JNrAz+jHZxQI=";
                 }
               );
             in
             {
-              "mods" = "${modpackOptimized}/mods";
+              "mods" = "${modpack}/mods";
 
             };
         };
