@@ -66,7 +66,7 @@ in
 
         fabric-server1 = {
           enable = true;
-          package = pkgs.fabricServers.fabric-1_21_3.override { loaderVersion = "0.16.7"; };
+          package = pkgs.fabricServers.fabric-1_21_1.override { loaderVersion = "0.16.7"; };
 
           serverProperties = {
             server-port = 25567;
