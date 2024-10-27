@@ -33,7 +33,7 @@ in
       };
 
       whitelist = {
-
+        UnicornLiotox = "795e503e-4155-4ad5-9ca0-27d62e3eaf2b";
       };
     };
 
