@@ -92,7 +92,7 @@ in
           package = pkgs.fabricServers.fabric-1_20_1.override { loaderVersion = "0.16.7"; };
 
           serverProperties = {
-            server-port = 25569;
+            server-port = 25568;
           };
 
           symlinks =
