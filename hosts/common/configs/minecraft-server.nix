@@ -20,26 +20,51 @@ in
 
   config = lib.mkIf cfg.enable {
     nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
-    services.minecraft-server = {
+    services.minecraft-servers = {
       enable = true;
       eula = true;
-      declarative = true;
-      package = pkgs.minecraftServers.vanilla-1_21_1;
 
-      serverProperties = {
-        "rcon.password" = "password";
-        difficulty = "normal";
-        enable-rcon = true;
-        gamemode = "survival";
-        max-players = 161;
-        motd = "NixOS Minecraft server!";
-        server-port = 25565;
-        view-distance = 10;
-        white-list = true;
-      };
+      servers = {
+        vanilla-server = {
+          enable = true;
+          package = pkgs.minecraftServers.vanilla-1_21_1;
 
-      whitelist = {
-        UnicornLiotox = "795e503e-4155-4ad5-9ca0-27d62e3eaf2b";
+          serverProperties = {
+            "rcon.password" = "password";
+            difficulty = "normal";
+            enable-rcon = true;
+            gamemode = "survival";
+            max-players = 161;
+            motd = "NixOS Vanilla Minecraft server!";
+            server-port = 25565;
+            view-distance = 10;
+            white-list = true;
+          };
+
+          whitelist = {
+            UnicornLiotox = "795e503e-4155-4ad5-9ca0-27d62e3eaf2b";
+          };
+        };
+
+        vanilla-server-2 = {
+          enable = true;
+          package = pkgs.minecraftServers.vanilla-1_8_3;
+
+          serverProperties = {
+            "rcon.password" = "password";
+            difficulty = "normal";
+            enable-rcon = true;
+            gamemode = "creative";
+            max-players = 5;
+            motd = "Second Vanilla Minecraft server!";
+            server-port = 25566;
+            rconf-port = 25576;
+            view-distance = 10;
+            white-list = false;
+          };
+
+        };
+
       };
     };
 
