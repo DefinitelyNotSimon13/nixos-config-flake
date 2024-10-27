@@ -17,6 +17,8 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       cliphist
+      jdk22
+      rconc
       docker-compose
       edit-config
       fzf
