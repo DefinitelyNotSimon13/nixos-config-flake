@@ -27,7 +27,10 @@ in
       wireless.enable = false; # Enables wireless support via wpa_supplicant.
 
       firewall.enable = true;
-      firewall.allowedTCPPorts = [ 22 ];
+      firewall.allowedTCPPorts = [
+        22
+        25565
+      ];
     };
   };
 }

@@ -15,6 +15,10 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    services.minecraft-server = {
+      enable = true;
+      eula = true;
+    };
 
   };
 }
