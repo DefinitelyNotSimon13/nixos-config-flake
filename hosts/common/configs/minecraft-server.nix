@@ -18,6 +18,7 @@ in
     services.minecraft-server = {
       enable = true;
       eula = true;
+      dataDir = "/home/simon/server";
     };
 
   };
