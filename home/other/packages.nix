@@ -47,6 +47,7 @@ in
       rebuild
       ripgrep
       sl
+      figma-linux
       sops
       spotify
       testscript
