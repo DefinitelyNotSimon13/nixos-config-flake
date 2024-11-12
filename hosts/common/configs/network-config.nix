@@ -26,7 +26,7 @@ in
       networkmanager.enable = true; # Easiest to use and most distros use this by default.
       wireless.enable = false; # Enables wireless support via wpa_supplicant.
 
-      firewall.enable = true;
+      firewall.enable = false;
       firewall.allowedTCPPorts = [
         22
         25565
