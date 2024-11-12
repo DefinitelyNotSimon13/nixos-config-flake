@@ -23,6 +23,7 @@ in
       fzf
       gcc
       prismlauncher
+      android-tools
       gh
       git-credential-manager
       gnumake
