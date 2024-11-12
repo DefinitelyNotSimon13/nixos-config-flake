@@ -17,4 +17,9 @@
       pkgs.xdg-desktop-portal-gtk
     ];
   };
+
+  systemd.user.services.xdg-desktop-portal-gtk = {
+    wantedBy = [ "xdg-desktop-portal.service" ];
+    before = [ "xdg-desktop-portal.service" ];
+  };
 }
