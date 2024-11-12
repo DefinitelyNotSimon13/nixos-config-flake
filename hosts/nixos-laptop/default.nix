@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ../common
@@ -9,6 +9,9 @@
 
   gaming.enable = true;
 
+  services.xserver = {
+    enable = lib.mkForce true;
+  };
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
