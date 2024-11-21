@@ -17,6 +17,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       cliphist
+      gimp-with-plugins
       jdk22
       rconc
       docker-compose
