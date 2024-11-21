@@ -5,18 +5,13 @@
   ];
 
   sops.age.keyFile = "/home/simon/.config/sops/age/keys.txt";
-  minecraftServer.enable = true;
-  gaming.enable = true;
+  minecraftServer.enable = false;
+  gaming.enable = false;
 
-  fileSystems."/home/simon/vwi" = {
-    device = "ud04_266@ud04.udmedia.de:/home/ud04_266";
-    fsType = "sshfs";
-    options = [
-      "nodev"
-      "noatime"
-      "allow_other"
-      "IdentityFile=/home/simon/.ssh/id_ed25519"
-      "Port=2222"
-    ];
+  virtualisation.oci-containers.containers = {
+    plantuml = {
+      image = "plantuml/plantuml-server:jetty";
+      ports = [ "8091:8080" ];
+    };
   };
 }
