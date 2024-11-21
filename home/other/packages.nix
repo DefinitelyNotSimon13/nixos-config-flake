@@ -18,8 +18,7 @@ in
     home.packages = with pkgs; [
       cliphist
       gimp-with-plugins
-      jdk22
-      rconc
+      zed-editor
       docker-compose
       edit-config
       fzf
@@ -49,6 +48,7 @@ in
       rebuild
       ripgrep
       sl
+      figma-linux
       sops
       spotify
       testscript

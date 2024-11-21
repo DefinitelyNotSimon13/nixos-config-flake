@@ -19,5 +19,8 @@
 
   sopsConfig.enable = lib.mkDefault true;
 
+  services.flatpak.enable = true;
+  xdg.portal.wlr.enable = true;
+
   boot.supportedFilesystems = [ "ntfs" ];
 }
