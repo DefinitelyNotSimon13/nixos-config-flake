@@ -15,16 +15,21 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    nixpkgs.config = {
+      allowUnfree = true;
+    };
+
     home.packages = with pkgs; [
       cliphist
       zed-editor
+      firefox
       docker-compose
       edit-config
       fzf
       gcc
       prismlauncher
       nspr
-      android-tools
       gh
       git-credential-manager
       gnumake
