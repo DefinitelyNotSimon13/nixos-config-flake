@@ -66,7 +66,6 @@ in
       };
 
       initExtra = ''
-        eval "$(${pkgs.oh-my-posh}/bin/oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
 
         export GPG_TTY=$(tty)
 

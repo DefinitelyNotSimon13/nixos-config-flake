@@ -21,7 +21,6 @@ in
       zed-editor
       docker-compose
       edit-config
-      fzf
       gcc
       prismlauncher
       gh
