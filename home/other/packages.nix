@@ -22,11 +22,11 @@ in
 
     home.packages = with pkgs; [
       cliphist
+      gimp-with-plugins
       zed-editor
       firefox
       docker-compose
       edit-config
-      fzf
       gcc
       prismlauncher
       nspr

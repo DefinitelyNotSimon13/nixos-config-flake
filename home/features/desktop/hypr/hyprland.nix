@@ -76,10 +76,6 @@ in
             passes = 3;
             new_optimizations = true;
           };
-          # drop_shadow = false;
-          # shadow_range = 0;
-          # shadow_render_power = 0;
-          # "col.shadow" = lib.mkForce "rgba(1a1a1aee)";
         };
 
         animations = {
@@ -89,7 +85,6 @@ in
         dwindle = {
           pseudotile = true;
           preserve_split = true;
-          # no_gaps_when_only = 0;
         };
 
         master = { };

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./zsh.nix
@@ -8,6 +8,10 @@
   ];
 
   programs = {
+    wezterm = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     zoxide = {
       enable = true;
       enableZshIntegration = true;
@@ -16,9 +20,17 @@
       ];
     };
 
-    oh-my-posh = {
+    starship = {
       enable = true;
       enableZshIntegration = true;
+      enableTransience = true;
+      # settings = lib.mkForce # toml
+      #   '''';
+    };
+
+    oh-my-posh = {
+      enable = false;
+      enableZshIntegration = false;
     };
 
     eza = {
