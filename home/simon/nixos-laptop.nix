@@ -16,6 +16,18 @@
     picom
   ];
 
+  xsession.windowManager.i3 = {
+    enable = true;
+    package = pkgs.i3-gaps;
+    config = {
+      modifier = "Mod4";
+      gaps = {
+        inner = 0;
+        outer = 0;
+      };
+    };
+  };
+
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [

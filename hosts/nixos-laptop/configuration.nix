@@ -3,6 +3,7 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
   pkgs,
+  lib,
   ...
 }:
 {
@@ -25,5 +26,13 @@
   system.copySystemConfiguration = false;
 
   system.stateVersion = "24.05";
+
+  services.xserver = {
+    enable = true;
+    windowManager.i3.enable = true;
+  };
+  services.displayManager = {
+    defaultSession = "none+i3";
+  };
 
 }
