@@ -11,6 +11,7 @@
 
   services.xserver = {
     enable = lib.mkForce true;
+    autorun = false;
   };
   xdg.portal = {
     enable = true;
