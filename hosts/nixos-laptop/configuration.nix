@@ -18,6 +18,15 @@
     git
   ];
 
+  services.xserver = {
+    enable = true;
+    displayManager.startx.enable = true;
+  };
+  services.displayManager = {
+    enable = true;
+  };
+  services.desktopManager.plasma6.enable = true;
+
   nixpkgs.config = {
     allowUnfree = true;
     android_sdk.accept_license = true;
@@ -28,7 +37,6 @@
   system.stateVersion = "24.05";
 
   services.xserver = {
-    enable = true;
     windowManager.i3.enable = true;
   };
   services.displayManager = {

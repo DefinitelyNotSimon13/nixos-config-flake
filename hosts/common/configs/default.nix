@@ -2,6 +2,7 @@
 {
   imports = [
     ./console-config.nix
+    ./sddm.nix
     ./grub-config.nix
     ./home-manager-config.nix
     ./locale-config.nix

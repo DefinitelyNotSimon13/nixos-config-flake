@@ -11,7 +11,6 @@
 
   services.xserver = {
     enable = lib.mkForce true;
-    autorun = false;
   };
 
   systemd.user.services.xdg-desktop-portal-gtk = {
