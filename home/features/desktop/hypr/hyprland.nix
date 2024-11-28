@@ -27,6 +27,11 @@ in
       enable = true;
       settings = {
 
+        cursor = {
+          no_hardware_cursors = true;
+
+        };
+
         xwayland = {
           force_zero_scaling = true;
         };
