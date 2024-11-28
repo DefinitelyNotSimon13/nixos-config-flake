@@ -1,6 +1,6 @@
 {
   services.xserver = {
-    enable = false;
+    enable = true;
     xkb = {
       layout = "de";
       options = "eurosign:e,caps:escape";

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./home.nix
@@ -6,6 +6,14 @@
     ../common
     ../features
     ../other
+  ];
+
+  dotfiles.i3.enable = true;
+
+  home.packages = with pkgs; [
+    i3
+    polybar
+    picom
   ];
 
   wayland.windowManager.hyprland = {
