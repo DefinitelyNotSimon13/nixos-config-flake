@@ -19,7 +19,20 @@
 
   sopsConfig.enable = lib.mkDefault true;
 
-  services.flatpak.enable = true;
+  services.flatpak = {
+    enable = true;
+    remotes = [
+      {
+        name = "flathub-beta";
+        location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+
+      }
+    ];
+    packages = [
+      "io.github.zen_browser.zen"
+      "com.spotify.Client"
+    ];
+  };
   xdg.portal = {
     wlr.enable = true;
     config.common.default = "*";

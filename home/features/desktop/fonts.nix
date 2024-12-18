@@ -15,12 +15,11 @@ in
     home.packages = with pkgs; [
       fira-code
       fira-code-symbols
-      fira-code-nerdfont
       font-manager
       font-awesome_5
       noto-fonts
       jetbrains-mono
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      nerd-fonts.jetbrains-mono
     ];
   };
 }

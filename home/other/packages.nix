@@ -21,7 +21,6 @@ in
     };
 
     home.packages = with pkgs; [
-      ciscoPacketTracer8
       cliphist
       gimp-with-plugins
       zed-editor
@@ -57,7 +56,6 @@ in
       sl
       figma-linux
       sops
-      spotify
       testscript
       viewnior
       vscode

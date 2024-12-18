@@ -33,6 +33,7 @@
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =
@@ -70,6 +71,7 @@
               };
             }
             ./hosts/nixos-desktop
+            inputs.nix-flatpak.nixosModules.nix-flatpak
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
             inputs.sops-nix.nixosModules.sops
@@ -88,6 +90,7 @@
               };
             }
             ./hosts/nixos-laptop
+            inputs.nix-flatpak.nixosModules.nix-flatpak
             inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
             inputs.sops-nix.nixosModules.sops

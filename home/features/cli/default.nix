@@ -11,6 +11,12 @@
     wezterm = {
       enable = true;
       enableZshIntegration = true;
+      extraConfig = # lua
+        ''
+          return {
+            enable_wayland = false
+          }
+        '';
     };
     zoxide = {
       enable = true;
