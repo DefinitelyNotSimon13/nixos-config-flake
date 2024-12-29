@@ -19,6 +19,7 @@
 
   sopsConfig.enable = lib.mkDefault true;
 
+
   services.flatpak = {
     enable = true;
     remotes = [
