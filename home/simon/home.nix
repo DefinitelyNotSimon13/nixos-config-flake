@@ -62,11 +62,6 @@
 
     lazygit = {
       enable = lib.mkDefault true;
-      catppuccin = {
-        enable = lib.mkDefault true;
-        accent = "peach";
-        flavor = "mocha";
-      };
     };
 
   };

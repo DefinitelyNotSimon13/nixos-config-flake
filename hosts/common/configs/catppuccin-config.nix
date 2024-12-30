@@ -15,6 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
     catppuccin = {
+      grub.enable = true;
       enable = lib.mkDefault true;
       accent = "peach";
       flavor = "mocha";

@@ -18,12 +18,6 @@ in
       platformTheme.name = "kvantum";
       style = {
         name = "kvantum";
-        catppuccin = {
-          enable = true;
-          accent = "green";
-          flavor = "mocha";
-          apply = true;
-        };
       };
     };
 

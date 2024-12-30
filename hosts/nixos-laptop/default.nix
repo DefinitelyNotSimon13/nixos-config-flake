@@ -7,14 +7,6 @@
 
   sops.age.keyFile = "/home/simon/.config/sops/age/keys.txt";
 
+  minecraftServer.enable = false;
   gaming.enable = true;
-
-  services.xserver = {
-    enable = lib.mkForce true;
-  };
-
-  systemd.user.services.xdg-desktop-portal-gtk = {
-    wantedBy = [ "xdg-desktop-portal.service" ];
-    before = [ "xdg-desktop-portal.service" ];
-  };
 }

@@ -13,14 +13,4 @@
 
   networkConfig.hostName = "nixos-laptop";
 
-  environment.systemPackages = with pkgs; [
-    neovim
-    git
-  ];
-
-
-  system.stateVersion = "24.05";
-
-  system.copySystemConfiguration = false;
-
 }

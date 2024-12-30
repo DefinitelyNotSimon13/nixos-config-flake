@@ -3,6 +3,7 @@
 {
   inputs,
   lib,
+  pkgs,
   ...
 }:
 {
@@ -17,11 +18,19 @@
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
-  sopsConfig.enable = lib.mkDefault true;
-
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
+    neovim
+    git
     inputs.ghostty.packages.x86_64-linux.default
   ];
+
+  nixpkgs.config.allowUnfree = true;
+
+  system.copySystemConfiguration = false;
+
+  system.stateVersion = "24.05";
+
+  sopsConfig.enable = lib.mkDefault true;
 
   services.flatpak = {
     enable = true;

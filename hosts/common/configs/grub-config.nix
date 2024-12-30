@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 let
@@ -35,10 +34,6 @@ in
         useOSProber = true;
         efiSupport = true;
         device = "nodev";
-        catppuccin = {
-          enable = true;
-          flavor = "mocha";
-        };
       };
     };
   };
