@@ -8,21 +8,6 @@
     ../other
   ];
 
-  dotfiles.i3.enable = true;
-
-  home.packages = with pkgs; [
-    i3
-    polybar
-    picom
-  ];
-
-  services.picom.enable = true;
-
-  xsession.windowManager.i3 = {
-    enable = true;
-    package = pkgs.i3;
-  };
-
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [

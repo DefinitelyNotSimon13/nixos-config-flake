@@ -97,9 +97,9 @@ in
         "$mainMod" = "SUPER";
 
         bind = [
-          "$mainMod, RETURN, exec, kitty"
+          "$mainMod, RETURN, exec, ghostty"
           "$mainMod SHIFT, RETURN, exec, alacritty -e tmux"
-          "$mainMod, Q, exec, firefox"
+          "$mainMod, Q, exec, io.github.zen_browser.zen"
           "$mainMod, C, killactive,"
           "$mainMod SHIFT, P, exec, ~/.config/rofi/bin/powermenu.sh"
           "$mainMod SHIFT, M, exit,"

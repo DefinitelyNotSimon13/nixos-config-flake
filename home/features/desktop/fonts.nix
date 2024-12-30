@@ -20,8 +20,8 @@ in
       font-awesome_5
       noto-fonts
       jetbrains-mono
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      # nerd-fonts.jetbrains-mono
+ #     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      nerd-fonts.jetbrains-mono
     ];
   };
 }

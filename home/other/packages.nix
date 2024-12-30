@@ -22,11 +22,8 @@ in
 
     home.packages = with pkgs; [
       cliphist
-      gimp-with-plugins
-      zed-editor
       firefox
       docker-compose
-      edit-config
       gcc
       prismlauncher
       nspr
@@ -51,12 +48,9 @@ in
       pinentry-tty
       plantuml
       python3
-      rebuild
       ripgrep
       sl
-      figma-linux
       sops
-      testscript
       viewnior
       vscode
       wget
