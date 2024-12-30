@@ -57,6 +57,7 @@ in
       xdg-utils
       xorg.xrandr
       zathura
+      zk
     ];
 
   };
