@@ -32,6 +32,8 @@
     FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";
   };
 
+  dotfiles.nvim.enable =true;
+
   services = {
     dunst = {
       enable = lib.mkDefault true;
