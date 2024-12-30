@@ -22,13 +22,11 @@
     ./pscd.nix
     ./docker.nix
     ./libvirtd.nix
-    ./cosmic-desktop.nix
     ./gaming.nix
   ];
 
   catppuccinConfig.enable = lib.mkDefault true;
   consoleConfig.enable = lib.mkDefault true;
-  cosmicDesktop.enable = lib.mkDefault false;
   docker.enable = lib.mkDefault true;
   gaming.enable = lib.mkDefault false;
   greetdConfig.enable = lib.mkDefault true;

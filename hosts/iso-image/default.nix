@@ -14,7 +14,6 @@
   };
 
   sopsConfig.enable = false;
-  cosmicDesktop.enable = false;
   docker.enable = false;
   gaming.enable = false;
   libvirtd.enable = false;

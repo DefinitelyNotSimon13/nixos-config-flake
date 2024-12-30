@@ -13,7 +13,6 @@
     ./programs.nix
     ./secrets.nix
     inputs.home-manager.nixosModules.home-manager
-    inputs.nixos-cosmic.nixosModules.default
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
