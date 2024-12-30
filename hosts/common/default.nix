@@ -1,5 +1,4 @@
 # Common configuration for all hosts
-
 {
   inputs,
   lib,
@@ -12,6 +11,7 @@
     ./configs
     ./programs.nix
     ./secrets.nix
+    ./nix-ld.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
