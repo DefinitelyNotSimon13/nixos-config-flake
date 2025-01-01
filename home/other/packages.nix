@@ -28,6 +28,9 @@ in
       prismlauncher
       nspr
       gh
+      viu
+      chafa
+      ueberzugpp
       git-credential-manager
       gnumake
       gnupg
