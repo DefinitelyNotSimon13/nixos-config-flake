@@ -23,6 +23,7 @@ in
     home.packages = with pkgs; [
       cliphist
       firefox
+      tree-sitter
       docker-compose
       gcc
       prismlauncher
