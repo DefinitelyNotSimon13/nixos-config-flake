@@ -52,15 +52,15 @@
       nix-direnv.enable = lib.mkDefault true;
     };
 
-    neovim = {
-      enable = lib.mkDefault true;
-      defaultEditor = lib.mkDefault true;
-      vimAlias = lib.mkDefault true;
-      viAlias = lib.mkDefault true;
-      withNodeJs = lib.mkDefault true;
-      withPython3 = lib.mkDefault true;
-      withRuby = lib.mkDefault true;
-    };
+    # neovim = {
+    #   enable = lib.mkDefault true;
+    #   defaultEditor = lib.mkDefault true;
+    #   vimAlias = lib.mkDefault true;
+    #   viAlias = lib.mkDefault true;
+    #   withNodeJs = lib.mkDefault true;
+    #   withPython3 = lib.mkDefault true;
+    #   withRuby = lib.mkDefault true;
+    # };
 
     lazygit = {
       enable = lib.mkDefault true;
