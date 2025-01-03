@@ -35,6 +35,7 @@ in
       xorg.libXinerama
       xorg.libXi
       xorg.libX11.dev
+      raylib
       chafa
       rustup
       cmake
