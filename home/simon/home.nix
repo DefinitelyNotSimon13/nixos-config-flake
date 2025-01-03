@@ -32,7 +32,7 @@
     FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";
   };
 
-  dotfiles.nvim.enable =true;
+  dotfiles.nvim.enable = false;
 
   services = {
     dunst = {
