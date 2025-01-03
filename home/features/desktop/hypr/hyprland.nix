@@ -26,6 +26,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = ''
+        windowrule = noinitialfocus, raylib
         windowrule = monitor DP-3, raylib
       '';
       settings = {
