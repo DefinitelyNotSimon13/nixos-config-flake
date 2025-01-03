@@ -25,10 +25,10 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
+      extraConfig = ''
+        windowrule = center, title:(raylib:)(.*)
+      '';
       settings = {
-        extraConfig = ''
-          windowrule = center, title:(raylib:)(.*)
-        '';
 
         cursor = {
           no_hardware_cursors = true;
