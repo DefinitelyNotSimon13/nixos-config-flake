@@ -34,7 +34,10 @@ in
       xorg.libXrandr
       xorg.libXinerama
       xorg.libXi
+      xorg.libX11
       xorg.libX11.dev
+      alsa-lib
+      mesa
       raylib
       chafa
       rustup
