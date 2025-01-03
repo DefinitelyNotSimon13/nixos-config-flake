@@ -28,7 +28,7 @@ in
       extraConfig = ''
         windowrule = noinitialfocus, raylib
         windowrule = monitor DP-1, raylib
-        windowrule = move 60% 20%, raylib
+        windowrule = move 50% 20%, raylib
       '';
       settings = {
 
