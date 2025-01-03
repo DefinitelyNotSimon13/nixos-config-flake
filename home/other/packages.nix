@@ -32,6 +32,7 @@ in
       viu
       chafa
       rustup
+      cmake
       ueberzugpp
       git-credential-manager
       gnumake
