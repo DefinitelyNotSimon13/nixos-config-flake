@@ -26,7 +26,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = ''
-        windowrule = monitor DP-3, title:raylib
+        windowrule = monitor DP-3, raylib
       '';
       settings = {
 
