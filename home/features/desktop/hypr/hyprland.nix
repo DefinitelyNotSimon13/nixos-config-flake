@@ -26,6 +26,9 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
+        extraConfig = ''
+          windowrule = center, title:(raylib:)(.*)
+        '';
 
         cursor = {
           no_hardware_cursors = true;
@@ -180,6 +183,7 @@ in
           focus_on_activate = true;
           new_window_takes_over_fullscreen = 2;
         };
+
       };
 
     };
