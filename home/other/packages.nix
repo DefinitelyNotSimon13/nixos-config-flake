@@ -30,6 +30,11 @@ in
       nspr
       gh
       viu
+      xorg.libXcursor
+      xorg.libXrandr
+      xorg.libXinerama
+      xorg.libXi
+      xorg.libX11.dev
       chafa
       rustup
       cmake
