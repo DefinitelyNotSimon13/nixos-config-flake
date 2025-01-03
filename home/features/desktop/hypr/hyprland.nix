@@ -26,6 +26,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = ''
+        windowrule = monitor DP-3, title:(raylib:)(.*)
         windowrule = center, title:(raylib:)(.*)
       '';
       settings = {
@@ -64,7 +65,7 @@ in
 
         general = {
           gaps_in = 0;
-          gaps_out = 5;
+          gaps_out = 0;
           border_size = 2;
           "col.active_border" = lib.mkForce "rgba(fab387ff)";
           "col.inactive_border" = lib.mkForce "rgba(595959ff)";
