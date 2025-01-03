@@ -21,16 +21,16 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.file = mkMerge [
-      (mkIf (!cfg.symlink) {
-        ".config/nvim" = {
-          source = "${inputs.dotfiles}/nvim";
-          recursive = true;
-        };
-      })
-      (mkIf (cfg.symlink) {
-        ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
-      })
-    ];
+    # home.file = mkMerge [
+    #   (mkIf (!cfg.symlink) {
+    #     ".config/nvim" = {
+    #       source = "${inputs.dotfiles}/nvim";
+    #       recursive = true;
+    #     };
+    #   })
+    #   (mkIf (cfg.symlink) {
+    #     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
+    #   })
+    # ];
   };
 }
