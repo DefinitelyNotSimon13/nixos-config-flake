@@ -52,7 +52,7 @@
       enable = lib.mkDefault true;
     };
     nvim = {
-      enable = lib.mkDefault true;
+      enable = lib.mkDefault false;
     };
   };
 
