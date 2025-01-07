@@ -69,6 +69,7 @@ in
       xorg.xrandr
       zathura
       zk
+      nautilus
     ];
 
   };
