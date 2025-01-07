@@ -31,6 +31,7 @@ in
       gh
       viu
       go
+      gimp
       alsa-lib
       mesa
       raylib
