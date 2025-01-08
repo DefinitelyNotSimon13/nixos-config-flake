@@ -12,5 +12,6 @@
   ];
 
   networkConfig.hostName = "nixos-laptop";
+  services.tlp.enable = true;
 
 }
