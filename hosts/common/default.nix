@@ -20,7 +20,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
-    inputs.ghostty.packages.x86_64-linux.default
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -42,7 +41,7 @@
     ];
     packages = [
       "io.github.zen_browser.zen"
-      "com.spotify.Client"
+      "com.discordapp.Discord"
     ];
   };
   xdg.portal = {

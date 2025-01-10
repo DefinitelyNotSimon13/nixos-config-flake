@@ -30,10 +30,6 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-
   };
 
   outputs =

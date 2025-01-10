@@ -4,6 +4,10 @@ default:
 rebuild-pre:
     git add *.nix
 
+package:
+    nvim $HOME/dotfiles/nixos/home/other/packages.nix
+    just rebuild
+
 rebuild-post:
   #!/usr/bin/env bash
   generation=$(nixos-rebuild list-generations | grep current | awk '{print $1}')

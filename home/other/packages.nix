@@ -21,6 +21,7 @@ in
     };
 
     home.packages = with pkgs; [
+      spotify
       cliphist
       firefox
       tree-sitter
@@ -30,6 +31,8 @@ in
       nspr
       gh
       viu
+      wev
+      ghostty
       go
       gimp
       alsa-lib
