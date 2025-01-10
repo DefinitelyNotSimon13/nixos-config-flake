@@ -42,6 +42,7 @@
     packages = [
       "io.github.zen_browser.zen"
       "com.discordapp.Discord"
+      "com.spotify.Client"
     ];
   };
   xdg.portal = {

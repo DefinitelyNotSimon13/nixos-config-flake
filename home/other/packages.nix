@@ -21,7 +21,6 @@ in
     };
 
     home.packages = with pkgs; [
-      spotify
       cliphist
       firefox
       tree-sitter
