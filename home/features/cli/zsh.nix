@@ -63,6 +63,7 @@ in
         z = "zathura";
         grep = "rg";
         find = "fd";
+        env = "git clone https://github.com/DefinitelyNotSimon13/direnv-flake . && ./init.sh";
       };
 
       initExtra = ''
