@@ -30,6 +30,11 @@ in
           '';
           user = "greeter";
         };
+        initial_session = {
+          command = "Hyprland";
+          user = "simon";
+
+        };
       };
     };
   };
