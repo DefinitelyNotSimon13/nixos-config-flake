@@ -15,6 +15,7 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
+  services.nginx.enable = true;
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   environment.systemPackages = with pkgs; [
