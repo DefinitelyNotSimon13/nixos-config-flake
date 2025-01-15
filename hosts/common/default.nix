@@ -16,6 +16,10 @@
   ];
 
   services.nginx.enable = true;
+  systemd.services.nginx.serviceConfig.ReadWritePaths = [
+    "/var/log/nginx/"
+  ];
+
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   environment.systemPackages = with pkgs; [
