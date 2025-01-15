@@ -15,7 +15,14 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  services.nginx.enable = true;
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+    virtualHosts."localhost" = {
+      locations."/".proxyPass = "http://localhost:3000";
+    };
+  };
   systemd.services.nginx.serviceConfig.ReadWritePaths = [
     "/var/log/nginx/"
   ];
