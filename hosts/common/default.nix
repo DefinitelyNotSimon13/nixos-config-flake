@@ -23,7 +23,9 @@
       locations."/" = {
         proxyPass = "http://localhost:3000";
       };
-      locations."/api" = {
+    };
+    virtualHosts."test.org" = {
+      locations."/" = {
         proxyPass = "http://localhost:3000";
       };
     };
