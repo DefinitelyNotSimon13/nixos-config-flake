@@ -23,13 +23,7 @@
       locations."/" = {
         proxyPass = "http://localhost:3000";
       };
-        enableACME = true;
-        addSSL = true;
     };
-  };
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "simon21.blum@gmail.com";
   };
   systemd.services.nginx.serviceConfig.ReadWritePaths = [
     "/var/log/nginx/"
