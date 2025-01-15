@@ -20,7 +20,12 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     virtualHosts."localhost" = {
-      locations."/".proxyPass = "http://localhost:3000";
+      locations."/" = {
+        proxyPass = "http://localhost:3000";
+      };
+      locations."/api" = {
+        proxyPass = "http://localhost:3000";
+      };
     };
   };
   systemd.services.nginx.serviceConfig.ReadWritePaths = [
