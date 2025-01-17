@@ -53,6 +53,7 @@ in
       mariadb
       mycli
       ncdu
+      chromium
       networkmanagerapplet
       nixd
       nixfmt-rfc-style
