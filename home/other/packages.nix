@@ -53,6 +53,7 @@ in
       mariadb
       mycli
       ncdu
+      azure-cli
       chromium
       networkmanagerapplet
       nixd
