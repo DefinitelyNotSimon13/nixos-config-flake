@@ -31,6 +31,7 @@ in
       gh
       viu
       wev
+      zed-editor
       ghostty
       go
       gimp
