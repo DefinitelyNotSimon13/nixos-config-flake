@@ -11,9 +11,9 @@
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
-        "DP-1, 2560x1440@164.84, 0x0, 1.5"
+        "DP-1, 2560x1440@164.84, 0x0, 1"
         "DP-2 , 1920x1080@60, -1920x0000, 1"
-        "DP-3, 1920x1080@60, auto, 1, transform, 3"
+        "DP-3, 1920x1080@60, 2560x-700, 1, transform, 4"
       ];
 
       workspace = [
