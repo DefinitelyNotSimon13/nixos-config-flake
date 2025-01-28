@@ -16,6 +16,20 @@ in
     programs.waybar = {
       enable = true;
       settings = {
+        second-bar = {
+          layer = "top";
+          output = [
+            "DP-2"
+            "DP-3"
+          ];
+          position = "bottom";
+          margin = "0 0";
+          margin-bottom = 0;
+          margin-top = 0;
+          modules-left = [
+            "hyprland/workspaces"
+          ];
+        };
         mainbar = {
           layer = "top";
           output = [
