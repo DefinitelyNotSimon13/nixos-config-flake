@@ -59,6 +59,7 @@ in
       networkmanagerapplet
       nixd
       nixfmt-rfc-style
+      spotify
       openssl
       pass
       pinentry-tty
