@@ -60,6 +60,7 @@ in
       nixd
       nixfmt-rfc-style
       spotify
+      sqlitebrowser
       openssl
       pass
       pinentry-tty
