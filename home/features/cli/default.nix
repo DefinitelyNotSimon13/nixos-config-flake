@@ -8,6 +8,27 @@
   ];
 
   programs = {
+    helix = {
+      enable = true;
+      settings = {
+        theme = lib.mkForce "catppuccin_mocha";
+        editor.cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+        editor.indent-guides = {
+          render = true;
+        };
+      };
+      languages.language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+        }
+      ];
+    };
     wezterm = {
       enable = true;
       enableZshIntegration = true;
