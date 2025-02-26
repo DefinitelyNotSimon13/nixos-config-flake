@@ -69,6 +69,7 @@ in
       initExtra = ''
 
         export GPG_TTY=$(tty)
+        export EDITOR=nvim
 
         path+=("$HOME/.config/rofi/bin")
         path+=("$HOME/.scripts/bin")

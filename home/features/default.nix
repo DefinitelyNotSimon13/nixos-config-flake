@@ -28,7 +28,6 @@ with lib;
     };
 
     theming = {
-      stylix.enable = mkDefault false;
       catppuccin.enable = mkDefault true;
       qt.enable = mkDefault true;
       gtk.enable = mkDefault true;
