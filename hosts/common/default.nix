@@ -20,8 +20,27 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     virtualHosts."localhost" = {
+      listen = [
+        {
+          addr = "127.0.0.1";
+          port = 443;
+          ssl = true;
+        }
+      ];
+
+      sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
+      sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
+
+      root = "/home/simon/2_Uni/webengineering/project/public";
+
       locations."/" = {
+        index = "index.html";
+        tryFiles = "$uri $uri/ @nodejs";
+      };
+
+      locations."@nodejs" = {
         proxyPass = "http://localhost:3000";
+        recommendedProxySettings = true;
       };
     };
   };
