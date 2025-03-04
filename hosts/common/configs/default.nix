@@ -11,7 +11,6 @@
     ./network-config.nix
     ./nix-config.nix
     ./nixpkgs-config.nix
-    ./stylix-config.nix
     ./catppuccin-config.nix
     ./xserver.nix
     ./pipewire.nix
@@ -33,6 +32,4 @@
   grub.enable = lib.mkDefault true;
   libvirtd.enable = lib.mkDefault true;
   networkConfig.enable = lib.mkDefault true;
-  stylixConfig.enable = lib.mkDefault false;
-  minecraftServer.enable = lib.mkDefault false;
 }
