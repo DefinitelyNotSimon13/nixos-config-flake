@@ -11,11 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,18 +36,10 @@
     }@inputs:
     let
       inherit (self) outputs;
-      systems = [
-        "aarch64-linux"
-        "i686-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
       overlays = import ./overlays { inherit inputs; };
       nixosConfigurations = {
         "nixos-desktop" = nixpkgs.lib.nixosSystem {
@@ -62,7 +49,6 @@
           modules = [
             ./hosts/nixos-desktop
             inputs.nix-flatpak.nixosModules.nix-flatpak
-            inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
             inputs.sops-nix.nixosModules.sops
           ];
@@ -74,7 +60,6 @@
           modules = [
             ./hosts/nixos-laptop
             inputs.nix-flatpak.nixosModules.nix-flatpak
-            inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
             inputs.sops-nix.nixosModules.sops
           ];
@@ -85,7 +70,6 @@
           };
           modules = [
             ./hosts/iso-image
-            inputs.stylix.nixosModules.stylix
             inputs.catppuccin.nixosModules.catppuccin
             inputs.sops-nix.nixosModules.sops
           ];
@@ -93,37 +77,45 @@
       };
       homeConfigurations = {
         "simon@nixos-desktop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          inherit pkgs;
           extraSpecialArgs = {
             inherit inputs outputs;
           };
           modules = [
             ./home/simon/nixos-desktop.nix
-            inputs.stylix.nixosModules.stylix
             inputs.catppuccin.homeManagerModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
           ];
         };
         "simon@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          inherit pkgs;
           extraSpecialArgs = {
             inherit inputs outputs;
           };
           modules = [
             ./home/simon/nixos-laptop.nix
-            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.sops-nix.homeManagerModules.sops
+          ];
+        };
+        "simon@windows-desktop" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./home/simon/windows-desktop.nix
             inputs.catppuccin.homeManagerModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
           ];
         };
         "simon@iso-image" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          inherit pkgs;
           extraSpecialArgs = {
             inherit inputs outputs;
           };
           modules = [
             ./home/simon/iso-image.nix
-            inputs.stylix.nixosModules.stylix
             inputs.catppuccin.homeManagerModules.catppuccin
           ];
         };

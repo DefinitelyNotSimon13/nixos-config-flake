@@ -17,5 +17,4 @@
   docker.enable = false;
   gaming.enable = false;
   libvirtd.enable = false;
-  stylixConfig.enable = false;
 }
