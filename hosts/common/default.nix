@@ -16,7 +16,7 @@
   ];
 
   services.nginx = {
-    enable = true;
+    enable = false;
     recommendedProxySettings = false;
     recommendedTlsSettings = false;
     virtualHosts."localhost" = {
