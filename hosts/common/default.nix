@@ -17,20 +17,19 @@
 
   services.nginx = {
     enable = true;
-    recommendedProxySettings = false;
-    recommendedTlsSettings = false;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
     virtualHosts."localhost" = {
-      addSSL = false;
       listen = [
         {
           addr = "127.0.0.1";
-          port = 80;
-          ssl = false;
+          port = 443;
+          ssl = true;
         }
       ];
 
-      # sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
-      # sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
+      sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
+      sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
 
       root = "/home/simon/2_Uni/webengineering/project/public";
 
@@ -41,7 +40,7 @@
 
       locations."@nodejs" = {
         proxyPass = "http://localhost:3000";
-        # recommendedProxySettings = true;
+        recommendedProxySettings = true;
       };
     };
   };
