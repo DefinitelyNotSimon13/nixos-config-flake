@@ -17,8 +17,8 @@
 
   services.nginx = {
     enable = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings = true;
+    recommendedProxySettings = false;
+    recommendedTlsSettings = false;
     virtualHosts."localhost" = {
       listen = [
         {
@@ -40,7 +40,7 @@
 
       locations."@nodejs" = {
         proxyPass = "http://localhost:3000";
-        recommendedProxySettings = true;
+        recommendedProxySettings = false;
       };
     };
   };
