@@ -20,6 +20,7 @@
     recommendedProxySettings = false;
     recommendedTlsSettings = false;
     virtualHosts."localhost" = {
+      addSSL = false;
       listen = [
         {
           addr = "127.0.0.1";
@@ -28,8 +29,8 @@
         }
       ];
 
-      sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
-      sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
+      # sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
+      # sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
 
       root = "/home/simon/2_Uni/webengineering/project/public";
 
@@ -40,7 +41,7 @@
 
       locations."@nodejs" = {
         proxyPass = "http://localhost:3000";
-        recommendedProxySettings = false;
+        # recommendedProxySettings = true;
       };
     };
   };
