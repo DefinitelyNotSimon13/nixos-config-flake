@@ -40,7 +40,7 @@
 
       locations."@nodejs" = {
         proxyPass = "http://localhost:3000";
-        recommendedProxySettings = true;
+        recommendedProxySettings = false;
       };
     };
   };
