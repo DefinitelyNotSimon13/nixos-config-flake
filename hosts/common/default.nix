@@ -28,8 +28,8 @@
         }
       ];
 
-      # sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
-      # sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
+      sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
+      sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
 
       root = "/home/simon/2_Uni/webengineering/project/public";
 
@@ -40,7 +40,7 @@
 
       locations."@nodejs" = {
         proxyPass = "http://localhost:3000";
-        # recommendedProxySettings = true;
+        recommendedProxySettings = true;
       };
     };
   };
