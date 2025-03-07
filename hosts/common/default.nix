@@ -23,13 +23,13 @@
       listen = [
         {
           addr = "127.0.0.1";
-          port = 443;
-          ssl = true;
+          port = 80;
+          ssl = false;
         }
       ];
 
-      sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
-      sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
+      # sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
+      # sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
 
       root = "/home/simon/2_Uni/webengineering/project/public";
 
