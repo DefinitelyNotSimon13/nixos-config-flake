@@ -55,7 +55,7 @@ in
       mycli
       ncdu
       azure-cli
-      chromium
+      google-chrome
       networkmanagerapplet
       nixd
       nixfmt-rfc-style
