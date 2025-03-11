@@ -15,6 +15,11 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
+  fonts.packages = with pkgs; [
+    corefonts
+    vistafonts
+  ];
+
   services.nginx = {
     enable = false;
     recommendedProxySettings = false;
