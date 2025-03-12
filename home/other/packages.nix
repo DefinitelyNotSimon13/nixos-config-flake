@@ -32,6 +32,8 @@ in
       viu
       wev
       zed-editor
+      corefonts
+      vistafonts
       ghostty
       go
       gimp
