@@ -63,6 +63,8 @@ in
       nixfmt-rfc-style
       spotify
       sqlitebrowser
+      pavucontrol
+      brave
       openssl
       pass
       pinentry-tty
