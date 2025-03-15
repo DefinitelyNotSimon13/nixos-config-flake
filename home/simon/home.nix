@@ -32,11 +32,14 @@
     FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";
   };
 
-
   services = {
     dunst = {
       enable = lib.mkDefault true;
     };
+  };
+
+  gtk = {
+    enable = true;
   };
 
   programs = {
