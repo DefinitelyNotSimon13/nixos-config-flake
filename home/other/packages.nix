@@ -38,6 +38,7 @@ in
       go
       gimp
       alsa-lib
+      nodejs
       mesa
       raylib
       chafa
