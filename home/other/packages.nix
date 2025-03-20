@@ -21,69 +21,59 @@ in
     };
 
     home.packages = with pkgs; [
-      cliphist
-      firefox
-      tree-sitter
-      docker-compose
-      gcc
-      prismlauncher
-      nspr
-      gh
-      viu
-      wev
-      zed-editor
-      corefonts
-      vistafonts
-      ghostty
-      go
-      gimp
       alsa-lib
-      nodejs
-      mesa
-      raylib
+      brave
       chafa
-      rustup
+      cliphist
       cmake
-      ueberzugpp
+      docker-compose
+      firefox
+      gcc
+      gh
+      ghostty
+      gimp
       git-credential-manager
       gnumake
       gnupg
+      go
       grim
       hyprcursor
       jetbrains-toolbox
       just
-      kitty
       libreoffice-qt
-      mariadb
-      mycli
+      nautilus
       ncdu
-      azure-cli
-      chromium
       networkmanagerapplet
       nixd
       nixfmt-rfc-style
-      spotify
-      sqlitebrowser
-      pavucontrol
-      brave
+      nodejs
+      nspr
       openssl
       pass
+      pavucontrol
       pinentry-tty
       plantuml
       python3
       ripgrep
+      rustup
       sl
       sops
+      spotify
+      sqlitebrowser
+      tree-sitter
+      ueberzugpp
       viewnior
+      vistafonts
+      viu
       vscode
+      wev
       wget
-      xdg-utils
-      xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+      xdg-utils
       xorg.xrandr
       zathura
       zk
-      nautilus
     ];
 
   };
