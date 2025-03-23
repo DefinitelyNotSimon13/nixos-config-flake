@@ -16,7 +16,7 @@
         ports = [ "8091:8080" ];
       };
       dividi = {
-        image = "definitelynotsimon13/dividi";
+        image = "definitelynotsimon13/dividi:latest";
         ports = [ "8005:8000" ];
       };
     };
