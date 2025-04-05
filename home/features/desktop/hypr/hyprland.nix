@@ -26,8 +26,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = ''
-        windowrule = monitor DP-1, raylib
-        windowrule = move 50% 20%, raylib
+        windowrulev2=noblur,class:^()$,title:^()$
       '';
       settings = {
 

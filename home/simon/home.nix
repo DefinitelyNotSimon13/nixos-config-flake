@@ -32,11 +32,22 @@
     FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";
   };
 
+  home.packages = [
+
+  ];
+  nixpkgs.config = {
+    allowUnfree = true;
+    android_sdk.accept_license = true;
+  };
 
   services = {
     dunst = {
       enable = lib.mkDefault true;
     };
+  };
+
+  gtk = {
+    enable = true;
   };
 
   programs = {

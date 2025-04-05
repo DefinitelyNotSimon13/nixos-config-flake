@@ -15,44 +15,6 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  fonts.packages = with pkgs; [
-    corefonts
-    vistafonts
-  ];
-
-  services.nginx = {
-    enable = false;
-    recommendedProxySettings = false;
-    recommendedTlsSettings = false;
-    virtualHosts."localhost" = {
-      listen = [
-        {
-          addr = "127.0.0.1";
-          port = 80;
-          ssl = false;
-        }
-      ];
-
-      # sslCertificate = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.crt";
-      # sslCertificateKey = "/home/simon/2_Uni/webengineering/project/certs/server_insecure.key";
-
-      root = "/home/simon/2_Uni/webengineering/project/public";
-
-      locations."/" = {
-        index = "index.html";
-        tryFiles = "$uri $uri/ @nodejs";
-      };
-
-      locations."@nodejs" = {
-        proxyPass = "http://localhost:3000";
-        recommendedProxySettings = false;
-      };
-    };
-  };
-  systemd.services.nginx.serviceConfig.ReadWritePaths = [
-    "/var/log/nginx/"
-  ];
-
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   environment.systemPackages = with pkgs; [
@@ -82,10 +44,23 @@
       "com.discordapp.Discord"
     ];
   };
+
   xdg.portal = {
-    wlr.enable = true;
-    config.common.default = "*";
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default = [
+          "hyprland"
+        ];
+        "org.gtk.Settings.FileChooser" = [
+          "gtk"
+        ];
+      };
+    };
   };
 
-  boot.supportedFilesystems = [ "ntfs" ];
 }
