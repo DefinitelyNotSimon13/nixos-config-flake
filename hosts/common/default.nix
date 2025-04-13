@@ -15,13 +15,6 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  services.udev = {
-    enable = true;
-    packages = [
-      pkgs.android-udev-rules
-    ];
-  };
-
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   environment.systemPackages = with pkgs; [
