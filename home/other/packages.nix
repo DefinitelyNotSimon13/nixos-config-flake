@@ -29,6 +29,7 @@ in
       docker-compose
       firefox
       gcc
+      arduino-ide
       gh
       ghostty
       gimp
