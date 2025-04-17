@@ -15,6 +15,7 @@
       "wheel"
       "kvm"
       "networkmanager"
+      "dialout"
       "flatpak"
       "audio"
       "video"
