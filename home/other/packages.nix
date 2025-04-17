@@ -21,6 +21,7 @@ in
     };
 
     home.packages = with pkgs; [
+      custom-udev-rules
       alsa-lib
       brave
       chafa

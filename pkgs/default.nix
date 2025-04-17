@@ -3,4 +3,5 @@
   ...
 }:
 {
+  custom-udev-rules = pkgs.callPackage ./udev { };
 }
