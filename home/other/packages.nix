@@ -29,6 +29,7 @@ in
       docker-compose
       firefox
       gcc
+      python313Packages.pyserial
       arduino-ide
       gh
       ghostty
