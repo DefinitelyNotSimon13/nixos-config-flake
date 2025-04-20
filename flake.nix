@@ -83,7 +83,7 @@
           };
           modules = [
             ./home/simon/nixos-desktop.nix
-            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.catppuccin.homeModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
           ];
         };
@@ -94,7 +94,7 @@
           };
           modules = [
             ./home/simon/nixos-laptop.nix
-            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.catppuccin.homeModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
           ];
         };
@@ -105,7 +105,7 @@
           };
           modules = [
             ./home/simon/windows-desktop.nix
-            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.catppuccin.homeModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
           ];
         };
@@ -116,7 +116,7 @@
           };
           modules = [
             ./home/simon/iso-image.nix
-            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.catppuccin.homeModules.catppuccin
           ];
         };
       };

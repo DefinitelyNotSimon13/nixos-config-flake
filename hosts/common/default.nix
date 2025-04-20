@@ -30,8 +30,11 @@
 
   sopsConfig.enable = lib.mkDefault true;
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
   services.udev.packages = [
-      pkgs.custom-udev-rules
+    pkgs.custom-udev-rules
   ];
 
   services.flatpak = {

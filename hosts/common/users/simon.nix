@@ -20,6 +20,7 @@
       "audio"
       "video"
       "input"
+      "vboxusers"
     ];
     useDefaultShell = true;
     packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
