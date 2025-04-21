@@ -15,6 +15,7 @@
     ./tmux.nix
     ./wallpapers.nix
     ./zathura.nix
+    ./ghostty.nix
   ];
 
   dotfiles = {
@@ -54,6 +55,9 @@
     nvim = {
       enable = lib.mkDefault true;
       symlink = lib.mkDefault true;
+    };
+    ghostty = {
+      enable = lib.mkDefault true;
     };
   };
 
