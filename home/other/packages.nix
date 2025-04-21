@@ -21,8 +21,12 @@ in
     };
 
     home.packages = with pkgs; [
+      # local pkgs
       custom-udev-rules
       direnv-flake
+      note
+
+      # nix-pkgs
       alsa-lib
       brave
       chafa
@@ -31,7 +35,6 @@ in
       docker-compose
       firefox
       gcc
-      python313Packages.pyserial
       arduino-ide
       gh
       ghostty
@@ -77,7 +80,6 @@ in
       xdg-utils
       xorg.xrandr
       zathura
-      zk
     ];
 
   };

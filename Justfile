@@ -2,7 +2,7 @@ default:
     @just --list
 
 rebuild-pre:
-    git add *.nix
+    git add .
 
 package:
     nvim $HOME/dotfiles/nixos/home/other/packages.nix
