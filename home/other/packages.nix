@@ -22,6 +22,7 @@ in
 
     home.packages = with pkgs; [
       custom-udev-rules
+      direnv-flake
       alsa-lib
       brave
       chafa
