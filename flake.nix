@@ -98,13 +98,13 @@
             inputs.sops-nix.homeManagerModules.sops
           ];
         };
-        "simon@windows-desktop" = home-manager.lib.homeManagerConfiguration {
+        "simon@work-desktop" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
             inherit inputs outputs;
           };
           modules = [
-            ./home/simon/windows-desktop.nix
+            ./home/simon/work-desktop.nix
             inputs.catppuccin.homeModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
           ];
