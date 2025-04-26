@@ -25,6 +25,7 @@ in
           "DP-1,/home/simon/Pictures/wallpapers/misc/lonely-fish.png"
           "DP-2,/home/simon/Pictures/wallpapers/misc/lonely-fish.png"
           "DP-3, /home/simon/Pictures/wallpapers/monitor2.jpg"
+          "HDMI-A-1, /home/simon/Pictures/wallpapers/monitor2.jpg"
           "eDP-1,/home/simon/Pictures/wallpapers/misc/lonely-fish.png"
         ];
 
