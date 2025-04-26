@@ -21,6 +21,7 @@ in
           output = [
             "DP-2"
             "DP-3"
+            "HDMI-A-1"
           ];
           position = "bottom";
           margin = "0 0";
