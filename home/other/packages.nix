@@ -25,6 +25,7 @@ in
       custom-udev-rules
       direnv-flake
       note
+      tokenize
 
       # nix-pkgs
       alsa-lib

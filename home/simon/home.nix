@@ -16,7 +16,6 @@
   home.username = "simon";
   home.homeDirectory = "/home/simon";
 
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -31,6 +30,7 @@
 
   home.sessionVariables = {
     FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";
+    NH_FLAKE = "${config.home.homeDirectory}/dotfiles/nixos";
   };
 
   home.packages = [

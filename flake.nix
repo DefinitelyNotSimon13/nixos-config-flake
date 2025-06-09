@@ -21,6 +21,8 @@
       flake = false;
     };
 
+    tokenize.url = "github:DefinitelyNotSimon13/tokenize";
+
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
