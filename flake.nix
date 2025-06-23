@@ -100,13 +100,13 @@
             inputs.sops-nix.homeManagerModules.sops
           ];
         };
-        "simon@work-desktop" = home-manager.lib.homeManagerConfiguration {
+        "simon@blsi153-workstation" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
             inherit inputs outputs;
           };
           modules = [
-            ./home/simon/work-desktop.nix
+            ./home/simon/blsi153-workstation.nix
             inputs.catppuccin.homeModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
           ];

@@ -25,6 +25,12 @@
     dunst = {
       enable = lib.mkDefault true;
     };
+    picom = {
+      enable = lib.mkDefault false;
+    };
+    polybar = {
+      enable = lib.mkDefault false;
+    };
     i3 = {
       enable = lib.mkDefault false;
     };

@@ -64,12 +64,42 @@ in
         grep = "rg";
         find = "fd";
         env = "git clone https://github.com/DefinitelyNotSimon13/direnv-flake . && ./init.sh";
+        ga = "git add";
+        gap = "ga --patch";
+        gb = "git branch";
+        gba = "gb --all";
+        gc = "git commit";
+        gca = "gc --amend --no-edit";
+        gce = "gc --amend";
+        gco = "git checkout";
+        gcl = "git clone --recursive";
+        gd = "git diff --output-indicator-new=\" \" --output-indicator-old=\" \"";
+        gds = "gd --staged";
+        gi = "git init";
+        gl = "git log --graph --all --pretty=format:\"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n\"";
+        gm = "git merge";
+        gn = "git checkout -b"; # new branch
+        gp = "git push";
+        gr = "git reset";
+        gs = "git status --short";
+        gu = "git pull";
       };
 
       initExtra = ''
 
-        export GPG_TTY=$(tty)
         export EDITOR=nvim
+
+        export http_proxy=http://127.0.0.1:3128
+        export https_proxy=$http_proxy
+        export ftp_proxy=$http_proxy
+        export all_proxy=$http_proxy
+        export no_proxy='localhost,127.0.0.1,::1'
+
+        export HTTP_PROXY=$http_proxy
+        export HTTPS_PROXY=$https_proxy
+        export FTP_PROXY=$ftp_proxy
+        export ALL_PROXY=$all_proxy
+        export NO_PROXY=$no_proxy
 
         path+=("$HOME/.config/rofi/bin")
         path+=("$HOME/.scripts/bin")
@@ -84,7 +114,6 @@ in
         plugins = [
           "colored-man-pages"
           "sudo"
-          "git"
           "git-auto-fetch"
           "man"
         ];

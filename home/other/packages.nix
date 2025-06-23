@@ -25,16 +25,28 @@ in
       custom-udev-rules
       direnv-flake
       note
-      tokenize
+      # tokenize
+
+      remmina
+      freerdp
 
       # nix-pkgs
       alsa-lib
       brave
       chafa
       cliphist
+      mprocs
+      xh
       cmake
       docker-compose
       firefox
+      i3lock
+      poppler-utils
+      keepass
+      google-chrome
+      minikube
+      kubectl
+      diff-so-fancy
       gcc
       arduino-ide
       gh
@@ -63,6 +75,7 @@ in
       plantuml
       python3
       ripgrep
+      montserrat
       rustup
       sl
       sops
@@ -73,7 +86,7 @@ in
       viewnior
       vistafonts
       viu
-      vscode
+      zotero
       wev
       wget
       xdg-desktop-portal-gtk
