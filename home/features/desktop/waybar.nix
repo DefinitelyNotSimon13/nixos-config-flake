@@ -19,6 +19,7 @@ in
         second-bar = {
           layer = "top";
           output = [
+            "DP-7"
             "DP-2"
             "DP-3"
             "HDMI-A-1"
@@ -27,13 +28,18 @@ in
           margin = "0 0";
           margin-bottom = 0;
           margin-top = 0;
+          modules-right = [
+          ];
           modules-left = [
+            "clock"
             "hyprland/workspaces"
+            "hyprland/window"
           ];
         };
         mainbar = {
           layer = "top";
           output = [
+            "DP-6"
             "DP-1"
             "eDP-1"
           ];
@@ -52,14 +58,15 @@ in
           modules-center = [ ];
           modules-right = [
             "tray"
+            "group/hardware"
             "pulseaudio"
             "network"
-            "cpu"
             "temperature"
             "memory"
             "battery"
             "backlight"
             "keyboard-state"
+            "hyprland/language"
             "custom/power"
           ];
 
@@ -129,6 +136,7 @@ in
             format = "{}% ";
           };
           "temperature" = {
+            thermal-zone = 1;
             critical-threshold = 80;
             format-critical = "{temperatureC}°C {icon}";
             format = "{icon} {temperatureC}°C";
@@ -212,6 +220,34 @@ in
             format = "{icon} {percent}%";
             format-icons = [ "󰃞" ];
             on-click = "$HOME/.bin/brightness";
+          };
+          "hyprland/language" = {
+            format = "{}";
+            format-en = "AMERICA, FUCK YEAH!";
+            format-de = "de";
+            keyboard-name = "at-translated-set-2-keyboard";
+          };
+          "disk" = {
+            format = "  {free} / {total}";
+            interval = 30;
+          };
+          "group/hardware" = {
+            orientation = "horizontal";
+            click-to-reveal = true;
+            drawer = {
+              transition-duration = 500;
+              children-class = "not-power";
+              transition-left-to-right = false;
+            };
+            modules = [
+              "custom/hardware-group"
+              "disk"
+              "cpu"
+            ];
+          };
+          "custom/hardware-group" = {
+            format = "󰇅 ";
+            tooltip = false;
           };
         };
       };
@@ -308,6 +344,10 @@ in
           #memory,
           #temperature,
           #network,
+          #hardware,
+          #hardware-group,
+          #disk
+          #language,
           #pulseaudio,
           #keyboard-state,
           #mpd,
@@ -317,6 +357,7 @@ in
           font-weight: bold;
           }
 
+          #language,
           #network {
           color: @sky;
           }
@@ -325,6 +366,8 @@ in
           color: @green;
           }
 
+
+          #hardware-group,
           #memory {
           color: @yellow;
           }
@@ -353,6 +396,7 @@ in
           #custom-updates {
           }
 
+          #disk,
           #user {
           color: @green;
           }

@@ -85,7 +85,7 @@ in
         gu = "git pull";
       };
 
-      initExtra = ''
+      initContent = ''
 
         export EDITOR=nvim
 

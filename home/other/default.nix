@@ -5,7 +5,10 @@
   ];
 
   other = {
-    packages.enable = lib.mkDefault true;
+    packages = {
+      enable = lib.mkDefault true;
+      nixOsMode = lib.mkDefault true;
+    };
   };
 
 }

@@ -11,6 +11,10 @@ in
 {
   options.features.desktop.hyprland = {
     enable = mkEnableOption "enables desktop.hyprland";
+    package = mkPackageOption pkgs "hyprland" {
+      example = "pkgs.hyprland";
+      default = pkgs.hyprland;
+    };
   };
 
   config = mkIf cfg.enable {
@@ -25,14 +29,14 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
+      package = cfg.package;
       extraConfig = ''
         windowrulev2=noblur,class:^()$,title:^()$
       '';
       settings = {
-
         cursor = {
+          inactive_timeout = 3;
           no_hardware_cursors = true;
-
         };
 
         xwayland = {
@@ -73,10 +77,6 @@ in
           "col.inactive_border" = lib.mkForce "rgba(595959ff)";
           layout = "dwindle";
           resize_on_border = true;
-        };
-
-        cursor = {
-          inactive_timeout = 3;
         };
 
         decoration = {
