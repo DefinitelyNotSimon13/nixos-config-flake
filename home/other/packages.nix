@@ -39,6 +39,7 @@ in
         chafa
         cliphist
         mprocs
+        vscode
         xh
         cmake
         docker-compose
