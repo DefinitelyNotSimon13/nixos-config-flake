@@ -21,7 +21,10 @@
       flake = false;
     };
 
-    tokenize.url = "github:DefinitelyNotSimon13/tokenize";
+    ownpkgs = {
+      url = "github:DefinitelyNotSimon13/pkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 

@@ -11,10 +11,6 @@ in
 {
   options.features.desktop.hyprland = {
     enable = mkEnableOption "enables desktop.hyprland";
-    package = mkPackageOption pkgs "hyprland" {
-      example = "pkgs.hyprland";
-      default = pkgs.hyprland;
-    };
   };
 
   config = mkIf cfg.enable {
@@ -29,7 +25,6 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
-      package = cfg.package;
       extraConfig = ''
         windowrulev2=noblur,class:^()$,title:^()$
       '';

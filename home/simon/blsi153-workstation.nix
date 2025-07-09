@@ -14,7 +14,6 @@
     theming.catppuccin.enable = false;
     desktop.hyprland = {
       enable = true;
-      package = pkgs.hyprland;
     };
   };
 

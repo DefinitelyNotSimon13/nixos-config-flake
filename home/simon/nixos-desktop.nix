@@ -8,6 +8,8 @@
     ../other
   ];
 
+  other.packages.nixOsMode = true;
+
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
