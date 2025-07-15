@@ -24,62 +24,60 @@ in
     home.packages =
       with pkgs;
       [
-        # local pkgs
+        ###### local pkgs ######
         custom-udev-rules
         direnv-flake
         note
+        docker-clean
         # tokenize
 
-        remmina
-        freerdp
-
-        # nix-pkgs
+        ###### nix-pkgs ######
         alsa-lib
+        arduino-ide
         brave
         chafa
         cliphist
-        mprocs
-        vscode
-        xh
         cmake
+        diff-so-fancy
         docker-compose
         firefox
-        i3lock
-        poppler-utils
-        keepass
-        google-chrome
-        minikube
-        kubectl
-        diff-so-fancy
+        freerdp
         gcc
-        arduino-ide
         gh
         gimp
         git-credential-manager
         gnumake
         gnupg
         go
+        google-chrome
         grim
         hyprcursor
+        i3lock
         jetbrains-toolbox
         just
+        keepass
+        keepass
+        kubectl
         libreoffice-qt
+        minikube
+        montserrat
+        mprocs
         nautilus
         ncdu
         networkmanagerapplet
         nixd
         nixfmt-rfc-style
         nodejs
-
         nspr
         openssl
         pass
         pavucontrol
         pinentry-tty
         plantuml
+        poppler-utils
         python3
+        remmina
         ripgrep
-        montserrat
         rustup
         sl
         sops
@@ -90,14 +88,17 @@ in
         viewnior
         vistafonts
         viu
-        zotero
+        vscode
         wev
         wget
         xdg-desktop-portal-gtk
         xdg-desktop-portal-hyprland
         xdg-utils
+        xh
+        xh
         xorg.xrandr
         zathura
+        zotero
       ]
       ++ optionals config.other.packages.nixOsMode [
         ghostty
