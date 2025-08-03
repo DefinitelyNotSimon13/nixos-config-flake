@@ -25,9 +25,11 @@ in
       custom-udev-rules
       direnv-flake
       note
-      tokenize
+      # tokenize
 
       # nix-pkgs
+      synology-drive-client
+      libreoffice
       alsa-lib
       brave
       chafa
@@ -48,7 +50,6 @@ in
       hyprcursor
       jetbrains-toolbox
       just
-      libreoffice-qt
       nautilus
       ncdu
       networkmanagerapplet
