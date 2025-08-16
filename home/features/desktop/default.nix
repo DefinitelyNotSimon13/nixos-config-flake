@@ -10,8 +10,4 @@
     ./hypr/hyprlock.nix
   ];
 
-  home.packages =
-    with pkgs;
-    [
-    ];
 }

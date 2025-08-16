@@ -29,10 +29,9 @@ in
         windowrulev2=noblur,class:^()$,title:^()$
       '';
       settings = {
-
         cursor = {
+          inactive_timeout = 3;
           no_hardware_cursors = true;
-
         };
 
         xwayland = {
@@ -50,6 +49,8 @@ in
 
         env = [
           "WLR_NO_HARDWARE_CURSORS,1"
+          "LIBVA_DRIVER_NAME,nvidia"
+          "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         ];
 
         input = {
@@ -71,10 +72,6 @@ in
           "col.inactive_border" = lib.mkForce "rgba(595959ff)";
           layout = "dwindle";
           resize_on_border = true;
-        };
-
-        cursor = {
-          inactive_timeout = 3;
         };
 
         decoration = {

@@ -46,6 +46,9 @@ in
           halign = "center";
           valign = "center";
         };
+        auth = {
+          "pam:enabled" = true;
+        };
       };
     };
 

@@ -7,5 +7,6 @@
   custom-udev-rules = pkgs.callPackage ./udev { };
   direnv-flake = pkgs.callPackage ./scripts/direnv-flake.nix { };
   note = pkgs.callPackage ./scripts/note.nix { };
-  tokenize = pkgs.callPackage "${inputs.tokenize}/dist/package.nix" { };
+  tokenize = pkgs.callPackage "${inputs.ownpkgs}/tokenize.nix" { };
+  docker-clean = pkgs.callPackage ./scripts/docker-clean.nix { };
 }

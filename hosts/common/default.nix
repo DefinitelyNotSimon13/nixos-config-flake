@@ -17,6 +17,8 @@
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
+  nixpkgs.config.android_sdk.accept_license = true;
+
   environment.systemPackages = with pkgs; [
     neovim
     git
