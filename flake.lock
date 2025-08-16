@@ -71,7 +71,7 @@
     "flake-utils_2": {
       "inputs": {
         "systems": [
-          "tokenize",
+          "ownpkgs",
           "systems"
         ]
       },
@@ -208,19 +208,25 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "ownpkgs": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems_2"
+      },
       "locked": {
-        "lastModified": 1749401433,
-        "narHash": "sha256-HXIQzULIG/MEUW2Q/Ss47oE3QrjxvpUX7gUl4Xp6lnc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "08fcb0dcb59df0344652b38ea6326a2d8271baff",
+        "lastModified": 1749985517,
+        "narHash": "sha256-j5JPOjN0R6uXWfEOgHaSPEXvDUG/LK1Jnkuk7lswq+8=",
+        "owner": "DefinitelyNotSimon13",
+        "repo": "pkgs",
+        "rev": "a9e6aab8e0c3b72c14502a4ae979d84806f8c467",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
+        "owner": "DefinitelyNotSimon13",
+        "repo": "pkgs",
         "type": "github"
       }
     },
@@ -233,8 +239,8 @@
         "nix-minecraft": "nix-minecraft",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
-        "sops-nix": "sops-nix",
-        "tokenize": "tokenize"
+        "ownpkgs": "ownpkgs",
+        "sops-nix": "sops-nix"
       }
     },
     "sops-nix": {
@@ -284,26 +290,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "tokenize": {
-      "inputs": {
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_4",
-        "systems": "systems_2"
-      },
-      "locked": {
-        "lastModified": 1749982091,
-        "narHash": "sha256-DPZOKE75e2+wqItEPf2hhhPubzFcyJq37sHxL3zbNTc=",
-        "owner": "DefinitelyNotSimon13",
-        "repo": "tokenize",
-        "rev": "65a2bec3d17fa3fb95de9564bb5dbcc9bb34552a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DefinitelyNotSimon13",
-        "repo": "tokenize",
         "type": "github"
       }
     }
