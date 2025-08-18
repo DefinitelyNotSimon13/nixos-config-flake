@@ -34,8 +34,10 @@ in
         };
       })
       (mkIf (cfg.symlink) {
-        ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/tmux";
-        ".tmux/plugins/tpm".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homDirectory/dotfiles/dot-tmux/tpm}";
+        ".config/tmux".source =
+          config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/tmux";
+        ".tmux/plugins/tpm".source =
+          config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dot-tmux/tpm";
       })
     ];
   };

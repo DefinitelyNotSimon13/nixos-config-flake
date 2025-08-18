@@ -29,7 +29,8 @@ in
         };
       })
       (mkIf (cfg.symlink) {
-        ".config/dunst".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dunst";
+        ".config/dunst".source =
+          config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dunst";
       })
     ];
   };

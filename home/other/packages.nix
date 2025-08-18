@@ -51,11 +51,9 @@ in
         gnumake
         gnupg
         go
-        google-chrome
         grim
         hyprcursor
         i3lock
-        jetbrains-toolbox
         just
         keepass
         keepass
@@ -104,6 +102,7 @@ in
       ]
       ++ optionals config.other.packages.nixOsMode [
         ghostty
+        jetbrains-toolbox
       ];
 
   };

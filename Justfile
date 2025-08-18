@@ -16,9 +16,13 @@ rebuild-post:
   git commit -am "Gen: $generation - $date"
   echo "Commited: \"Gen: $generation - $date\""
 
-
 rebuild: rebuild-pre && rebuild-post
+  #!/usr/bin/env bash
+  if [[ $HOST == nix* ]]; then
     nh os switch
+  else
+    nh home switch
+  fi
 
 update-rebuild: update rebuild
 

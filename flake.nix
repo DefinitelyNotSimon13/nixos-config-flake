@@ -114,6 +114,17 @@
             inputs.sops-nix.homeManagerModules.sops
           ];
         };
+        "simon@arch-desktop" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./home/simon/arch-desktop.nix
+            inputs.catppuccin.homeModules.catppuccin
+            inputs.sops-nix.homeManagerModules.sops
+          ];
+        };
         "simon@iso-image" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
