@@ -16,7 +16,7 @@
   };
 
   other.packages.nixOsMode = false;
-
+  other.packages.archMode = true;
 
   home.packages = with pkgs; [
     neovim

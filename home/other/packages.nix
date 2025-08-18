@@ -13,6 +13,7 @@ in
   options.other.packages = {
     enable = mkEnableOption "enables packages";
     nixOsMode = mkEnableOption "running in NixOs mode";
+    archMode = mkEnableOption "running in Arch mode";
   };
 
   config = mkIf cfg.enable {
@@ -103,7 +104,11 @@ in
       ++ optionals config.other.packages.nixOsMode [
         ghostty
         jetbrains-toolbox
-      ];
+      ]
+      ++ optionals config.other.packages.archMode [
+        paru
+      ]
+      ;
 
   };
 }

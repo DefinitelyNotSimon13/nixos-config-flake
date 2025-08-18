@@ -47,7 +47,7 @@
       enable = lib.mkDefault true;
     };
     rofi = {
-      enable = lib.mkDefault true;
+      enable = lib.mkDefault false;
     };
     tmux = {
       enable = lib.mkDefault true;
