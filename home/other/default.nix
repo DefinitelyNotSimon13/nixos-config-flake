@@ -2,6 +2,7 @@
 {
   imports = [
     ./packages.nix
+    ./declair.nix
   ];
 
   other = {
@@ -9,6 +10,9 @@
       enable = lib.mkDefault true;
       nixOsMode = lib.mkDefault true;
       archMode = lib.mkDefault false;
+    };
+    declair = {
+      enable = lib.mkDefault true;
     };
   };
 

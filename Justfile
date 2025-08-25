@@ -28,6 +28,9 @@ rebuild: rebuild-pre && rebuild-post
 
 update-rebuild: update rebuild
 
+declair:
+    ./declair.clj
+
 update:
     nix flake update
 
