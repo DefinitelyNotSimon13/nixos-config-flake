@@ -17,14 +17,7 @@ rebuild-post:
   echo "Commited: \"Gen: $generation - $date\""
 
 rebuild: rebuild-pre && rebuild-post
-  #!/usr/bin/env zsh
-  if [[ $HOST == nixos-* ]]; then
-    echo "Rebuilding OS"
-    nh os switch .
-  else
-    echo "Rebuilding HM"
-    nh home switch .
-  fi
+    nh home switch
 
 update-rebuild: update rebuild
 
