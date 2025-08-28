@@ -90,7 +90,6 @@ in
         viewnior
         vistafonts
         viu
-        vscode
         wev
         wget
         xdg-utils
@@ -108,8 +107,7 @@ in
       ]
       ++ optionals config.other.packages.archMode [
         paru
-      ]
-      ;
+      ];
 
   };
 }
