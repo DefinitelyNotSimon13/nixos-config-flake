@@ -20,10 +20,10 @@ rebuild: rebuild-pre && rebuild-post
   #!/usr/bin/env zsh
   if [[ $HOST == nixos-* ]]; then
     echo "Rebuilding OS"
-    nh os switch
+    nh os switch .
   else
     echo "Rebuilding HM"
-    nh home switch
+    nh home switch .
   fi
 
 update-rebuild: update rebuild

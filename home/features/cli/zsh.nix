@@ -86,6 +86,7 @@ in
       };
 
       initContent = ''
+        export ZSH_DISABLE_COMPFIX=true
 
         export EDITOR=nvim
 

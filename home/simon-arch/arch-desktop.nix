@@ -15,6 +15,7 @@
     };
   };
 
+  
   other.packages.nixOsMode = false;
   other.packages.archMode = true;
 
