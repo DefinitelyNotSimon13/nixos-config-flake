@@ -92,8 +92,6 @@ in
         vscode
         wev
         wget
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-hyprland
         xdg-utils
         xh
         xh
@@ -104,6 +102,8 @@ in
       ++ optionals config.other.packages.nixOsMode [
         ghostty
         jetbrains-toolbox
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
       ]
       ++ optionals config.other.packages.archMode [
         paru
