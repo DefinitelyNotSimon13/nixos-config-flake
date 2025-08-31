@@ -7,10 +7,12 @@
 with lib;
 let
   cfg = config.features.desktop.hyprland;
+  mkIfElse = p: yes: no: mkMerge [ (mkIf p yes) (mkIf (!p) no) ];
 in
 {
   options.features.desktop.hyprland = {
     enable = mkEnableOption "enables desktop.hyprland";
+    packagelessMode = mkEnableOption "dont use a nixpkg";
   };
 
   config = mkIf cfg.enable {
@@ -24,6 +26,11 @@ in
     };
 
     wayland.windowManager.hyprland = {
+      package = mkIfElse cfg.packagelessMode {
+        null
+      } {
+        pkgs.hyprland
+        };
       enable = true;
       extraConfig = ''
         windowrulev2=noblur,class:^()$,title:^()$

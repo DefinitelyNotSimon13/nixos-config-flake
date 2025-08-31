@@ -9,19 +9,26 @@
   ];
 
   features = {
-    theming.catppuccin.enable = false;
     desktop.hyprland = {
       enable = true;
+    };
+    theming = {
+      catppuccin.enable =  false;
+      qt.enable =  false;
+      gtk.enable =  false;
     };
   };
 
   
-  other.packages.nixOsMode = false;
-  other.packages.archMode = true;
+  other = {
+    packages = {
+      enable = false;
+    };
+    declair = {
+      enable = false;
+    };
+  };
 
-  home.packages = with pkgs; [
-    neovim
-  ];
 
   programs.home-manager.enable = true;
 
