@@ -19,7 +19,6 @@ in
     sops.defaultSopsFormat = "yaml";
 
     sops.secrets = {
-      "nordpass/recovery_code" = { };
     };
 
   };

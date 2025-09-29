@@ -33,6 +33,7 @@ in
 
         ###### nix-pkgs ######
         alsa-lib
+        age
         arduino-ide
         brave
         chafa

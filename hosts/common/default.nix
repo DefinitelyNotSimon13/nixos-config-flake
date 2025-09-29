@@ -49,8 +49,6 @@
       }
     ];
     packages = [
-      "io.github.zen_browser.zen"
-      "com.discordapp.Discord"
     ];
   };
 
