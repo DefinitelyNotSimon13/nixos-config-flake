@@ -170,10 +170,10 @@ in
           "$mainMod, SUPER_L, exec, ~/.config/rofi/bin/launcher.sh"
         ];
 
-        gestures = {
-          workspace_swipe = true;
-          workspace_swipe_fingers = 4;
-        };
+        # gestures = {
+        #   workspace_swipe = true;
+        #   workspace_swipe_fingers = 4;
+        # };
 
         misc = {
           disable_hyprland_logo = true;

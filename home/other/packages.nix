@@ -47,6 +47,7 @@ in
         gh
         gimp
         git-credential-manager
+        synology-drive-client
         gnumake
         gnupg
         go
