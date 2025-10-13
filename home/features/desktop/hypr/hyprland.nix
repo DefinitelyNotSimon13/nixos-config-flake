@@ -26,11 +26,12 @@ in
     };
 
     wayland.windowManager.hyprland = {
-      package = mkIfElse cfg.packagelessMode {
-        null
-      } {
-        pkgs.hyprland
-        };
+      package = null;
+      # package = mkIfElse cfg.packagelessMode {
+      #   null
+      # } {
+      #   pkgs.hyprland
+      #   };
       enable = true;
       extraConfig = ''
         windowrulev2=noblur,class:^()$,title:^()$
