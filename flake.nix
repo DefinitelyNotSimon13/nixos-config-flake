@@ -131,7 +131,7 @@
             inherit inputs outputs;
           };
           modules = [
-            ./home/simon-arch/arch-laptop.nix
+            ./home/simon/arch-laptop.nix
             inputs.catppuccin.homeModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
           ];
