@@ -90,6 +90,9 @@ in
 
         export EDITOR=nvim
 
+        export BUN_INSTALL="$HOME/.bun"
+        export PATH="$BUN_INSTALL/bin:$PATH"
+
 
         path+=("$HOME/.config/rofi/bin")
         path+=("$HOME/.scripts/bin")
