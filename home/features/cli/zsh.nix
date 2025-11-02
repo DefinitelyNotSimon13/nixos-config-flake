@@ -83,6 +83,7 @@ in
         gr = "git reset";
         gs = "git status --short";
         gu = "git pull";
+        view = "kitty +kitten icat";
       };
 
       initContent = ''
