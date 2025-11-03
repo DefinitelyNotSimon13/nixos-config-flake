@@ -1,9 +1,4 @@
-{ ... }:
-{
-  imports = [
-    ./qt.nix
-    ./gtk.nix
-    ./catppuccin.nix
-  ];
+{ ... }: {
+  imports = [ ./qt.nix ./gtk.nix ./stylix.nix ];
 
 }

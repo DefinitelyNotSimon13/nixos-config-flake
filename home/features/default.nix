@@ -1,15 +1,9 @@
 { lib, ... }:
-with lib;
-{
-  imports = [
-    ./cli
-    ./desktop
-    ./theming
-    ./gaming
-  ];
+with lib; {
+  imports = [ ./cli ./desktop ./theming ./gaming ];
 
   features = {
-    
+
     cli = {
       zsh.enable = mkDefault true;
       neofetch.enable = mkDefault true;
@@ -28,9 +22,9 @@ with lib;
     };
 
     theming = {
-      catppuccin.enable = mkDefault true;
       qt.enable = mkDefault true;
       gtk.enable = mkDefault true;
+      stylix.enable = mkDefault true;
     };
 
   };

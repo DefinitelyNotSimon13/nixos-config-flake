@@ -1,18 +1,7 @@
-{
-  config,
-  pkgs,
-  inputs,
-  lib,
-  ...
-}:
-{
-  imports = [
-    ../common
-    inputs.catppuccin.homeModules.catppuccin
-  ];
+{ config, pkgs, inputs, lib, ... }: {
+  imports = [ ../common ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-
   home.username = "simon-arch";
   home.homeDirectory = "/home/simon-arch";
 
@@ -41,21 +30,13 @@
     android_sdk.accept_license = true;
   };
 
-  services = {
-    dunst = {
-      enable = lib.mkDefault true;
-    };
-  };
+  services = { dunst = { enable = lib.mkDefault true; }; };
 
-  gtk = {
-    enable = true;
-  };
+  gtk = { enable = true; };
 
   programs = {
     # Let Home Manager install and manage itself.
-    home-manager = {
-      enable = lib.mkDefault true;
-    };
+    home-manager = { enable = lib.mkDefault true; };
 
     direnv = {
       enable = lib.mkDefault true;
@@ -63,9 +44,7 @@
       nix-direnv.enable = lib.mkDefault true;
     };
 
-    lazygit = {
-      enable = lib.mkDefault true;
-    };
+    lazygit = { enable = lib.mkDefault true; };
 
   };
 

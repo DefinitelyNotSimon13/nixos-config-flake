@@ -37,6 +37,7 @@ in
         age
         arduino-ide
         brave
+        nixd
         chafa
         cliphist
         cmake

@@ -1,43 +1,21 @@
-{ pkgs, ... }:
-{
-  imports = [
-    ./home.nix
-    ../dotfiles
-    ../common
-    ../features
-    ../other
-  ];
+{ pkgs, ... }: {
+  imports = [ ./home.nix ../dotfiles ../common ../features ../other ];
 
   features = {
-    desktop.hyprland = {
-      enable = true;
-    };
-    theming = {
-      catppuccin.enable =  false;
-      qt.enable =  false;
-      gtk.enable =  false;
-    };
+    desktop.hyprland = { enable = true; };
+    theming = { };
   };
 
-  
   other = {
-    packages = {
-      enable = false;
-    };
-    declair = {
-      enable = false;
-    };
+    packages = { enable = false; };
+    declair = { enable = false; };
   };
-
 
   programs.home-manager.enable = true;
 
   wayland.windowManager.hyprland = {
     settings = {
-      monitor = [
-        "eDP-1, preferred, auto, 1.2"
-        ", preferred, auto, 1"
-      ];
+      monitor = [ "eDP-1, preferred, auto, 1.2" ", preferred, auto, 1" ];
 
       workspace = [
         "1, monitor:eDP-1, default:true"

@@ -1,34 +1,12 @@
-{ pkgs, ... }:
-{
-  imports = [
-    ./home.nix
-    ../dotfiles
-    ../common
-    ../features
-    ../other
-  ];
+{ pkgs, ... }: {
+  imports = [ ./home.nix ../dotfiles ../common ../features ../other ];
 
-  features = {
-    desktop.hyprland = {
-      enable = true;
-    };
-    theming = {
-      catppuccin.enable =  false;
-      qt.enable =  false;
-      gtk.enable =  false;
-    };
-  };
+  features = { desktop.hyprland = { enable = true; }; };
 
-  
   other = {
-    packages = {
-      enable = false;
-    };
-    declair = {
-      enable = false;
-    };
+    packages = { enable = false; };
+    declair = { enable = false; };
   };
-
 
   programs.home-manager.enable = true;
 

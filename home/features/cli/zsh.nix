@@ -1,14 +1,7 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ pkgs, lib, config, ... }:
 with lib;
-let
-  cfg = config.features.cli.zsh;
-in
-{
+let cfg = config.features.cli.zsh;
+in {
   options.features.cli.zsh = {
     enable = mkEnableOption "enables extended zsh configuration";
   };
@@ -30,9 +23,7 @@ in
         ignoreSpace = true;
       };
 
-      historySubstringSearch = {
-        enable = true;
-      };
+      historySubstringSearch = { enable = true; };
 
       sessionVariables = {
         ZOXIDE_CMD_OVERRIDE = "cd";
@@ -59,11 +50,12 @@ in
         tx = "tmuxinator";
         killme = "shutdown now";
         uvenv = "source .venv/bin/activate";
-        neorg = "nvim -c \"Neorg workspace notes\"";
+        neorg = ''nvim -c "Neorg workspace notes"'';
         z = "zathura";
         grep = "rg";
         find = "fd";
-        env = "git clone https://github.com/DefinitelyNotSimon13/direnv-flake . && ./init.sh";
+        env =
+          "git clone https://github.com/DefinitelyNotSimon13/direnv-flake . && ./init.sh";
         ga = "git add";
         gap = "ga --patch";
         gb = "git branch";
@@ -73,10 +65,11 @@ in
         gce = "gc --amend";
         gco = "git checkout";
         gcl = "git clone --recursive";
-        gd = "git diff --output-indicator-new=\" \" --output-indicator-old=\" \"";
+        gd = ''git diff --output-indicator-new=" " --output-indicator-old=" "'';
         gds = "gd --staged";
         gi = "git init";
-        gl = "git log --graph --all --pretty=format:\"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n\"";
+        gl = ''
+          git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'';
         gm = "git merge";
         gn = "git checkout -b"; # new branch
         gp = "git push";
@@ -101,16 +94,12 @@ in
         path+=("$HOME/.cargo/bin")
         path+=("$HOME/dotfiles/nixos/bin")
         path+=("$HOME/go/bin")
+        path+=("$HOME/.ghcup/bin")
       '';
 
       oh-my-zsh = {
         enable = true;
-        plugins = [
-          "colored-man-pages"
-          "sudo"
-          "git-auto-fetch"
-          "man"
-        ];
+        plugins = [ "colored-man-pages" "sudo" "git-auto-fetch" "man" ];
         extraConfig = ''
           zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
           zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
