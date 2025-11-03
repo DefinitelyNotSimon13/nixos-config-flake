@@ -62,7 +62,7 @@ in
         ];
 
         input = {
-          kb_layout = "de";
+          kb_layout = "de-latin1";
           kb_variant = "";
           kb_model = "";
           kb_rules = "";

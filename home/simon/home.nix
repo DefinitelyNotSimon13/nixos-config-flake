@@ -1,5 +1,5 @@
 { config, pkgs, inputs, lib, ... }: {
-  imports = [ ../common inputs.stylix.homeModules.stylix ];
+  imports = [ ../common ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
