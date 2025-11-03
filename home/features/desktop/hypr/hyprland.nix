@@ -62,8 +62,8 @@ in
         ];
 
         input = {
-          kb_layout = "de-latin1";
-          kb_variant = "";
+          kb_layout = "de";
+            kb_variant = "latin1";
           kb_model = "";
           kb_rules = "";
           kb_options = "caps:swapescape";
