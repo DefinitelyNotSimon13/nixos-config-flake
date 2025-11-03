@@ -63,9 +63,6 @@ in
 
         input = {
           kb_layout = "de";
-            kb_variant = "latin1";
-          kb_model = "";
-          kb_rules = "";
           kb_options = "caps:swapescape";
           follow_mouse = 1;
           touchpad.natural_scroll = true;
