@@ -46,7 +46,7 @@ in
           force_zero_scaling = true;
         };
         exec-once = [
-          "waybar"
+          "quickshell"
           "dunst"
           "hypridle"
           "hyprpaper"
