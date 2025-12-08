@@ -57,8 +57,6 @@ in
 
         env = [
           "WLR_NO_HARDWARE_CURSORS,1"
-          "LIBVA_DRIVER_NAME,nvidia"
-          "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         ];
 
         input = {
@@ -71,7 +69,7 @@ in
 
         general = {
           gaps_in = 0;
-          gaps_out = 0;
+          gaps_out = 2;
           border_size = 2;
           "col.active_border" = lib.mkForce "rgba(fab387ff)";
           "col.inactive_border" = lib.mkForce "rgba(595959ff)";
