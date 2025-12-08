@@ -69,8 +69,8 @@ in
 
         general = {
           gaps_in = 0;
-          gaps_out = 1;
-          border_size = 1;
+          gaps_out = 5;
+          border_size = 5;
           "col.active_border" = lib.mkForce "rgba(fab387ff)";
           "col.inactive_border" = lib.mkForce "rgba(595959ff)";
           layout = "dwindle";
