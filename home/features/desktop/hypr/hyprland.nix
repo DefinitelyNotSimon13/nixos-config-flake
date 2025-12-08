@@ -156,14 +156,12 @@ in
           "$mainMod SHIFT, left, resizeactive, -10 0"
           "$mainMod SHIFT, up, resizeactive, 0 -10"
           "$mainMod SHIFT, down, resizeactive, 0 10"
-          ", code:123, exec, playerctl volume 0.1+"
           "$mainMod, code:123, exec, playerctl volume 1"
-          ", code:122, exec, playerctl volume 0.1-"
-          ", code:121, exec, playerctl volume 0"
-          ", code:172, exec, playerctl play-pause"
-          ", code:171, exec, playerctl next"
-          ", code:173, exec, playerctl previous"
-          ", code:174, exec, playerctl shuffle Toggle"
+
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
         ];
 
         bindm = [
