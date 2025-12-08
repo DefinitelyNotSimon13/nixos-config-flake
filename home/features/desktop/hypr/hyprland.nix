@@ -80,7 +80,7 @@ in
         decoration = {
           rounding = 0;
           blur = {
-            enabled = true;
+            enabled = false;
             size = 8;
             passes = 3;
             new_optimizations = true;
