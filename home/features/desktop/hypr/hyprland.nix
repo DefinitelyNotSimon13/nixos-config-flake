@@ -70,9 +70,9 @@ in
         };
 
         general = {
-          gaps_in = 2;
-          gaps_out = 0;
-          border_size = 2;
+          gaps_in = 10;
+          gaps_out = 10;
+          border_size = 4;
           "col.active_border" = lib.mkForce "rgba(fab387ff)";
           "col.inactive_border" = lib.mkForce "rgba(595959ff)";
           layout = "dwindle";
@@ -80,9 +80,9 @@ in
         };
 
         decoration = {
-          rounding = 10;
+          rounding = 20;
           blur = {
-            enabled = true;
+            enabled = false;
             size = 8;
             passes = 3;
             new_optimizations = true;
