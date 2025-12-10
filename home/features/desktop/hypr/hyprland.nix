@@ -70,9 +70,11 @@ in
         };
 
         general = {
+          allow_tearing = false;
+          gaps_workspaces = 20;
           gaps_in = 10;
-          gaps_out = 10;
-          border_size = 4;
+          gaps_out = 40;
+          border_size = 3;
           "col.active_border" = lib.mkForce "rgba(fab387ff)";
           "col.inactive_border" = lib.mkForce "rgba(595959ff)";
           layout = "dwindle";
@@ -82,7 +84,7 @@ in
         decoration = {
           rounding = 20;
           blur = {
-            enabled = false;
+            enabled = true;
             size = 8;
             passes = 3;
             new_optimizations = true;
@@ -163,6 +165,7 @@ in
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           ", XF86MonBrightnessUp, exec, brightnessctl --class=backlight set +5%"
           ", XF86MonBrightnessDown, exec, brightnessctl --class=backlight set 5%-"
+          ", XF86AudioPlay, exec, playerctl play-pause"
 
         ];
 
