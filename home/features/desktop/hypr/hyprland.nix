@@ -72,7 +72,7 @@ in
         general = {
           allow_tearing = false;
           gaps_workspaces = 20;
-          gaps_in = 10;
+          gaps_in = 5;
           gaps_out = 40;
           border_size = 3;
           "col.active_border" = lib.mkForce "rgba(fab387ff)";
