@@ -71,10 +71,10 @@ in
 
         general = {
           allow_tearing = false;
-          gaps_workspaces = 20;
-          gaps_in = 5;
-          gaps_out = 40;
-          border_size = 3;
+          gaps_workspaces =0;
+          gaps_in = 0;
+          gaps_out = 0;
+          border_size = 2;
           "col.active_border" = lib.mkForce "rgba(fab387ff)";
           "col.inactive_border" = lib.mkForce "rgba(595959ff)";
           layout = "dwindle";
@@ -82,7 +82,7 @@ in
         };
 
         decoration = {
-          rounding = 20;
+          rounding = 0;
           blur = {
             enabled = true;
             size = 8;
