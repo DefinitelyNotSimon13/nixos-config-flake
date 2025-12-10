@@ -70,7 +70,7 @@ in
         };
 
         general = {
-          gaps_in = 0;
+          gaps_in = 2;
           gaps_out = 0;
           border_size = 2;
           "col.active_border" = lib.mkForce "rgba(fab387ff)";
@@ -80,7 +80,7 @@ in
         };
 
         decoration = {
-          rounding = 0;
+          rounding = 10;
           blur = {
             enabled = true;
             size = 8;
