@@ -83,6 +83,7 @@ in {
         export ZSH_DISABLE_COMPFIX=true
 
         export EDITOR=nvim
+        export MANPAGER="nvim +Man\!"
 
         export BUN_INSTALL="$HOME/.bun"
         export PATH="$BUN_INSTALL/bin:$PATH"
