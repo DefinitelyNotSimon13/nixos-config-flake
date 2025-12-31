@@ -89,10 +89,6 @@ in {
         export GPG_TTY=$(tty)
       else
         export GPG_TTY="$TTY"
-      fi   if [ -n "$TTY" ]; then
-        export GPG_TTY=$(tty)
-      else
-        export GPG_TTY="$TTY"
       fi
 
         path+=("$HOME/.bun/bin")
