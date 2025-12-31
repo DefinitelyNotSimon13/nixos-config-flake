@@ -14,6 +14,9 @@
     declair = {
       enable = lib.mkDefault true;
     };
+
   };
+
+xdg.portal.config.common.default = "*";
 
 }

@@ -28,6 +28,7 @@ in {
       sessionVariables = {
         ZOXIDE_CMD_OVERRIDE = "cd";
         HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND = "bold";
+        EDITOR = "nvim";
       };
 
       shellAliases = {
@@ -77,17 +78,11 @@ in {
         gs = "git status --short";
         gu = "git pull";
         view = "kitty +kitten icat";
+        open = "xdg-open";
       };
 
       initContent = ''
-        export ZSH_DISABLE_COMPFIX=true
-
-        export EDITOR=nvim
-
-        export BUN_INSTALL="$HOME/.bun"
-        export PATH="$BUN_INSTALL/bin:$PATH"
-
-
+        path+=("$HOME/.bun/bin")
         path+=("$HOME/.config/rofi/bin")
         path+=("$HOME/.scripts/bin")
         path+=("$HOME/.bin")
@@ -95,7 +90,49 @@ in {
         path+=("$HOME/dotfiles/nixos/bin")
         path+=("$HOME/go/bin")
         path+=("$HOME/.ghcup/bin")
-      '';
+
+        alias -s md="bat"
+        alias -s png="open"
+        alias -s jpeg="open"
+        alias -s jpg="open"
+        alias -s mp4="open"
+        alias -s json="jless"
+        alias -s yaml="bat -l yaml"
+        alias -s html="open"
+
+        autoload -Uz edit-command-line
+        zle -N edit-command-line
+        bindkey '^X^E' edit-command-line
+
+        copy-command() {
+          echo -n $BUFFER | wl-copy
+          zle -M "Copied to clipboard"
+        }
+        zle -N copy-command
+        bindkey '^Xc' copy-command
+
+        bindkey ' ' magic-space
+
+        autoload -Uz zmv
+
+        hash -d dl=$HOME/Downloads
+        hash -d dot=$HOME/dotfiles
+        hash -d nix=$HOME/dotfiles/nixos
+
+        bindkey -s '^Xgc' 'git commit -m ""\C-b'
+
+        bindkey -s '^Xgp' 'git push origin '
+        bindkey -s '^Xgs' 'git status\n'
+        bindkey -s '^Xgl' 'git log --oneline -n 10\n'
+	'';
+
+      shellGlobalAliases = {
+        NE = "2>/dev/null";
+        ND = ">/dev/null";
+        NUL = ">/dev/null 2>1";
+        JQ = "| jq";
+        C = "| wl-copy";
+      };
 
       oh-my-zsh = {
         enable = true;
