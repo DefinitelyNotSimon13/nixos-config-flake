@@ -108,10 +108,11 @@ in {
         alias -s json="jless"
         alias -s yaml="bat -l yaml"
         alias -s html="open"
+        alias -s pdf="open"
 
         autoload -Uz edit-command-line
         zle -N edit-command-line
-        bindkey '^X^E' edit-command-line
+        bindkey '^Xe' edit-command-line
 
         copy-command() {
           echo -n $BUFFER | wl-copy
