@@ -53,6 +53,7 @@ in
           "wl-paste --watch cliphist store"
           "hyprctl setcursor catppuccin-mocha-dark-cursors 24"
           "goxlr-daemon"
+          "ibus start --type wayland"
         ];
 
         env = [
