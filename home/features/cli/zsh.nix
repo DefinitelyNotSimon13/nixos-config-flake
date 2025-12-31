@@ -15,6 +15,7 @@ in {
       autocd = true;
 
       history = {
+        size = 10000;
         share = true;
         append = true;
         extended = true;
@@ -43,7 +44,7 @@ in {
         lla = "eza --long --all --icons --group-directories-first";
         cat = "bat";
         zz = "cd -";
-        lg = "lazygit";
+        # lg = "lazygit";
         ":q" = "exit";
         cl = "clear";
         c = "clear";
@@ -82,6 +83,18 @@ in {
       };
 
       initContent = ''
+      ZSH_DISABLE_COMPFIX=true
+
+      if [ -n "$TTY" ]; then
+        export GPG_TTY=$(tty)
+      else
+        export GPG_TTY="$TTY"
+      fi   if [ -n "$TTY" ]; then
+        export GPG_TTY=$(tty)
+      else
+        export GPG_TTY="$TTY"
+      fi
+
         path+=("$HOME/.bun/bin")
         path+=("$HOME/.config/rofi/bin")
         path+=("$HOME/.scripts/bin")
@@ -147,6 +160,11 @@ in {
       };
 
       plugins = [
+        {
+          name = "zsh-completions";
+          src = pkgs.zsh-completions;
+          file = "share/zsh-completions/zsh-completions.zsh";
+        }
         {
           name = "zsh-autopair";
           src = pkgs.fetchFromGitHub {
