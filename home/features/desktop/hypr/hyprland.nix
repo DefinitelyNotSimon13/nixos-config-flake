@@ -69,6 +69,8 @@ in
         };
 
         general = {
+          allow_tearing = false;
+          gaps_workspaces =0;
           gaps_in = 0;
           gaps_out = 0;
           border_size = 2;
@@ -160,8 +162,12 @@ in
           ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
           ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-          ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
-          ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+          ", XF86MonBrightnessUp, exec, brightnessctl --class=backlight set +5%"
+          ", XF86MonBrightnessDown, exec, brightnessctl --class=backlight set 5%-"
+          ", XF86AudioPlay, exec, playerctl play-pause"
+          ", XF86AudioStop, exec, playerctl stop"
+          ", XF86AudioNext, exec, playerctl next"
+          ", XF86AudioPrev, exec, playerctl previous"
 
         ];
 
@@ -171,7 +177,7 @@ in
         ];
 
         bindr = [
-          "$mainMod, SUPER_L, exec, ~/.config/rofi/bin/launcher.sh"
+          "$mainMod, SUPER_L, exec, fuzzel"
         ];
 
         # gestures = {

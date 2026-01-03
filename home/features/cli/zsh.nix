@@ -83,7 +83,13 @@ in {
       };
 
       initContent = ''
-      ZSH_DISABLE_COMPFIX=true
+        export ZSH_DISABLE_COMPFIX=true
+
+        export EDITOR=nvim
+        export MANPAGER="nvim +Man\!"
+
+        export BUN_INSTALL="$HOME/.bun"
+        export PATH="$BUN_INSTALL/bin:$PATH"
 
       if [ -n "$TTY" ]; then
         export GPG_TTY=$(tty)
