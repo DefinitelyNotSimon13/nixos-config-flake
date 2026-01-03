@@ -35,6 +35,34 @@ in
       enable = true;
       extraConfig = ''
         windowrulev2=noblur,class:^()$,title:^()$
+windowrulev2 = tile, class:^(org\.wezfurlong\.wezterm)$
+
+windowrulev2 = rounding 12, class:^(org\.gnome\.)
+windowrulev2 = noborder, class:^(org\.gnome\.)
+
+windowrulev2 = tile, class:^(gnome-control-center)$
+windowrulev2 = tile, class:^(pavucontrol)$
+windowrulev2 = tile, class:^(nm-connection-editor)$
+
+windowrulev2 = float, class:^(gnome-calculator)$
+windowrulev2 = float, class:^(galculator)$
+windowrulev2 = float, class:^(blueman-manager)$
+windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
+windowrulev2 = float, class:^(steam)$
+windowrulev2 = float, class:^(xdg-desktop-portal)$
+
+windowrulev2 = noborder, class:^(org\.wezfurlong\.wezterm)$
+windowrulev2 = noborder, class:^(Alacritty)$
+windowrulev2 = noborder, class:^(zen)$
+windowrulev2 = noborder, class:^(com\.mitchellh\.ghostty)$
+windowrulev2 = noborder, class:^(kitty)$
+
+windowrulev2 = float, class:^(firefox)$, title:^(Picture-in-Picture)$
+windowrulev2 = float, class:^(zoom)$
+
+# DMS windows floating by default
+windowrulev2 = float, class:^(org.quickshell)$
+windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
       '';
       settings = {
         cursor = {
@@ -72,27 +100,45 @@ in
         general = {
           allow_tearing = false;
           gaps_workspaces =0;
-          gaps_in = 0;
-          gaps_out = 0;
+          gaps_in = 5;
+          gaps_out = 5;
           border_size = 2;
-          "col.active_border" = lib.mkForce "rgba(fab387ff)";
-          "col.inactive_border" = lib.mkForce "rgba(595959ff)";
+          "col.active_border" = lib.mkForce "rgba(707070ff)";
+          "col.inactive_border" = lib.mkForce "rgba(d0d0d0ff)";
           layout = "dwindle";
           resize_on_border = true;
         };
 
         decoration = {
-          rounding = 0;
+          rounding = 12;
+          active_opacity = 1.0;
+          inactive_opacity = 0.9;
           blur = {
             enabled = false;
             size = 8;
             passes = 3;
             new_optimizations = true;
           };
+
+    shadow = {
+        enabled = true;
+        range = 30;
+        render_power = 5;
+        offset = "0 5";
+        color = lib.mkForce "rgba(00000070)";
+    };
         };
 
         animations = {
-          enabled = false;
+    enabled = true;
+    animation = [
+            "windowsIn, 1, 3, default"
+           "windowsOut, 1, 3, default"
+           "workspaces, 1, 5, default"
+           "windowsMove, 1, 4, default"
+           "fade, 1, 3, default"
+           "border, 1, 3, default"
+          ];
         };
 
         dwindle = {
@@ -190,7 +236,7 @@ in
           disable_hyprland_logo = true;
           disable_splash_rendering = true;
           focus_on_activate = true;
-          new_window_takes_over_fullscreen = 2;
+          vrr = 1;
         };
 
       };
