@@ -44,7 +44,6 @@ in {
         lla = "eza --long --all --icons --group-directories-first";
         cat = "bat";
         zz = "cd -";
-        # lg = "lazygit";
         ":q" = "exit";
         cl = "clear";
         c = "clear";
