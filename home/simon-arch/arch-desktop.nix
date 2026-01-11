@@ -3,6 +3,8 @@
 
   features = { desktop.hyprland = { enable = true; }; };
 
+  home.packages = with pkgs; [ nixd brave ];
+
   other = {
     packages = { enable = false; };
     declair = { enable = false; };

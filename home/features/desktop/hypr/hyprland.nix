@@ -81,8 +81,9 @@ windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
           "wl-paste --watch cliphist store"
           "hyprctl setcursor catppuccin-mocha-dark-cursors 24"
           "GTK_IM_MODULE=simple nixGL ghostty"
-          # "goxlr-daemon"
-          # "ibus start --type wayland"
+          "goxlr-daemon"
+          "ibus start --type wayland"
+          "udiskie"
         ];
 
         env = [
@@ -103,8 +104,8 @@ windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
           gaps_in = 5;
           gaps_out = 5;
           border_size = 2;
-          "col.active_border" = lib.mkForce "rgba(707070ff)";
-          "col.inactive_border" = lib.mkForce "rgba(d0d0d0ff)";
+          "col.inactive_border" = lib.mkForce "rgba(707070ff)";
+          "col.active_border" = lib.mkForce "rgba(d0d0d0ff)";
           layout = "dwindle";
           resize_on_border = true;
         };
