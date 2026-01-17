@@ -33,6 +33,8 @@ in
         # tokenize
 
         ###### nix-pkgs ######
+        bat
+        ghostty
         alsa-lib
         age
         arduino-ide
@@ -49,7 +51,6 @@ in
         gh
         gimp
         git-credential-manager
-        synology-drive-client
         gnumake
         gnupg
         go
@@ -88,7 +89,7 @@ in
         tree-sitter
         ueberzugpp
         viewnior
-        vistafonts
+        vista-fonts
         viu
         wev
         wget

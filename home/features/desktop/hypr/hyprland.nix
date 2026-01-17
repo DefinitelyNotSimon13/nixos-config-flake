@@ -52,8 +52,9 @@ in
           "hyprpaper"
           "wl-paste --watch cliphist store"
           "hyprctl setcursor catppuccin-mocha-dark-cursors 24"
-          "goxlr-daemon"
-          "ibus start --type wayland"
+          "GTK_IM_MODULE=simple nixGL ghostty"
+          # "goxlr-daemon"
+          # "ibus start --type wayland"
         ];
 
         env = [
@@ -104,7 +105,7 @@ in
         "$mainMod" = "SUPER";
 
         bind = [
-          "$mainMod, RETURN, exec, ghostty"
+          "$mainMod, RETURN, exec, ghostty +new-window"
           "$mainMod SHIFT, RETURN, exec, alacritty -e tmux"
           "$mainMod, Q, exec, io.github.zen_browser.zen"
           "$mainMod, C, killactive,"

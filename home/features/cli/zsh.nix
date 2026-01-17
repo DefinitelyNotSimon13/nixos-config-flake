@@ -1,14 +1,7 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ pkgs, lib, config, ... }:
 with lib;
-let
-  cfg = config.features.cli.zsh;
-in
-{
+let cfg = config.features.cli.zsh;
+in {
   options.features.cli.zsh = {
     enable = mkEnableOption "enables extended zsh configuration";
   };
@@ -31,9 +24,7 @@ in
         ignoreSpace = true;
       };
 
-      historySubstringSearch = {
-        enable = true;
-      };
+      historySubstringSearch = { enable = true; };
 
       sessionVariables = {
         ZOXIDE_CMD_OVERRIDE = "cd";
@@ -65,7 +56,8 @@ in
         z = "zathura";
         grep = "rg";
         find = "fd";
-        env = "git clone https://github.com/DefinitelyNotSimon13/direnv-flake . && ./init.sh";
+        env =
+          "git clone https://github.com/DefinitelyNotSimon13/direnv-flake . && ./init.sh";
         ga = "git add";
         gap = "ga --patch";
         gb = "git branch";
@@ -78,7 +70,8 @@ in
         gd = ''git diff --output-indicator-new=" " --output-indicator-old=" "'';
         gds = "gd --staged";
         gi = "git init";
-        gl = ''git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'';
+        gl = ''
+          git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'';
         gm = "git merge";
         gn = "git checkout -b"; # new branch
         gp = "git push";
@@ -89,76 +82,97 @@ in
         open = "xdg-open";
       };
 
-      initContent = ''
-                export ZSH_DISABLE_COMPFIX=true
+      initContent = # bash
+        ''
+            export ZSH_DISABLE_COMPFIX=true
 
-                export EDITOR=nvim
-                export MANPAGER="nvim +Man\!"
+            export EDITOR=nvim
+            export MANPAGER="nvim +Man\!"
 
-                export BUN_INSTALL="$HOME/.bun"
-                export PATH="$BUN_INSTALL/bin:$PATH"
-                export http_proxy=http://127.0.0.1:3128
-                export https_proxy=$http_proxy
-                export ftp_proxy=$http_proxy
-                export all_proxy=$http_proxy
-                export no_proxy='localhost,127.0.0.1,::1'
+            export BUN_INSTALL="$HOME/.bun"
+            export PATH="$BUN_INSTALL/bin:$PATH"
+            export http_proxy=http://127.0.0.1:3128
+            export https_proxy=$http_proxy
+            export ftp_proxy=$http_proxy
+            export all_proxy=$http_proxy
+            export no_proxy='localhost,127.0.0.1,::1,*.local,10.*,harbor.local'
 
-                export HTTP_PROXY=$http_proxy
-                export HTTPS_PROXY=$https_proxy
-                export FTP_PROXY=$ftp_proxy
-                export ALL_PROXY=$all_proxy
-                export NO_PROXY=$no_proxy
+            export HTTP_PROXY=$http_proxy
+            export HTTPS_PROXY=$https_proxy
+            export FTP_PROXY=$ftp_proxy
+            export ALL_PROXY=$all_proxy
+            export NO_PROXY=$no_proxy
 
-              if [ -n "$TTY" ]; then
-                export GPG_TTY=$(tty)
+            if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+
+            if [ -n "$TTY" ]; then
+              export GPG_TTY=$(tty)
+            else
+              export GPG_TTY="$TTY"
+            fi
+
+            path+=("$HOME/.bun/bin")
+            path+=("$HOME/.config/rofi/bin")
+            path+=("$HOME/.scripts/bin")
+            path+=("$HOME/.bin")
+            path+=("$HOME/.cargo/bin")
+            path+=("$HOME/dotfiles/nixos/bin")
+            path+=("$HOME/go/bin")
+            path+=("$HOME/.ghcup/bin")
+            path+=("$HOME/.local/bin")
+            path+=("/home/simon/.opencode/bin")
+
+            alias -s md="bat"
+            alias -s png="open"
+            alias -s jpeg="open"
+            alias -s jpg="open"
+            alias -s mp4="open"
+            alias -s json="jless"
+            alias -s yaml="bat -l yaml"
+            alias -s html="open"
+            alias -s pdf="open"
+
+            autoload -Uz edit-command-line
+            zle -N edit-command-line
+            bindkey '^Xe' edit-command-line
+
+            copy-command() {
+              echo -n $BUFFER | wl-copy
+              zle -M "Copied to clipboard"
+            }
+            zle -N copy-command
+            bindkey '^Xc' copy-command
+
+            bindkey ' ' magic-space
+
+            autoload -Uz zmv
+
+            hash -d dl=$HOME/Downloads
+            hash -d dot=$HOME/dotfiles
+            hash -d nix=$HOME/dotfiles/nixos
+
+            bindkey -s '^Xgc' 'git commit -m ""\C-b'
+
+            bindkey -s '^Xgp' 'git push origin '
+            bindkey -s '^Xgs' 'git status\n'
+            bindkey -s '^Xgl' 'git log --oneline -n 10\n'
+
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+            nvim() {
+              if [ $# -eq 0 ]; then
+                local file=$(fzf)
+                if [ -n "$file" ]; then
+                  command nvim "$file"
+                fi
               else
-                export GPG_TTY="$TTY"
+                command nvim "$@"
               fi
+            }
 
-                path+=("$HOME/.bun/bin")
-                path+=("$HOME/.config/rofi/bin")
-                path+=("$HOME/.scripts/bin")
-                path+=("$HOME/.bin")
-                path+=("$HOME/.cargo/bin")
-                path+=("$HOME/dotfiles/nixos/bin")
-                path+=("$HOME/go/bin")
-                path+=("$HOME/.ghcup/bin")
-
-                alias -s md="bat"
-                alias -s png="open"
-                alias -s jpeg="open"
-                alias -s jpg="open"
-                alias -s mp4="open"
-                alias -s json="jless"
-                alias -s yaml="bat -l yaml"
-                alias -s html="open"
-                alias -s pdf="open"
-
-                autoload -Uz edit-command-line
-                zle -N edit-command-line
-                bindkey '^Xe' edit-command-line
-
-                copy-command() {
-                  echo -n $BUFFER | wl-copy
-                  zle -M "Copied to clipboard"
-                }
-                zle -N copy-command
-                bindkey '^Xc' copy-command
-
-                bindkey ' ' magic-space
-
-                autoload -Uz zmv
-
-                hash -d dl=$HOME/Downloads
-                hash -d dot=$HOME/dotfiles
-                hash -d nix=$HOME/dotfiles/nixos
-
-                bindkey -s '^Xgc' 'git commit -m ""\C-b'
-
-                bindkey -s '^Xgp' 'git push origin '
-                bindkey -s '^Xgs' 'git status\n'
-                bindkey -s '^Xgl' 'git log --oneline -n 10\n'
-        	'';
+          	'';
 
       shellGlobalAliases = {
         NE = "2>/dev/null";
@@ -170,12 +184,7 @@ in
 
       oh-my-zsh = {
         enable = true;
-        plugins = [
-          "colored-man-pages"
-          "sudo"
-          "git-auto-fetch"
-          "man"
-        ];
+        plugins = [ "colored-man-pages" "sudo" "git-auto-fetch" "man" ];
         extraConfig = ''
           zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
           zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"

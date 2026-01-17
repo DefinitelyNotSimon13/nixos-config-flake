@@ -38,3 +38,11 @@ build-iso: rebuild-pre && rebuild-post
         --format iso \
         --flake "/home/simon/dotfiles/nixos#iso-image" \
         -o result
+
+ap:
+    nvim home/simon/blsi153-workstation.nix -c "/home\.packages.*\\[" -c "/\\];" -c "normal! O" -c "startinsert" -c "normal! i     "
+    nh home switch
+
+ec:
+    nvim $(fzf)
+    nh home switch
