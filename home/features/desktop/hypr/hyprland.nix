@@ -66,7 +66,6 @@ in {
         xwayland = { force_zero_scaling = true; };
         exec-once = [
           "quickshell"
-          "dunst"
           "hypridle"
           "hyprpaper"
           "wl-paste --watch cliphist store"
@@ -151,24 +150,21 @@ in {
 
         bind = [
           "$mainMod, RETURN, exec, ghostty +new-window"
-          "$mainMod SHIFT, RETURN, exec, alacritty -e tmux"
-          "$mainMod, Q, exec, io.github.zen_browser.zen"
+          "$mainMod, SPACE, exec, qs -c noctalia-shell ipc call launcher toggle"
+          "$mainMod, comma, exec, qs -c noctalia-shell ipc call settings toggle"
+          "$mainMod SHIFT, V, exec, qs -c noctalia-shell ipc call launcher clipboard"
+          "$mainMod SHIFT, E, exec, qs -c noctalia-shell ipc call launcher emoji"
+          "$mainMod SHIFT, P, exec, qs -c noctalia-shell ipc call sessionMenu toggle"
+          "$mainMod, L, exec, qs -c noctalia-shell ipc call lockScreen lock"
+          "$mainMod, Q, exec, brave"
           "$mainMod, C, killactive,"
-          "$mainMod SHIFT, P, exec, ~/.config/rofi/bin/powermenu.sh"
           "$mainMod SHIFT, M, exit,"
           "$mainMod, E, exec, $fileManager"
           "$mainMod, V, togglefloating,"
           "$mainMod, P, pseudo,"
-          "$mainMod, R, exec, exec ~/.config/rofi/bin/runner.sh"
-          "$mainMod, A, exec, exec ~/.config/rofi/bin/drawer.sh"
-          "$mainMod, S, exec, exec ~/.config/rofi/bin/screenshot.sh"
           "$mainMod, J, togglesplit,"
           "$mainMod, F, fullscreen, 0"
           "$mainMod SHIFT, S, exec, spotify"
-          "$mainMod SHIFT, V, exec, ~/.config/rofi/bin/volume.sh"
-          "$mainMod, B, exec, ~/.config/rofi/bin/brightness"
-          "$mainMod SHIFT, B, exec, ~/.config/rofi/bin/battery.sh"
-          "$mainMod, M, exec, ~/.config/rofi/bin/mpd.sh"
           "$mainMod, h, movefocus, l"
           "$mainMod, l, movefocus, r"
           "$mainMod, k, movefocus, u"
@@ -222,7 +218,9 @@ in {
           "$mainMod, mouse:273, resizewindow"
         ];
 
-        bindr = [ "$mainMod, SUPER_L, exec, fuzzel" ];
+        bindr = [
+          "$mainMod, SUPER_L, exec, qs -c noctalia-shell ipc call launcher toggle"
+        ];
 
         # gestures = {
         #   workspace_swipe = true;
