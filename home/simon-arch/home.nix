@@ -30,7 +30,7 @@
     android_sdk.accept_license = true;
   };
 
-  services = { dunst = { enable = lib.mkDefault true; }; };
+  services = { dunst = { enable = lib.mkDefault false; }; };
 
   gtk = { enable = true; };
 
