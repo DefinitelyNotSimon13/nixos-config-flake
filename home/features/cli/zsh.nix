@@ -90,17 +90,17 @@ in {
 
             export BUN_INSTALL="$HOME/.bun"
             export PATH="$BUN_INSTALL/bin:$PATH"
-            export http_proxy=http://127.0.0.1:3128
-            export https_proxy=$http_proxy
-            export ftp_proxy=$http_proxy
-            export all_proxy=$http_proxy
-            export no_proxy='localhost,127.0.0.1,::1,*.local,10.*,harbor.local'
+            # export http_proxy=http://127.0.0.1:3128
+            # export https_proxy=$http_proxy
+            # export ftp_proxy=$http_proxy
+            # export all_proxy=$http_proxy
+            # export no_proxy='localhost,127.0.0.1,::1,*.local,10.*,harbor.local'
 
-            export HTTP_PROXY=$http_proxy
-            export HTTPS_PROXY=$https_proxy
-            export FTP_PROXY=$ftp_proxy
-            export ALL_PROXY=$all_proxy
-            export NO_PROXY=$no_proxy
+            # export HTTP_PROXY=$http_proxy
+            # export HTTPS_PROXY=$https_proxy
+            # export FTP_PROXY=$ftp_proxy
+            # export ALL_PROXY=$all_proxy
+            # export NO_PROXY=$no_proxy
 
             if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 

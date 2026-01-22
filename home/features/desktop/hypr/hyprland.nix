@@ -1,27 +1,20 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
-}:
+{ lib, config, pkgs, ... }:
 with lib;
 let
   cfg = config.features.desktop.hyprland;
   mkIfElse = p: yes: no: mkMerge [ (mkIf p yes) (mkIf (!p) no) ];
-in
-{
+in {
   options.features.desktop.hyprland = {
     enable = mkEnableOption "enables desktop.hyprland";
     packagelessMode = mkEnableOption "dont use a nixpkg";
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      hyprcursor
-    ];
+    home.packages = with pkgs; [ hyprcursor ];
 
     home.file.".local/share/icons/catppuccin-mocha-dark-cursors" = {
-      source = "${pkgs.catppuccin-cursors.mochaDark}/share/icons/catppuccin-mocha-dark-cursors";
+      source =
+        "${pkgs.catppuccin-cursors.mochaDark}/share/icons/catppuccin-mocha-dark-cursors";
       recursive = true;
     };
 
@@ -34,35 +27,35 @@ in
       #   };
       enable = true;
       extraConfig = ''
-        windowrulev2=noblur,class:^()$,title:^()$
-windowrulev2 = tile, class:^(org\.wezfurlong\.wezterm)$
+                windowrulev2=noblur,class:^()$,title:^()$
+        windowrulev2 = tile, class:^(org\.wezfurlong\.wezterm)$
 
-windowrulev2 = rounding 12, class:^(org\.gnome\.)
-windowrulev2 = noborder, class:^(org\.gnome\.)
+        windowrulev2 = rounding 12, class:^(org\.gnome\.)
+        windowrulev2 = noborder, class:^(org\.gnome\.)
 
-windowrulev2 = tile, class:^(gnome-control-center)$
-windowrulev2 = tile, class:^(pavucontrol)$
-windowrulev2 = tile, class:^(nm-connection-editor)$
+        windowrulev2 = tile, class:^(gnome-control-center)$
+        windowrulev2 = tile, class:^(pavucontrol)$
+        windowrulev2 = tile, class:^(nm-connection-editor)$
 
-windowrulev2 = float, class:^(gnome-calculator)$
-windowrulev2 = float, class:^(galculator)$
-windowrulev2 = float, class:^(blueman-manager)$
-windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
-windowrulev2 = float, class:^(steam)$
-windowrulev2 = float, class:^(xdg-desktop-portal)$
+        windowrulev2 = float, class:^(gnome-calculator)$
+        windowrulev2 = float, class:^(galculator)$
+        windowrulev2 = float, class:^(blueman-manager)$
+        windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
+        windowrulev2 = float, class:^(steam)$
+        windowrulev2 = float, class:^(xdg-desktop-portal)$
 
-windowrulev2 = noborder, class:^(org\.wezfurlong\.wezterm)$
-windowrulev2 = noborder, class:^(Alacritty)$
-windowrulev2 = noborder, class:^(zen)$
-windowrulev2 = noborder, class:^(com\.mitchellh\.ghostty)$
-windowrulev2 = noborder, class:^(kitty)$
+        windowrulev2 = noborder, class:^(org\.wezfurlong\.wezterm)$
+        windowrulev2 = noborder, class:^(Alacritty)$
+        windowrulev2 = noborder, class:^(zen)$
+        windowrulev2 = noborder, class:^(com\.mitchellh\.ghostty)$
+        windowrulev2 = noborder, class:^(kitty)$
 
-windowrulev2 = float, class:^(firefox)$, title:^(Picture-in-Picture)$
-windowrulev2 = float, class:^(zoom)$
+        windowrulev2 = float, class:^(firefox)$, title:^(Picture-in-Picture)$
+        windowrulev2 = float, class:^(zoom)$
 
-# DMS windows floating by default
-windowrulev2 = float, class:^(org.quickshell)$
-windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
+        # DMS windows floating by default
+        windowrulev2 = float, class:^(org.quickshell)$
+        windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
       '';
       settings = {
         cursor = {
@@ -70,9 +63,7 @@ windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
           no_hardware_cursors = true;
         };
 
-        xwayland = {
-          force_zero_scaling = true;
-        };
+        xwayland = { force_zero_scaling = true; };
         exec-once = [
           "quickshell"
           "dunst"
@@ -86,9 +77,7 @@ windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
           "udiskie"
         ];
 
-        env = [
-          "WLR_NO_HARDWARE_CURSORS,1"
-        ];
+        env = [ "WLR_NO_HARDWARE_CURSORS,1" ];
 
         input = {
           kb_layout = "de";
@@ -100,45 +89,54 @@ windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
 
         general = {
           allow_tearing = false;
-          gaps_workspaces =0;
+          gaps_workspaces = 0;
           gaps_in = 5;
-          gaps_out = 5;
+          gaps_out = 10;
           border_size = 2;
-          "col.inactive_border" = lib.mkForce "rgba(707070ff)";
-          "col.active_border" = lib.mkForce "rgba(d0d0d0ff)";
+          # "col.inactive_border" = lib.mkForce "rgba(707070ff)";
+          # "col.active_border" = lib.mkForce "rgba(d0d0d0ff)";
           layout = "dwindle";
           resize_on_border = true;
         };
 
         decoration = {
-          rounding = 12;
+          rounding = 20;
+          rounding_power = 2;
           active_opacity = 1.0;
           inactive_opacity = 0.98;
           blur = {
-            enabled = false;
-            size = 8;
-            passes = 3;
-            new_optimizations = true;
+            enabled = true;
+            size = 3;
+            passes = 2;
+            vibrancy = 0.1696;
           };
 
-    shadow = {
-        enabled = true;
-        range = 30;
-        render_power = 5;
-        offset = "0 5";
-        color = lib.mkForce "rgba(00000070)";
-    };
+          shadow = {
+            enabled = true;
+            range = 4;
+            render_power = 3;
+            # offset = "0 5";
+            color = lib.mkForce "rgba(1a1a1aee)";
+          };
+        };
+
+        layerrule = {
+          name = "noctalia";
+          "match:namespace" = "noctalia-background-.*$";
+          ignore_alpha = 0.5;
+          blur = true;
+          blur_popups = true;
         };
 
         animations = {
-    enabled = true;
-    animation = [
+          enabled = true;
+          animation = [
             "windowsIn, 1, 3, default"
-           "windowsOut, 1, 3, default"
-           "workspaces, 1, 5, default"
-           "windowsMove, 1, 4, default"
-           "fade, 1, 3, default"
-           "border, 1, 3, default"
+            "windowsOut, 1, 3, default"
+            "workspaces, 1, 5, default"
+            "windowsMove, 1, 4, default"
+            "fade, 1, 3, default"
+            "border, 1, 3, default"
           ];
         };
 
@@ -224,9 +222,7 @@ windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
           "$mainMod, mouse:273, resizewindow"
         ];
 
-        bindr = [
-          "$mainMod, SUPER_L, exec, fuzzel"
-        ];
+        bindr = [ "$mainMod, SUPER_L, exec, fuzzel" ];
 
         # gestures = {
         #   workspace_swipe = true;
