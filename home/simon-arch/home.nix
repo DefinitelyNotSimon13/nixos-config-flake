@@ -30,7 +30,7 @@
     android_sdk.accept_license = true;
   };
 
-  gtk = { enable = true; };
+  # gtk = { enable = true; };
 
   programs = {
     # Let Home Manager install and manage itself.

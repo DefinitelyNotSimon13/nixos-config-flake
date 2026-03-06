@@ -26,37 +26,7 @@ in {
       #   pkgs.hyprland
       #   };
       enable = true;
-      extraConfig = ''
-                windowrulev2=noblur,class:^()$,title:^()$
-        windowrulev2 = tile, class:^(org\.wezfurlong\.wezterm)$
-
-        windowrulev2 = rounding 12, class:^(org\.gnome\.)
-        windowrulev2 = noborder, class:^(org\.gnome\.)
-
-        windowrulev2 = tile, class:^(gnome-control-center)$
-        windowrulev2 = tile, class:^(pavucontrol)$
-        windowrulev2 = tile, class:^(nm-connection-editor)$
-
-        windowrulev2 = float, class:^(gnome-calculator)$
-        windowrulev2 = float, class:^(galculator)$
-        windowrulev2 = float, class:^(blueman-manager)$
-        windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
-        windowrulev2 = float, class:^(steam)$
-        windowrulev2 = float, class:^(xdg-desktop-portal)$
-
-        windowrulev2 = noborder, class:^(org\.wezfurlong\.wezterm)$
-        windowrulev2 = noborder, class:^(Alacritty)$
-        windowrulev2 = noborder, class:^(zen)$
-        windowrulev2 = noborder, class:^(com\.mitchellh\.ghostty)$
-        windowrulev2 = noborder, class:^(kitty)$
-
-        windowrulev2 = float, class:^(firefox)$, title:^(Picture-in-Picture)$
-        windowrulev2 = float, class:^(zoom)$
-
-        # DMS windows floating by default
-        windowrulev2 = float, class:^(org.quickshell)$
-        windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
-      '';
+      extraConfig = "";
       settings = {
         cursor = {
           inactive_timeout = 3;
@@ -76,7 +46,7 @@ in {
           "udiskie"
         ];
 
-        env = [ "WLR_NO_HARDWARE_CURSORS,1" ];
+        env = [ "WLR_NO_HARDWARE_CURSORS,1" "QT_QPA_PLATFORMTHEME,qt6ct" ];
 
         input = {
           kb_layout = "de";
@@ -150,7 +120,7 @@ in {
 
         bind = [
           "$mainMod, RETURN, exec, ghostty +new-window"
-          "$mainMod, SPACE, exec, qs -c noctalia-shell ipc call launcher toggle"
+          "$mainMod, SPACE, exec, qs -c noctalia-shell ipc call controlCenter toggle"
           "$mainMod, comma, exec, qs -c noctalia-shell ipc call settings toggle"
           "$mainMod SHIFT, V, exec, qs -c noctalia-shell ipc call launcher clipboard"
           "$mainMod SHIFT, E, exec, qs -c noctalia-shell ipc call launcher emoji"

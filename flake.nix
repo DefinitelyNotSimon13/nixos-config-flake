@@ -92,7 +92,7 @@
           modules = [
             ./home/simon-arch/arch-desktop.nix
             inputs.sops-nix.homeManagerModules.sops
-            inputs.stylix.homeModules.stylix
+            # inputs.stylix.homeModules.stylix
           ];
         };
         "simon@arch-laptop" = home-manager.lib.homeManagerConfiguration {
