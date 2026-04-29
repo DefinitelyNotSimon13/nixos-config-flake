@@ -2,7 +2,6 @@
 {
   imports = [
     ./zsh.nix
-    ./neofetch.nix
     ./fzf.nix
     ./tmux.nix
   ];

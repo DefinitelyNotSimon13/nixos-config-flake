@@ -6,7 +6,6 @@ with lib; {
 
     cli = {
       zsh.enable = mkDefault true;
-      neofetch.enable = mkDefault true;
       fzf.enable = mkDefault true;
       tmux.enable = mkDefault true;
     };
